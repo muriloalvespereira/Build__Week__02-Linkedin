@@ -1,11 +1,13 @@
 import React from 'react'
 import { Navbar, Nav, Container } from 'react-bootstrap'
 import SearchInput from '../SearchInput'
-import {IoMdArrowDropdown} from 'react-icons/io'
+import { useState } from 'react'
 import TriangleIcon from './TriangleIcon'
 import RedCircleIcon from './RedCircleIcon'
 
 function TopNavBar(props) {
+    const [isClicked, setIsClicked] = useState(false)
+
     return (
         <Navbar id="NavBar" className="container-fluid p-0">
             <Container>
@@ -68,26 +70,30 @@ function TopNavBar(props) {
                         </Nav.Link>
     
     
-                        <div className="nav-item transformMod">
-                            {/* {Need to put logic do toggle show/hide} */}
+                        <div className="nav-item transformMod" 
+                        onClick={()=> setIsClicked(!isClicked)}>
     
                             <a aria-haspopup="true" aria-expanded="false" id="basic-nav-dropdown" className=" nav-link d-flex flex-column justify-content-center align-items-center small-inlink" role="button">
                                 <img className="avatar" width="24" src="https://media-exp3.licdn.com/dms/image/C4D03AQEKmFGdeuoSQw/profile-displayphoto-shrink_100_100/0/1625334640822?e=1632355200&amp;v=beta&amp;t=6mX7pit2IAerIiSNcPHWLstAzfNQkPa5RfasVJVzSXc" height="24" alt="Rafael Lima" id="ember34" />
                                
                                 <div className="d-flex align-items-center">
+
                                     <span className="mr-1">Me</span>
-                                   <TriangleIcon></TriangleIcon>
+                                    <TriangleIcon></TriangleIcon>
+
                                 </div>
                             </a>
     
     
                         </div>
     
-                        <Nav.Link className="d-flex flex-column justify-content-center align-items-center small-inlink position-relative border-left-Work">
+                        <Nav.Link className="d-flex flex-column justify-content-center align-items-center small-inlink position-relative border-left-Work"
+                         onClick={()=> setIsClicked(!isClicked)}>
                             <svg id="global-nav-icon--classic__work" height="24" width="24">
                                 <path d="M10 10h4v4h-4v-4zm0 11h4v-4h-4v4zm-7-7h4v-4H3v4zm0 7h4v-4H3v4zM3 7h4V3H3v4zm14 7h4v-4h-4v4zm0-11v4h4V3h-4zm-7 4h4V3h-4v4zm7 14h4v-4h-4v4z"></path>
                             </svg>
                             <div className="d-flex align-items-center">
+                                
                                 <span className="mr-1">Work</span>
                                 <TriangleIcon></TriangleIcon>
                             </div>
