@@ -5,7 +5,7 @@ import { InputGroup, FormControl } from 'react-bootstrap'
 function SearchInput(props) {
     return (
         <>
-            <InputGroup className="ml-4 border-0 search-Wrapper">
+            <InputGroup className="ml-4 border-0 flex-nowrap">
                 <InputGroup.Prepend>
                     <InputGroup.Text className="searchIcon border-0">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" dataSupportedDps="24x24" fill="currentColor" width="20" height="20" focusable="false">
@@ -16,7 +16,7 @@ function SearchInput(props) {
                     className="searchInput border-0 pl-0"
                     aria-label="Default"
                     aria-describedby="inputGroup-sizing-default"
-                    placeholder="Artists, songs or podcasts"
+                    placeholder="Search"
 
                     onChange={(e) => console.log(e.target.value)}
                 />
