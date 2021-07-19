@@ -28,6 +28,7 @@
 .dashboard .article-view,
 .dashboard .search-appearances {
   border-left: 1px solid #dde6f1;
+  flex-grow: 1;
 }
 /* @media (max-width: 400px) {
   .dashboard-middle-container {
