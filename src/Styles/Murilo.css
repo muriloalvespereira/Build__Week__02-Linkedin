@@ -22,13 +22,20 @@
   position: absolute;
   right: 20px;
   top: 20px;
+  cursor: pointer;
 }
 
 .mercado-match {
   color: #0a66c2;
-  margin-left: 6px;
+  margin-left: 7px;
   margin-top: 1px;
 }
+.card-svg {
+  color: #0a66c2;
+  margin-left: 7px;
+  margin-top: 7px;
+}
+
 .profile-pic {
   height: 150px;
   width: 150px;
@@ -103,6 +110,11 @@ p > img {
   position: absolute;
   right: 17px;
   top: 10px;
+  cursor: pointer;
+}
+
+.edit-details:hover {
+  background-color: #ebebeb;
 }
 
 .edit-svg {
@@ -132,7 +144,8 @@ p > img {
   background-color: transparent;
   position: absolute;
   right: 10px;
-  top: 10px;
+  top: 5px;
+  cursor: pointer;
 }
 
 .card-svg {
@@ -158,4 +171,19 @@ p > img {
   color: #0a66c2;
   font-weight: 600;
   font-size: 14px;
+}
+
+.card-details-top {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.p-card {
+  font-size: 14px;
+}
+.card-edit:hover {
+  background-color: #ebebeb;
+}
+.card-edit-color:hover {
+  background-color: #d7d3ce;
 }
