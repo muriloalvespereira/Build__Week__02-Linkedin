@@ -62,14 +62,14 @@ function TopNavBar() {
                     </Nav.Link>
 
 
-                    <div className="nav-item">
+                    <div className="nav-item transformMod">
                         {/* {Need to put logic do toggle show/hide} */}
 
                         <a ariaHaspopup="true" ariaExpanded="false" id="basic-nav-dropdown" className=" nav-link d-flex flex-column justify-content-center align-items-center small-inlink" role="button">
                             <img className="avatar" width="24" src="https://media-exp3.licdn.com/dms/image/C4D03AQEKmFGdeuoSQw/profile-displayphoto-shrink_100_100/0/1625334640822?e=1632355200&amp;v=beta&amp;t=6mX7pit2IAerIiSNcPHWLstAzfNQkPa5RfasVJVzSXc" height="24" alt="Rafael Lima" id="ember34" />
                            
-                            <div className="d-flex">
-                                <span>Me</span>
+                            <div className="d-flex align-items-center">
+                                <span className="mr-1">Me</span>
                                <TriangleIcon></TriangleIcon>
                             </div>
                         </a>
@@ -84,7 +84,10 @@ function TopNavBar() {
                         <svg id="global-nav-icon--classic__work" height="24" width="24">
                             <path d="M10 10h4v4h-4v-4zm0 11h4v-4h-4v4zm-7-7h4v-4H3v4zm0 7h4v-4H3v4zM3 7h4V3H3v4zm14 7h4v-4h-4v4zm0-11v4h4V3h-4zm-7 4h4V3h-4v4zm7 14h4v-4h-4v4z"></path>
                         </svg>
-                        Work
+                        <div className="d-flex align-items-center">
+                            <span className="mr-1">Work</span>
+                            <TriangleIcon></TriangleIcon>
+                        </div>
                     </Nav.Link>
                     <Nav.Link className="d-flex flex-column justify-content-center align-items-center small-inlink premium-inlink">Try Premium Free for 1 Month</Nav.Link>
                 </Nav>
