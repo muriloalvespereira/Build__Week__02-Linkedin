@@ -11,7 +11,8 @@
   /*  text-decoration: none; */
 }
 .dashboard a:hover {
-  text-decoration-color: #8345cc;
+  color: #757272 !important;
+  text-decoration-color: #0c67c2;
 }
 .dashboard .dashboard-middle-container {
   display: flex;
@@ -59,7 +60,8 @@
 }
 .dashboard-bottom-container h5,
 .dashboard-bottom-container p {
-  margin-left: 32px !important;
+  margin-left: 16px !important;
+  margin-bottom: 5px;
 }
 
 .dashboard-section__hr {
@@ -74,7 +76,7 @@
   top: 0;
   bottom: 0;
   right: 0;
-  left: 45px;
+  left: 42px;
   padding-right: 5px;
 }
 /* .dashboard svg {
@@ -84,6 +86,9 @@
   margin-top: 8px;
 }
 .dashboard-svg {
-  display: flex;
-  align-self: center;
+  /*  display: flex;
+  align-self: center; */
+  margin-top: 10px;
+}
+.dashboard p {
 }
