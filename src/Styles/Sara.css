@@ -52,23 +52,32 @@
 .salaryinsights-content,
 .myitems-content {
   display: flex;
+  flex-grow: 1;
 }
 .dashboard-bottom-container h5,
 .dashboard-bottom-container p {
   margin-left: 32px !important;
 }
 
-.dashboard-section__cta {
+.dashboard-section__hr {
   position: relative !important;
 }
-.dashboard-section__cta::before {
+.dashboard-section__hr::before {
   content: "";
   display: block;
   background-color: rgb(231, 229, 229);
   height: 1px;
   position: absolute;
-  top: -20px;
+  top: 0;
+  bottom: 0;
   right: 0;
   left: 45px;
   padding-right: 5px;
+  margin-top: 5px;
+}
+/* .dashboard svg {
+  margin-top: 10px;
+} */
+.dashboard .p-h5 {
+  margin-top: 16px;
 }
