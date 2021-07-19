@@ -1,8 +1,12 @@
 import React from 'react'
-import { InputGroup, FormControl } from 'react-bootstrap'
-// import {useState, useEffect} from 'react'
+import { InputGroup, FormControl, Modal, Button } from 'react-bootstrap'
+import { useState} from 'react'
 
 function SearchInput(props) {
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
     return (
         <>
             <InputGroup className="ml-4 border-0 flex-nowrap">
@@ -17,6 +21,7 @@ function SearchInput(props) {
                     aria-label="Default"
                     aria-describedby="inputGroup-sizing-default"
                     placeholder="Search"
+                    onClick={handleShow}
 
                     onChange={(e) => console.log(e.target.value)}
                 />
