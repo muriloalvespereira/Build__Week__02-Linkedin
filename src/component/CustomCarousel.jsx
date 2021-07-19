@@ -30,8 +30,9 @@ const CustomCarousel = () => {
 
       <Carousel className="mt-3 pl-3"  partialVisible={true} responsive={responsive}>
         <div className="mb-1 mr-3">
-            <Col className="card-carousel-color">
-                <p><span>Open to work</span></p>
+            <Col className="card-carousel-color pt-3">
+                <p className="mb-0"><span className="qualifications">Open to work</span></p>
+                <p><span className="span-card">See all details</span></p>
             <div className="card-edit">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -48,9 +49,18 @@ const CustomCarousel = () => {
             </div>
           </Col>
           </div>
-        <div className="mr-3 mb-1"><Col className="card-carousel"></Col></div>
+        <div className="mr-3 mb-1">
+            <Col className="card-carousel pt-3">
+            <p className="mb-0"><span className="qualifications">Share that you're hiring</span> and attract qualified candidates.</p>
+                <p><span className="span-card">Get started</span></p>
+                </Col>
+                </div>
         <div className="mb-1 mr-3">
-        <Col className="card-carousel"></Col>
+        <Col className="card-carousel pt-3">
+        <p className="mb-0"><span className="qualifications">
+Find potential clients</span> by showcasing the services you provide.</p>
+                <p><span className="span-card">Get started</span></p>
+        </Col>
             </div>
     
       </Carousel>

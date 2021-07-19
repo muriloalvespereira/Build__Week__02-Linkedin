@@ -1,12 +1,12 @@
 .profile-area {
   background-color: white !important;
   width: 500px !important;
-  height: 600px !important;
+  height: 520px !important;
   border-radius: 10px;
 }
 
 .bg-profile {
-  height: 40%;
+  height: 30%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -36,7 +36,7 @@
   background-color: white;
   position: absolute;
   left: 25px;
-  top: 130px;
+  top: 50px;
 }
 
 .bg-photo {
@@ -115,12 +115,14 @@ p > img {
   background-color: #e9e5df;
   border-radius: 10px;
   height: 85px;
+  line-height: 1.1;
 }
 
 .card-carousel {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   height: 85px;
+  line-height: 1.1;
 }
 
 .card-edit {
@@ -150,4 +152,10 @@ p > img {
   border-radius: 50% !important;
   min-width: 30px !important;
   min-height: 30px !important;
+}
+
+.span-card {
+  color: #0a66c2;
+  font-weight: 600;
+  font-size: 14px;
 }
