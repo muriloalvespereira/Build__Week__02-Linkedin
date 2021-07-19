@@ -35,7 +35,7 @@ const App = () => {
     <>
       {loggedUser && <div className="container-fluid p-0 m-0">
         <TopNavBar userInfo={loggedUser} setIsSearchOn={setIsSearchOn}></TopNavBar>
-        <SearchOverlay></SearchOverlay>
+        {isSearchOn && <SearchOverlay></SearchOverlay>}
 
 
         {/* Row NavBar */}

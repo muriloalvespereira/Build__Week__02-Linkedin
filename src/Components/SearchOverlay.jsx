@@ -2,7 +2,7 @@ import React from 'react'
 
 function SearchOverlay() {
     return (
-        <div>
+        <div className="Overlay">
             
         </div>
     )
