@@ -4,9 +4,11 @@ import SearchInput from '../SearchInput'
 import { useState } from 'react'
 import TriangleIcon from './TriangleIcon'
 import RedCircleIcon from './RedCircleIcon'
+import ProfileBox from'./ProfileBox'
 
 function TopNavBar(props) {
-    const [isClicked, setIsClicked] = useState(false)
+    const [isClickedAvatar, setIsClickedAvatar] = useState(false)
+    const [isClickedWork, setIsClickedWork] = useState(false)
 
     return (
         <Navbar id="NavBar" className="container-fluid p-0">
@@ -71,7 +73,7 @@ function TopNavBar(props) {
     
     
                         <div className="nav-item transformMod" 
-                        onClick={()=> setIsClicked(!isClicked)}>
+                        onClick={()=> setIsClickedAvatar(!isClickedAvatar)}>
     
                             <a aria-haspopup="true" aria-expanded="false" id="basic-nav-dropdown" className=" nav-link d-flex flex-column justify-content-center align-items-center small-inlink" role="button">
                                 <img className="avatar" width="24" src="https://media-exp3.licdn.com/dms/image/C4D03AQEKmFGdeuoSQw/profile-displayphoto-shrink_100_100/0/1625334640822?e=1632355200&amp;v=beta&amp;t=6mX7pit2IAerIiSNcPHWLstAzfNQkPa5RfasVJVzSXc" height="24" alt="Rafael Lima" id="ember34" />
@@ -80,15 +82,16 @@ function TopNavBar(props) {
 
                                     <span className="mr-1">Me</span>
                                     <TriangleIcon></TriangleIcon>
-
                                 </div>
                             </a>
     
     
                         </div>
+                        {isClickedAvatar && <ProfileBox></ProfileBox>}
+                        
     
                         <Nav.Link className="d-flex flex-column justify-content-center align-items-center small-inlink position-relative border-left-Work"
-                         onClick={()=> setIsClicked(!isClicked)}>
+                         onClick={()=> setIsClickedWork(!isClickedWork)}>
                             <svg id="global-nav-icon--classic__work" height="24" width="24">
                                 <path d="M10 10h4v4h-4v-4zm0 11h4v-4h-4v4zm-7-7h4v-4H3v4zm0 7h4v-4H3v4zM3 7h4V3H3v4zm14 7h4v-4h-4v4zm0-11v4h4V3h-4zm-7 4h4V3h-4v4zm7 14h4v-4h-4v4z"></path>
                             </svg>

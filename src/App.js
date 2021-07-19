@@ -21,8 +21,7 @@ const App = () => {
     try {
 
       let response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/profile/60f5264b0efe7800155c3494",
-        {
+        "https://striveschool-api.herokuapp.com/api/profile/60f5264b0efe7800155c3494", {
           method: "Get",
           headers: {
             Authorization:
@@ -30,14 +29,6 @@ const App = () => {
           },
         }
       )
-
-      let response = await fetch('https://striveschool-api.herokuapp.com/api/profile/60f5264b0efe7800155c3494', {
-        method: 'Get',
-        headers: {
-          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGRjNWYwNmIzNTgxNzAwMTVjMjI3MDUiLCJpYXQiOjE2MjYyNzAyMjMsImV4cCI6MTYyNzQ3OTgyM30.0IcvG8-Zqf633mRWGCRlzG5yDVI6njZjZGZzJfuGulw",
-        }
-      })
-
       let dataRequested = await response.json()
       setLoggedUser(dataRequested)
     } catch (e) {
@@ -52,14 +43,13 @@ const App = () => {
       {loggedUser && <div className="container-fluid p-0 m-0">
         <TopNavBar userInfo={loggedUser} setIsSearchOn={setIsSearchOn}></TopNavBar>
         {isSearchOn && <SearchOverlay></SearchOverlay>}
-        <SearchCard></SearchCard>
-          <ProfileBox />
+         
 
 
-        {/* Row NavBar */}
+    
         <Container>
 
-          {/* Container Row > inside Profile Col8 sideBar col4 */}
+        
 
 
         </Container>
