@@ -12,6 +12,17 @@
     border-radius: .4rem;
     color: rgba(0,0,0,0.9);
     padding: 0 8px 0 40px;
+    max-width: 220px;
+    transition: all .5s linear;
+}
+
+
+.searchInput:focus{
+    max-width: 70%;
+    border-color: rgba(0,0,0,0.08) ;
+    background-color: #eef3f8 ;
+    box-shadow: none;
+
 }
 
 
@@ -77,4 +88,11 @@ transform: translateY(1px);
 
 .transformMod{
     transform: translateY(5px);
+}
+
+@media (min-width: 768px) { 
+    #NavBar{
+        height: 52px;
+    }
+
 }
