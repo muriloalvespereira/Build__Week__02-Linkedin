@@ -22,7 +22,7 @@
     border-color: rgba(0,0,0,0.08) ;
     background-color: #eef3f8 ;
     box-shadow: none;
-    padding-left: 24px !important;
+    padding-left: 8px !important;
 
 }
 
@@ -37,6 +37,10 @@
 }
 
 .border-left-Work::before{
+    content: "";
+    position: absolute;
+    height: 52px;
+    left: 0px;
     border-left: 1px solid rgba(0,0,0,0.08);
 }
 
