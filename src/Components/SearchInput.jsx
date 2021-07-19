@@ -7,19 +7,22 @@ function SearchInput(props) {
         <>
             <InputGroup className="ml-4 border-0 search-Wrapper">
                 <InputGroup.Prepend>
-                    <InputGroup.Text className="searchIcon border-0"><svg height="24" role="img" width="24" viewBox="0 0 512 512" aria-hidden="true"><path d="M349.714 347.937l93.714 109.969-16.254 13.969-93.969-109.969q-48.508 36.825-109.207 36.825-36.826 0-70.476-14.349t-57.905-38.603-38.603-57.905-14.349-70.476 14.349-70.476 38.603-57.905 57.905-38.603 70.476-14.349 70.476 14.349 57.905 38.603 38.603 57.905 14.349 70.476q0 37.841-14.73 71.619t-40.889 58.921zM224 377.397q43.428 0 80.254-21.461t58.286-58.286 21.461-80.254-21.461-80.254-58.286-58.285-80.254-21.46-80.254 21.46-58.285 58.285-21.46 80.254 21.46 80.254 58.285 58.286 80.254 21.461z" fill="currentColor"></path></svg></InputGroup.Text>
+                    <InputGroup.Text className="searchIcon border-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" dataSupportedDps="24x24" fill="currentColor" width="20" height="20" focusable="false">
+                            <path d="M21.41 18.59l-5.27-5.28A6.83 6.83 0 0017 10a7 7 0 10-7 7 6.83 6.83 0 003.31-.86l5.28 5.27a2 2 0 002.82-2.82zM5 10a5 5 0 115 5 5 5 0 01-5-5z"></path>
+                        </svg>                        </InputGroup.Text>
                 </InputGroup.Prepend>
                 <FormControl
                     className="searchInput border-0 pl-0"
                     aria-label="Default"
                     aria-describedby="inputGroup-sizing-default"
                     placeholder="Artists, songs or podcasts"
-                  
-                    onChange={(e)=> console.log(e.target.value)}
-                    />
-                   
 
-               
+                    onChange={(e) => console.log(e.target.value)}
+                />
+
+
+
             </InputGroup>
         </>
     )
