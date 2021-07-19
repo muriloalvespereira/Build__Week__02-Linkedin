@@ -36,7 +36,7 @@
     max-width: 425px;
 }
 
-.border-left-Work{
+.border-left-Work::before{
     border-left: 1px solid rgba(0,0,0,0.08);
 }
 
@@ -55,6 +55,10 @@
     font-weight: 400;
     color: rgba(0,0,0,0.6);
     font-size: 0.75rem;
+}
+
+#NavBar{
+    border-bottom: 1px solid rgba(177 177 177 / 60%);
 }
 
 #NavBar .small-inlink {
@@ -78,6 +82,7 @@
 
 }
 
+
 .triangle-Icon{
     width: 0;
 height: 0;
@@ -96,4 +101,29 @@ transform: translateY(1px);
         height: 52px;
     }
 
+}
+
+.red-circle-icon-OuterWrapper{
+    position: absolute;
+    top: 14px;
+    right: 24px;
+}
+
+.red-circle-Icon {
+    width: 16px;
+    height: 16px;
+    background: #cc1016;
+    border-radius: 50%;
+}
+
+.inner-white-circle{
+    height: 6px;
+    width: 6px;
+    border-radius: .6rem;
+    background-color: white;
+}
+
+.red-circle-Icon > span {
+    color: white;
+    transform: translateY(-1px);
 }
