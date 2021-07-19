@@ -2,6 +2,8 @@ import './Styles/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useState, useEffect} from 'react'
 import { Container } from 'react-bootstrap';
+import TopNavBar from './Components/NavBar/TopNavBar';
+
 
 const App = () => {
   const [loggedUser, setLoggedUser] = useState(false)
@@ -30,6 +32,9 @@ const App = () => {
     
        <> 
        {loggedUser && <div className="container-fluid p-0 m-0">
+         <TopNavBar userInfo={loggedUser}></TopNavBar>
+         
+         
          {/* Row NavBar */}
          <Container>
 
