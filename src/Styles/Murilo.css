@@ -1,0 +1,153 @@
+.profile-area {
+  background-color: white !important;
+  width: 500px !important;
+  height: 600px !important;
+  border-radius: 10px;
+}
+
+.bg-profile {
+  height: 40%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.btn-edit {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.mercado-match {
+  color: #0a66c2;
+  margin-left: 6px;
+  margin-top: 1px;
+}
+.profile-pic {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  left: 25px;
+  top: 130px;
+}
+
+.bg-photo {
+  height: 143px;
+  width: 143px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  margin: auto;
+  position: absolute;
+}
+
+.details-profile {
+  height: 200px;
+  padding-top: 60px;
+}
+
+.span-details {
+  color: #0a66c2;
+  font-weight: 600;
+}
+
+.details-region {
+  font-size: 14px;
+}
+
+.qualifications {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+p > img {
+  width: 35px;
+}
+.row-btn {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.btn-details {
+  background-color: #0a66c2 !important;
+  border-radius: 30px;
+  font-weight: 600;
+  /* height: 33px; */
+}
+.btn-details-color {
+  background-color: transparent !important;
+  border-radius: 30px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  /* height: 33px; */
+}
+
+.edit-details {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  right: 17px;
+  top: 10px;
+}
+
+.edit-svg {
+  color: rgba(0, 0, 0, 0.6) !important;
+  margin-left: 8px;
+  margin-top: 8px;
+}
+
+.card-carousel-color {
+  background-color: #e9e5df;
+  border-radius: 10px;
+  height: 85px;
+}
+
+.card-carousel {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  height: 85px;
+}
+
+.card-edit {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: transparent;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.card-svg {
+  color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.react-multiple-carousel__arrow--left {
+  left: calc(1% + 1px) !important;
+}
+
+.react-multiple-carousel__arrow--right {
+  right: calc(1% + 1px) !important;
+}
+
+.react-multiple-carousel__arrow {
+  background: black !important;
+  border-radius: 50% !important;
+  min-width: 30px !important;
+  min-height: 30px !important;
+}
