@@ -77,37 +77,3 @@ const App = () => {
 
 export default App
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{/* //          <>
-//           {loggedUser && <div className="container-fluid p-0 m-0">
-//             <TopNavBar userInfo={loggedUser} setIsSearchOn={setIsSearchOn}></TopNavBar>
-//             {isSearchOn && <SearchOverlay></SearchOverlay>}
-
-
-
-
-//             <Container>
-//               <RightProfileCard />
-//               <Footer />
-
-
-//             </Container>
-//            } 
-//            </> */}
-
-{/* //       ); */}
-
