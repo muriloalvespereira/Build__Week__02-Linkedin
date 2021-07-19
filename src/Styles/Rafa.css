@@ -23,3 +23,53 @@
 .search-Wrapper {
     max-width: 425px;
 }
+
+.border-left-Work{
+    border-left: 1px solid rgba(0,0,0,0.08);
+}
+
+#NavBar #basic-navbar-nav svg{
+    transform: scale(1);
+    transition: transform .2s ease-in-out;
+    width: 24px;
+    fill: rgba(0,0,0,0.6)
+}
+
+.Linkedin-Logo{
+    color: #0a66c2;
+}
+
+.small-inlink{
+    font-weight: 400;
+    color: rgba(0,0,0,0.6);
+    font-size: 0.75rem;
+}
+
+#NavBar .small-inlink {
+    min-height: 52px;
+    min-width: 80px;
+}
+
+#NavBar .avatar{
+    border-radius: 50%;
+    border: none;
+    height: 24px;
+    transform: scale(1);
+    transition: transform .2s ease-in-out;
+    width: 24px;
+}
+
+.premium-inlink{
+    color: #915907 !important;
+    max-width: 100px;
+    text-align: center;
+
+}
+
+.triangle-Icon{
+    width: 0;
+height: 0;
+border-style: solid;
+border-width: 8px 6px 0 6px;
+border-color: rgba(0,0,0,0.6) transparent transparent transparent;
+}
