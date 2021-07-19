@@ -12,8 +12,8 @@ import './Styles/Sara.css'
 
 ReactDOM.render(
 
-    <App />,
-  
+  <App />,
+
   document.getElementById('root')
 );
 
