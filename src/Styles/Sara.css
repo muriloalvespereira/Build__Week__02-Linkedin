@@ -1,0 +1,74 @@
+.dashboard {
+  background-color: #dde6f1;
+  border: 1px solid #dde6f1;
+  border-radius: 5px;
+  box-shadow: none;
+
+  padding: 24px !important;
+}
+.dashboard a {
+  color: #757272;
+  text-decoration: none;
+}
+
+.dashboard .dashboard-middle-container {
+  display: flex;
+  background-color: white;
+  margin: 12px 0;
+  border-radius: 5px;
+}
+.dashboard .dashboard-view {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 12px 0;
+  padding: 8px 12px 12px;
+}
+.dashboard .profile-view,
+.dashboard .article-view,
+.dashboard .search-appearances {
+  border-left: 1px solid #dde6f1;
+}
+/* @media (max-width: 400px) {
+  .dashboard-middle-container {
+    flex-direction: column;
+  }
+} */
+.dashboard .no-view {
+  color: #0a66c2;
+  font-size: 2rem;
+}
+.dashboard .dashboard-bottom-container {
+  background-color: white;
+  padding: 10px 20px;
+  margin: 16px 0;
+  border-radius: 5px;
+}
+/* .dashboard-bottom-container a {
+  padding: 12px !important;
+} */
+.creatormode-content,
+.mynetwork-content,
+.salaryinsights-content,
+.myitems-content {
+  display: flex;
+}
+.dashboard-bottom-container h5,
+.dashboard-bottom-container p {
+  margin-left: 32px !important;
+}
+
+.dashboard-section__cta {
+  position: relative !important;
+}
+.dashboard-section__cta::before {
+  content: "";
+  display: block;
+  background-color: rgb(231, 229, 229);
+  height: 1px;
+  position: absolute;
+  top: -20px;
+  right: 0;
+  left: 45px;
+  padding-right: 5px;
+}

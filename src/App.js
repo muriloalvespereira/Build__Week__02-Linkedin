@@ -1,7 +1,8 @@
 import './Styles/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useState, useEffect} from 'react'
-import { Container } from 'react-bootstrap';
+import { Container,Row,Col } from 'react-bootstrap';
+import Dashboard from './components-sara/Dashboard'
 
 const App = () => {
   const [loggedUser, setLoggedUser] = useState(false)
@@ -34,7 +35,11 @@ const App = () => {
          <Container>
 
          {/* Container Row > inside Profile Col8 sideBar col4 */}
-
+<Row>
+  <Col xs="12" md="8">
+    <Dashboard/>
+  </Col>
+</Row>
 
          </Container>
        
