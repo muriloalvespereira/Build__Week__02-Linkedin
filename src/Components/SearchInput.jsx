@@ -1,12 +1,16 @@
 import React from 'react'
-import { InputGroup, FormControl, Modal, Button } from 'react-bootstrap'
+import { InputGroup, FormControl } from 'react-bootstrap'
 import { useState} from 'react'
 
 function SearchInput(props) {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    const handleShow = () => {
+        setShow(true)
+        props.setIsSearchOn(true)
+    
+    };
     return (
         <>
             <InputGroup className="ml-2 border-0 flex-nowrap">
@@ -23,6 +27,7 @@ function SearchInput(props) {
                     placeholder="Search"
                     onClick={handleShow}
                     onChange={(e) => console.log(e.target.value)}
+                    onMouseLeave={()=>props.setIsSearchOn(false)}
                 />
 
             </InputGroup>

@@ -5,7 +5,7 @@ import {IoMdArrowDropdown} from 'react-icons/io'
 import TriangleIcon from './TriangleIcon'
 import RedCircleIcon from './RedCircleIcon'
 
-function TopNavBar() {
+function TopNavBar(props) {
     return (
         <Navbar id="NavBar" className="container-fluid p-0">
             <Container>
@@ -20,7 +20,7 @@ function TopNavBar() {
                         </g>
                     </svg>
                 </div>
-                <SearchInput></SearchInput>
+                <SearchInput setIsSearchOn={props.setIsSearchOn}></SearchInput>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
