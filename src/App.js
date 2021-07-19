@@ -8,6 +8,7 @@ import TopNavBar from './Components/NavBar/TopNavBar';
 import SearchOverlay from './Components/SearchOverlay';
 import Profile from './Components/Profile'
 import Dashboard from "./components-sara/Dashboard";
+import Login from './Components/Login/Signup/Login';
 
 
 
@@ -41,7 +42,8 @@ const App = () => {
   return (
 
     <>
-      {loggedUser && 
+    <Login></Login>
+      {/* {loggedUser && 
         <div className="container-fluid p-0 m-0">
         <TopNavBar userInfo={loggedUser} setIsSearchOn={setIsSearchOn}></TopNavBar>
         {isSearchOn && <SearchOverlay></SearchOverlay>}
@@ -67,7 +69,7 @@ const App = () => {
 
 
         {console.log(loggedUser)}
-      </div>}
+      </div>} */}
     </>
 
   );
