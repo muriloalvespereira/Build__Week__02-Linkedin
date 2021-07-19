@@ -1,3 +1,5 @@
+
+import ProfileBox from "./Components/NavBar/ProfileBox"
 import './Styles/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState, useEffect } from 'react'
@@ -13,23 +15,36 @@ const App = () => {
 
   useEffect(() => {
     getLoggedUser()
-
   }, [])
 
   const getLoggedUser = async () => {
     try {
+
+      let response = await fetch(
+        "https://striveschool-api.herokuapp.com/api/profile/60f5264b0efe7800155c3494",
+        {
+          method: "Get",
+          headers: {
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGRjNWYwNmIzNTgxNzAwMTVjMjI3MDUiLCJpYXQiOjE2MjYyNzAyMjMsImV4cCI6MTYyNzQ3OTgyM30.0IcvG8-Zqf633mRWGCRlzG5yDVI6njZjZGZzJfuGulw",
+          },
+        }
+      )
+
       let response = await fetch('https://striveschool-api.herokuapp.com/api/profile/60f5264b0efe7800155c3494', {
         method: 'Get',
         headers: {
           "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGRjNWYwNmIzNTgxNzAwMTVjMjI3MDUiLCJpYXQiOjE2MjYyNzAyMjMsImV4cCI6MTYyNzQ3OTgyM30.0IcvG8-Zqf633mRWGCRlzG5yDVI6njZjZGZzJfuGulw",
         }
       })
+
       let dataRequested = await response.json()
       setLoggedUser(dataRequested)
     } catch (e) {
       return e
     }
   }
+
 
   return (
 
@@ -38,6 +53,7 @@ const App = () => {
         <TopNavBar userInfo={loggedUser} setIsSearchOn={setIsSearchOn}></TopNavBar>
         {isSearchOn && <SearchOverlay></SearchOverlay>}
         <SearchCard></SearchCard>
+          <ProfileBox />
 
 
         {/* Row NavBar */}
@@ -64,4 +80,4 @@ const App = () => {
   );
 }
 
-export default App;
+export default App
