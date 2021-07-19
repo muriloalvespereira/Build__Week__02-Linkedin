@@ -1,16 +1,13 @@
-
-import ProfileBox from "./Components/NavBar/ProfileBox"
 import './Styles/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState, useEffect } from 'react'
 import { Container } from 'react-bootstrap';
-
 import Footer from './Components/Footer/Footer'
 import RightProfileCard from './Components/SideCards/RightProfileCard'
-
 import TopNavBar from './Components/NavBar/TopNavBar';
 import SearchOverlay from './Components/SearchOverlay';
-import SearchCard from './Components/SearchCard';
+import Profile from './Components/Profile'
+import Dashboard from "./components-sara/Dashboard";
 
 
 
@@ -49,13 +46,14 @@ const App = () => {
         <TopNavBar userInfo={loggedUser} setIsSearchOn={setIsSearchOn}></TopNavBar>
         {isSearchOn && <SearchOverlay></SearchOverlay>}
          
+          <Profile></Profile>
 
 
-    
+
+
+
+
         <Container>
-
-        
-        <RightProfileCard></RightProfileCard>
         <Footer></Footer>
         </Container>
 
