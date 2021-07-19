@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { Container } from 'react-bootstrap';
 import TopNavBar from './Components/NavBar/TopNavBar';
 import SearchOverlay from './Components/SearchOverlay';
+import SearchCard from './Components/SearchCard';
 
 
 const App = () => {
@@ -36,6 +37,7 @@ const App = () => {
       {loggedUser && <div className="container-fluid p-0 m-0">
         <TopNavBar userInfo={loggedUser} setIsSearchOn={setIsSearchOn}></TopNavBar>
         {isSearchOn && <SearchOverlay></SearchOverlay>}
+        <SearchCard></SearchCard>
 
 
         {/* Row NavBar */}
