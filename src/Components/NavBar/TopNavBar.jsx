@@ -72,7 +72,7 @@ function TopNavBar(props) {
                         </Nav.Link>
     
     
-                        <div className="nav-item transformMod" 
+                        <div className="nav-item transformMod position-relative" 
                         onClick={()=> setIsClickedAvatar(!isClickedAvatar)}>
     
                             <a aria-haspopup="true" aria-expanded="false" id="basic-nav-dropdown" className=" nav-link d-flex flex-column justify-content-center align-items-center small-inlink" role="button">
@@ -86,8 +86,8 @@ function TopNavBar(props) {
                             </a>
     
     
-                        </div>
                         {isClickedAvatar && <ProfileBox></ProfileBox>}
+                        </div>
                         
     
                         <Nav.Link className="d-flex flex-column justify-content-center align-items-center small-inlink position-relative border-left-Work"
