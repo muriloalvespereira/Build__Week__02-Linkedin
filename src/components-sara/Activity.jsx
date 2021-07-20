@@ -75,10 +75,11 @@ const Activity = () => {
         </Col>
       </Row>
 
-      <Row className="text-center">
-        <a href="#">
-          <div>See all activity</div>{" "}
-        </a>
+      <Row className="text-center all-activity d-flex justify-content-center p-2">
+        <div className=" d-flex align-items-center">
+          {" "}
+          <span>See all activity</span>
+        </div>{" "}
       </Row>
     </div>
   );
