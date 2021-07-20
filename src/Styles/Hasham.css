@@ -1,0 +1,86 @@
+.footer {
+	margin: 20px auto;
+}
+
+a {
+	color: rgb(94, 91, 91) !important;
+	font-size: small;
+	font-weight: 400;
+}
+a:hover {
+	color: rgb(67, 94, 201) !important;
+}
+.copyRight {
+	margin-top: 15px;
+	margin-bottom: 5px;
+	font-size: 12px;
+	color: rgb(103, 102, 102);
+}
+.footerIcon {
+	color: gray;
+}
+.language {
+	border: 2px solid gray;
+	text-align: start;
+	width: 300px;
+}
+.language:hover {
+	border: 2px solid rgb(67, 94, 201);
+}
+#dropdown-basic {
+	font-size: 12px;
+	color: grey;
+}
+.options {
+	font-size: 10px;
+	color: grey;
+	background-color: lightgrey;
+}
+
+.footerDropdown:focus {
+	box-shadow: none;
+}
+.footerDropdown::after {
+	position: absolute;
+	margin-left: 150px;
+	margin-top: 10px;
+}
+
+÷
+/* people also viewed */
+
+
+.people_also_viewed {
+	background: white;
+	border-radius: 10px;
+	max-width: 100%;
+	margin-top: 45px;
+}
+.profile_container {
+	display: flex;
+	text-align: start;
+}
+.profile_info {
+	padding: 5px 20px;
+}
+.profile_container > img {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+.name {
+	font-weight: bold;
+	font-size: small;
+}
+.connect_button {
+	color: gray;
+	border: 2px solid gray;
+	padding: 10px;
+	border-radius: 60px;
+	background-color: white;
+}
+.connect_button:hover {
+	border: 2px solid rgb(73, 73, 73);
+	background-color: rgb(165, 165, 165);
+	color: rgb(255, 255, 255);
+}
