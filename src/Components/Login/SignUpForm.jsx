@@ -1,5 +1,6 @@
 import React from 'react';
 import { useFormik } from 'formik';
+import { useState, useEffect } from 'react';
 
 const validate = values => {
   const errors = {};
@@ -56,6 +57,7 @@ const validate = values => {
 };
 
 const SignupForm = () => {
+  const [newUserToken, setNewToken] = useState('')
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -69,7 +71,6 @@ const SignupForm = () => {
     },
     validate,
     onSubmit: values => {
-      console.log(values)
       createUser(values, ' <<<<<< inside Signupform on submit')
     },
   });
@@ -85,18 +86,36 @@ const SignupForm = () => {
         body: JSON.stringify(values)
 
       })
-      console.log(values)
       if (response.ok) {
-        console.log(response, '<<<<<<< RESPONSE')
         let dataRequested = await response.json()
-        console.log(dataRequested, '<<<<<<< RESPONSE')
+        setNewToken(dataRequested.access_token)
         alert('userCreated')
 
+      } else {
+        alert('User not created')
       }
     } catch (e) {
       return e
     }
   }
+
+  const getLoggedUser = async () => {
+    try {
+      let response = await fetch('https://striveschool-api.herokuapp.com/api/profile/me', {
+        method: 'Get',
+        headers: {
+          "Authorization": "Bearer" + newUserToken,
+        }
+      })
+      let dataRequested = await response.json()
+      console.log(dataRequested, 'Meeeeeeeeeee')
+    } catch (e) {
+      return e
+    }
+  }
+  useEffect(()=> getLoggedUser,[newUserToken])
+  
+
 
   return (
     <form onSubmit={formik.handleSubmit}>
@@ -117,7 +136,7 @@ const SignupForm = () => {
           <div>{formik.errors.name}</div>
         ) : null}
       </div>
-     <div className="form-group">
+      <div className="form-group">
         <label htmlFor="surname">Last Name</label>
         <input
           id="surname"
@@ -131,9 +150,9 @@ const SignupForm = () => {
         {formik.touched.surname && formik.errors.surname ? (
           <div>{formik.errors.surname}</div>
         ) : null}
-     </div>
+      </div>
 
-     <div className="form-group">
+      <div className="form-group">
         <label htmlFor="email">Email Address</label>
         <input
           id="email"
@@ -147,7 +166,7 @@ const SignupForm = () => {
         {formik.touched.email && formik.errors.email ? (
           <div>{formik.errors.email}</div>
         ) : null}
-     </div>
+      </div>
 
       <div className="form-group">
         <label htmlFor="password">Password</label>
@@ -197,7 +216,7 @@ const SignupForm = () => {
         ) : null}
       </div>
 
-     <div className="form-group">
+      <div className="form-group">
         <label htmlFor="username">Username</label>
         <input
           id="username"
@@ -211,9 +230,9 @@ const SignupForm = () => {
         {formik.touched.username && formik.errors.username ? (
           <div>{formik.errors.username}</div>
         ) : null}
-     </div>
+      </div>
 
-      <div className="form-group"> 
+      <div className="form-group">
         <label htmlFor="bio">Bio</label>
         <textarea
           id="bio"
@@ -231,7 +250,7 @@ const SignupForm = () => {
 
 
 
-  
+
       <button type="submit" className="btn btn-success my-5 btn-large w-100">Submit</button>
     </form>
   );
