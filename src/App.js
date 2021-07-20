@@ -14,7 +14,7 @@ import Login from './Components/Login/Login'
 
 const App = (props) => {
   const [loggedUser, setLoggedUser] = useState(false)
-  const [isSearchOn, setIsSearchOn] = useState(false)
+  const [isSearchOn, setIsSearchOn] = useState(false) //not being used atm  this is to set the overlay when the search is going on
   const [userData, setUserData] = useState('')
 
   // useEffect(() => {
@@ -43,20 +43,19 @@ const App = (props) => {
   return (
 
     <>
-      {window.location.pathname === '/login' ? <Login setUserData={setUserData} setLoggedUser={setLoggedUser} ></Login>
-      :
-        <div className="container-fluid p-0 m-0">
-        <TopNavBar userInfo={loggedUser} setIsSearchOn={setIsSearchOn}></TopNavBar>
-          <Router>
-            <Route path="/home" exact component={Home} />
-            <Route path="/profile" exact component={Profile} />
-          </Router>
+
+      <div className="container-fluid p-0 m-0">
+        {window.location.pathname !== '/' && <TopNavBar userInfo={loggedUser} setIsSearchOn={setIsSearchOn}></TopNavBar>}
+        <Router>
+          <Route path="/" exact render={(routerProps) => <Login setUserData={setUserData} setLoggedUser={setLoggedUser}  {...routerProps}></Login>}></Route>
+          <Route path="/home" exact render={(routerProps) => <Home userData={userData}  {...routerProps}></Home>}></Route>
+          <Route path="/profile" exact render={(routerProps) => <Profile userData={userData}  {...routerProps}></Profile>}></Route>
+        </Router>
 
         <Container>
-        <Footer></Footer>
+          <Footer></Footer>
         </Container>
-
-      </div>}
+      </div>
     </>
 
   );

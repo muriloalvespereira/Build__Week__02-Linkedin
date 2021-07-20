@@ -12,7 +12,9 @@ const Home = () => {
                 <Col className="col-6">
                     <Post></Post>
                 </Col>
-                <Col className="col-4"></Col>
+                <Col className="col-4">
+                    
+                </Col>
             </Row>
         </Container>
     )

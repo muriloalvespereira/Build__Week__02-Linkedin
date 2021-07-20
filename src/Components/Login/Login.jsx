@@ -1,6 +1,8 @@
 import React from 'react'
 import '../../Styles/Login.css'
 import { useState, useEffect } from 'react'
+import { withRouter } from 'react-router'
+
 
 
 function Login(props) {
@@ -41,7 +43,9 @@ function Login(props) {
         if (userInfo.length === 1) {
             props.setUserData(userInfo)
             props.setLoggedUser(true)
-            window.location.replace("/home")
+            console.log(userInfo)
+            props.history.push('profile')
+            
         } else {
             alert(' User not found')
         }
@@ -53,7 +57,7 @@ function Login(props) {
 
     return (
         <div id="logo-main-container" className="container-fluid d-flex flex-column align-content-center p-0">
-
+            {console.log(props)}
             <div className="container  d-flex flex-column justify-content-center align-items-center mt-4 mb-3 mod-logo-maxWidth">
 
                 <div id="login-logo" className="d-flex justify-content-center align-items-center">
@@ -132,7 +136,7 @@ function Login(props) {
                                 <input type="checkbox" className="form-check-input my-auto" id="exampleCheck1" />
                                 <label className="form-check-label" for="exampleCheck1">Remember me</label>
                             </div>
-                            <a id="login-btn" className="btn btn-success" onClick={setLoginData}>Log in</a>
+                            <a  id="login-btn" className="btn btn-success" onClick={setLoginData}>Log in</a>
                         </div>
                     </form>
 
@@ -168,4 +172,4 @@ function Login(props) {
     )
 }
 
-export default Login
+export default withRouter(Login)
