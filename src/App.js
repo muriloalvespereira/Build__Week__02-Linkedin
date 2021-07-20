@@ -35,9 +35,9 @@ const App = (props) => {
           <Route path="/profile" exact render={(routerProps) => <Profile userData={userData}  {...routerProps}></Profile>}></Route>
         </Router>
 
-        <Container>
+    
           <Footer></Footer>
-        </Container>
+       
       </div>
 
     </>
