@@ -1,8 +1,11 @@
 import React from 'react'
-import '../../../Styles/Login.css'
+import '../../Styles/Login.css'
 import { useState, useEffect } from 'react'
+import { withRouter } from 'react-router'
 
-function Login() {
+
+
+function Login(props) {
     const [login, setLogin] = useState('')
     const [usersList, setUserList] = useState([])
     const [userInfo, setUserInfo] = useState([])
@@ -11,8 +14,8 @@ function Login() {
         getUserList()
     }, [])
 
-    useEffect(()=> setUserInfo(usersList.filter(user => user.email === login)),
-     [login])
+    useEffect(() => {setUserInfo(usersList.filter(user => user.email === login))},
+        [login])
 
     const getUserList = async () => {
         try {
@@ -36,13 +39,23 @@ function Login() {
         }
     }
 
+    const setLoginData = () => {
+        if (userInfo.length === 1) {
+            props.setUserData(userInfo)
+            props.setShowTopNavBar(true)
+            props.history.push('profile')
+            
+        } else {
+            alert(' User not found')
+        }
+    }
+
 
 
 
 
     return (
         <div id="logo-main-container" className="container-fluid d-flex flex-column align-content-center p-0">
-
             <div className="container  d-flex flex-column justify-content-center align-items-center mt-4 mb-3 mod-logo-maxWidth">
 
                 <div id="login-logo" className="d-flex justify-content-center align-items-center">
@@ -108,7 +121,6 @@ function Login() {
                             <label for="exampleInputEmail1">Email address</label>
                             <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onChange={(e) => {
                                 setLogin(e.target.value)
-                                console.log(login)
                             }} />
                             <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
                         </div>
@@ -121,7 +133,7 @@ function Login() {
                                 <input type="checkbox" className="form-check-input my-auto" id="exampleCheck1" />
                                 <label className="form-check-label" for="exampleCheck1">Remember me</label>
                             </div>
-                            <a id="login-btn" className="btn btn-success" href="#">Log in</a>
+                            <a  id="login-btn" className="btn btn-success" onClick={setLoginData}>Log in</a>
                         </div>
                     </form>
 
@@ -137,7 +149,7 @@ function Login() {
 
                 <div className="container d-flex flex-column justify-content-center align-items-center mod-logo-maxWidth">
                     <h5 className="mb-4">Don't have an account?</h5>
-                    <button id="btn-sign-up-strivefy" className="btn btn-outline-dark btn-large w-100">
+                    <button id="btn-sign-up-strivefy" className="btn btn-outline-dark btn-large w-100" onClick={()=>props.history.push('signup')}>
                         SIGN UP FOR LINKEDIN
                     </button>
                 </div>
@@ -157,4 +169,4 @@ function Login() {
     )
 }
 
-export default Login
+export default withRouter(Login)

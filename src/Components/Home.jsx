@@ -3,8 +3,9 @@ import LeftProfile from "./LeftProfile"
 import Post from './../components-sara/Post'
 import Sidebar from "./RaiaComponents/Sidebar"
 
-const Home = () => {
+const Home = (props) => {
     return (
+
         <>
             <Container>
                 <Row>
@@ -26,6 +27,7 @@ const Home = () => {
 
 
         </>
+
     )
 
 }

@@ -9,59 +9,37 @@ import Profile from './Components/Profile'
 import Skills from './Components/skills/interests/Skills'
 import Home from './Components/Home';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Login from './Components/Login/Login'
+import Signup from './Components/Login/Signup';
 
 
 
 
-const App = () => {
-  const [loggedUser, setLoggedUser] = useState(false)
-  const [isSearchOn, setIsSearchOn] = useState(false)
+const App = (props) => {
+  const [isSearchOn, setIsSearchOn] = useState(false) //not being used atm  this is to set the overlay when the search is going on
+  const [userData, setUserData] = useState('')
+  const [showTopNavBar, setShowTopNavBar] = useState(false)
 
-  useEffect(() => {
-    getLoggedUser()
-  }, [])
-
-  const getLoggedUser = async () => {
-    try {
-
-      let response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/profile/60f5264b0efe7800155c3494", {
-        method: "Get",
-        headers: {
-          Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGRjNWYwNmIzNTgxNzAwMTVjMjI3MDUiLCJpYXQiOjE2MjYyNzAyMjMsImV4cCI6MTYyNzQ3OTgyM30.0IcvG8-Zqf633mRWGCRlzG5yDVI6njZjZGZzJfuGulw",
-        },
-      }
-      )
-      let dataRequested = await response.json()
-      setLoggedUser(dataRequested)
-    } catch (e) {
-      return e
-    }
-  }
 
   return (
 
     <>
 
 
- 
+      <div className="container-fluid p-0 m-0">
+        <Router>
+        {showTopNavBar && <TopNavBar userData={userData} setShowTopNavBar={setShowTopNavBar} setIsSearchOn={setIsSearchOn}></TopNavBar>}
+          <Route path="/" exact render={(routerProps) => <Login setUserData={setUserData} setShowTopNavBar={setShowTopNavBar}   {...routerProps}></Login>}></Route>
+          <Route path="/signup" exact render={(routerProps) => <Signup setUserData={setUserData}   {...routerProps}></Signup>}></Route>
+          <Route path="/home" exact render={(routerProps) => <Home userData={userData}  {...routerProps}></Home>}></Route>
+          <Route path="/profile" exact render={(routerProps) => <Profile userData={userData}  {...routerProps}></Profile>}></Route>
+        </Router>
 
-
-      {loggedUser && 
-        <div className="container-fluid p-0 m-0">
-        <TopNavBar userInfo={loggedUser} setIsSearchOn={setIsSearchOn}></TopNavBar>
-        {isSearchOn && <SearchOverlay></SearchOverlay>}
-         
-          <Router>
-            <Route path="/" exact component={Home} />
-            <Route path="/profile" exact component={Profile} />
-          </Router>
-
+        <Container>
           <Footer></Footer>
+        </Container>
+      </div>
 
-
-        </div>}
     </>
 
   );

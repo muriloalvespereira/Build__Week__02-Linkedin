@@ -12,6 +12,7 @@ function TopNavBar(props) {
 
     return (
         <Navbar id="NavBar" className="container-fluid p-0">
+            {console.log(props.userData, ' Inside NavBar')}
             <Container>
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" className="Linkedin-Logo">
@@ -86,7 +87,7 @@ function TopNavBar(props) {
                             </a>
     
     
-                        {isClickedAvatar && <ProfileBox></ProfileBox>}
+                        {isClickedAvatar && <ProfileBox setShowTopNavBar={props.setShowTopNavBar} userData={props.userData}></ProfileBox>}
                         </div>
                         
     

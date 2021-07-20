@@ -5,10 +5,11 @@ import avatar from "../assets/muriloavatar.png";
 import currentJob from "../assets/eli.jpg";
 import education from "../assets/dbs.jpg";
 
-const UserDisplay = () => {
+const UserDisplay = (props) => {
 
     return(
         <Row>
+          {console.log(props.userData, 'Inside User display')}
             <Col className="col-12 profile-area mt-5 px-0">
               <Col
                 className="bg-profile "
@@ -52,12 +53,12 @@ const UserDisplay = () => {
                 </div>
                 <div className="details-profile d-flex">
                   <Col className="col-8">
-                    <h4 className="mb-0">Murilo Alves</h4>
+                    <h4 className="mb-0">{props.userData[0].name + ' ' + props.userData[0].surname }</h4>
                     <p className="mb-0">
-                      MSc Digital Marketing/Sales Growth/Polyglot
+                      {props.userData[0].title}
                     </p>
                     <p className="text-muted details-region">
-                      Ireland -{" "}
+                      {props.userData[0].area + '-' } 
                       <span className="span-details">Contact info</span>
                     </p>
                     <p className="details-region">
