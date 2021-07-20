@@ -9,7 +9,6 @@ a {
 }
 a:hover {
 	color: rgb(67, 94, 201) !important;
-	decoration: underline;
 }
 .copyRight {
 	margin-top: 15px;
@@ -54,18 +53,15 @@ a:hover {
 .people_also_viewed {
 	background: white;
 	border-radius: 10px;
-	padding: 20px 30px;
 	max-width: 100%;
-	margin: 0;
 	margin-top: 45px;
 }
 .profile_container {
 	display: flex;
-	padding: 0px 0;
 	text-align: start;
 }
 .profile_info {
-	padding: 0 20px;
+	padding: 5px 20px;
 }
 .profile_container > img {
 	width: 50px;
@@ -79,7 +75,7 @@ a:hover {
 .connect_button {
 	color: gray;
 	border: 2px solid gray;
-	padding: 5px 20px;
+	padding: 10px;
 	border-radius: 60px;
 	background-color: white;
 }

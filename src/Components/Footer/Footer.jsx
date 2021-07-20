@@ -105,7 +105,9 @@ const Footer = () => {
                     <p className='copyRight'> Linkedin Corporation &copy; 2021</p>
                 </Col>
             </Row>
+            <div></div>
         </div >
+
     );
 };
 

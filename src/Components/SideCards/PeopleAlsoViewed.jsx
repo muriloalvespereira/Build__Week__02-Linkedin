@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '../../Styles/Hasham.css';
 
+
 const PeopleAlsoViewed = () => {
     const [Profiles, setProfiles] = useState([]);
     //console.log(Profiles);
@@ -16,8 +17,8 @@ const PeopleAlsoViewed = () => {
             .then((data) => setProfiles(data.slice(43, 54)));
     }, []);
     return (
-        <div className='people_also_viewed ml-auto mt-5 p-4' style={{
-            border: '1px solid black', borderRadius: '10px'
+        <div className='people_also_viewed ml-auto mt-4 p-3 mr-3' style={{
+            border: 'solid 1px lightgrey', borderRadius: '10px', backgroundColor: 'white'
         }}>
             <p style={{ fontSize: '1.5em', fontWeight: '500', }}>People also viewed</p>
             {
@@ -40,9 +41,6 @@ const PeopleAlsoViewed = () => {
                 ))
             }
             <div style={{ textAlign: 'center' }} className='mt-4'>Show More</div>
-
-
-            <div></div>
         </div >
     );
 };
