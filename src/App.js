@@ -3,13 +3,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState, useEffect } from 'react'
 import { Container } from 'react-bootstrap';
 import Footer from './Components/Footer/Footer'
-import RightProfileCard from './Components/SideCards/RightProfileCard'
 import TopNavBar from './Components/NavBar/TopNavBar';
 import SearchOverlay from './Components/SearchOverlay';
 import Profile from './Components/Profile'
-import Dashboard from "./components-sara/Dashboard";
-import SignupForm from './Components/Login/SignUpForm';
-// import Login from './Components/Login/Login';
+
 
 
 
@@ -43,8 +40,8 @@ const App = () => {
   return (
 
     <>
-    <SignupForm></SignupForm>
-      {/* {loggedUser && 
+    
+      {loggedUser && 
         <div className="container-fluid p-0 m-0">
         <TopNavBar userInfo={loggedUser} setIsSearchOn={setIsSearchOn}></TopNavBar>
         {isSearchOn && <SearchOverlay></SearchOverlay>}
@@ -70,7 +67,7 @@ const App = () => {
 
 
         {console.log(loggedUser)}
-      </div>} */}
+      </div>}
     </>
 
   );
