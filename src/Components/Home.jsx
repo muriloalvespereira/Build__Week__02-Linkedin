@@ -11,10 +11,10 @@ const Home = (props) => {
         <>
             <Container>
                 <Row>
-                    <div className="px-0">
+                    <Col className="col-2 px-0">
                         <LeftProfile />
-                    </div>
-                    <Col className="col-6">
+                    </Col>
+                    <Col className="col-6 pr-0">
                         <Post></Post>
                         <Feed></Feed>
                     </Col>

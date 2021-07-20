@@ -2,11 +2,11 @@ import { Col } from "react-bootstrap";
 const Feed = () => {
   return (
     <Col className="feed-area">
-      <div className="d-flex justify-content-between py-2 like-section align-items-center">
+      <div className="d-flex justify-content-between pt-2 like-section align-items-center">
         <div className="who-like">
           Ingrid Oncken <span className="span-like">commented on this</span>
         </div>
-        <div>
+        <div className="dots-feed">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"

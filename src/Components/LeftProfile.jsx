@@ -37,7 +37,7 @@ const LeftProfile = () => {
           <div className="d-flex justify-content-between align-items-center"><p className="mb-0 about-side-middle">Views of your post</p><span className="span-side">46</span></div>
         </Col>
         <Col className="side-middle">
-          <p className="mb-0 about-side">Access exclusive tools & insights</p>
+          <p className="mb-0 about-side">Exclusive tools & insights</p>
           <p className="mb-0 about-side-end align-items-center d-flex">
             <svg
               xmlns="http://www.w3.org/2000/svg"
