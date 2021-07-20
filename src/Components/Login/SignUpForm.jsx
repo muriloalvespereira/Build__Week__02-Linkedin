@@ -42,8 +42,14 @@ const validate = values => {
 
   if (!values.username) {
     errors.username = 'Required';
-  // } else if (values.username.length < ) {
-  //   errors.username = 'Username must have at least 5 characters';
+    // } else if (values.username.length < ) {
+    //   errors.username = 'Username must have at least 5 characters';
+  }
+
+  if (!values.bio) {
+    errors.bio = 'Required';
+    } else if (values.bio.length < 30 ) {
+      errors.bio = 'Your bio must have at least 30 characters';
   }
 
   return errors;
@@ -167,7 +173,7 @@ const SignupForm = () => {
         <div>{formik.errors.title}</div>
       ) : null}
 
-<label htmlFor="username">Username</label>
+      <label htmlFor="username">Username</label>
       <input
         id="username"
         name="username"
@@ -180,6 +186,21 @@ const SignupForm = () => {
         <div>{formik.errors.username}</div>
       ) : null}
 
+<label htmlFor="bio">Bio</label>
+      <textarea
+        id="bio"
+        name="bio"
+        type="bio"
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        value={formik.values.bio}
+      />
+      {formik.touched.bio && formik.errors.bio ? (
+        <div>{formik.errors.bio}</div>
+      ) : null}
+
+
+
       {/* Btn */}
       <button type="submit">Submit</button>
     </form>
@@ -187,19 +208,3 @@ const SignupForm = () => {
 };
 
 export default SignupForm
-
-
-// bio: "I love breads"
-// username: "random"
-
-
-
-
-
-
-// title: "wanna be a baker"
-//  area: "Breadland"
-// password: "nope123"
-// surname: "testtttt"
-// email: "tesddft@gmail.com"
-// name: "testt"
