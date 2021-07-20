@@ -17,6 +17,7 @@ const Profile = (props) => {
             </Col>
           </Row>
         </Col>
+
         <Col className="col-4">
           <RightProfileCard userData={props.userData}></RightProfileCard>
         </Col>

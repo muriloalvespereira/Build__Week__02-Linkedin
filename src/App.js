@@ -5,11 +5,13 @@ import { Container } from 'react-bootstrap';
 import Footer from './Components/Footer/Footer';
 import TopNavBar from './Components/NavBar/TopNavBar';
 import SearchOverlay from './Components/SearchOverlay';
-import Profile from './Components/Profile';
+import Profile from './Components/Profile'
+import Skills from './Components/skills/interests/Skills'
 import Home from './Components/Home';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Login from './Components/Login/Login'
 import Signup from './Components/Login/Signup';
+
 
 
 
@@ -18,9 +20,11 @@ const App = (props) => {
   const [userData, setUserData] = useState('')
   const [showTopNavBar, setShowTopNavBar] = useState(false)
 
+
   return (
 
     <>
+
 
       <div className="container-fluid p-0 m-0">
         <Router>
@@ -35,6 +39,7 @@ const App = (props) => {
           <Footer></Footer>
         </Container>
       </div>
+
     </>
 
   );

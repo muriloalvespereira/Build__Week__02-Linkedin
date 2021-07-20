@@ -17,7 +17,7 @@ const PeopleAlsoViewed = () => {
             .then((data) => setProfiles(data.slice(43, 54)));
     }, []);
     return (
-        <div className='people_also_viewed ml-auto mt-4 p-3 mr-3' style={{
+        <div className='people_also_viewed ml-auto mt-4 p-3 ' style={{
             border: 'solid 1px lightgrey', borderRadius: '10px', backgroundColor: 'white'
         }}>
             <p style={{ fontSize: '1.5em', fontWeight: '500', }}>People also viewed</p>
