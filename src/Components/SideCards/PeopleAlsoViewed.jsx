@@ -40,6 +40,9 @@ const PeopleAlsoViewed = () => {
                 ))
             }
             <div style={{ textAlign: 'center' }} className='mt-4'>Show More</div>
+
+
+            <div></div>
         </div >
     );
 };
