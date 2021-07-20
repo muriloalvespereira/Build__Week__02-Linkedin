@@ -1,8 +1,8 @@
 import React from 'react'
-import '../../../Styles/Login.css'
+import '../../Styles/Login.css'
 import { useState, useEffect } from 'react'
 
-function Login() {
+function Login(props) {
     const [login, setLogin] = useState('')
     const [usersList, setUserList] = useState([])
     const [userInfo, setUserInfo] = useState([])
@@ -11,8 +11,12 @@ function Login() {
         getUserList()
     }, [])
 
-    useEffect(()=> setUserInfo(usersList.filter(user => user.email === login)),
-     [login])
+    useEffect(() => {
+        setUserInfo(usersList.filter(user => user.email === login)
+        )
+        console.log(userInfo)
+    },
+        [login])
 
     const getUserList = async () => {
         try {
@@ -33,6 +37,15 @@ function Login() {
 
         } catch (e) {
             return e
+        }
+    }
+
+    const setLoginData = () => {
+        if (userInfo.length === 1) {
+            props.setUserData(userInfo)
+            props.setLoggedUser(true)
+        } else {
+            alert(' User not found')
         }
     }
 
@@ -121,7 +134,7 @@ function Login() {
                                 <input type="checkbox" className="form-check-input my-auto" id="exampleCheck1" />
                                 <label className="form-check-label" for="exampleCheck1">Remember me</label>
                             </div>
-                            <a id="login-btn" className="btn btn-success" href="#">Log in</a>
+                            <a id="login-btn" className="btn btn-success" onClick={setLoginData} href="#">Log in</a>
                         </div>
                     </form>
 
