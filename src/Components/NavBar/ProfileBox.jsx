@@ -1,7 +1,7 @@
 import { Button, Col, Image, ListGroup, Row } from "react-bootstrap"
 import "../../Styles/Ingrid.css"
 
-const ProfileBox = () => (
+const ProfileBox = (props) => (
   <ListGroup id="profile-Box" className="list-groupMod">
     <ListGroup.Item className="ListGroupItem">
       <div className="image-colMod d-flex">
@@ -11,12 +11,11 @@ const ProfileBox = () => (
           roundedCircle
           className="align-self-start"
         />
-
+          {console.log(props.userData, 'Inside Profile box')}
         <Col>
-          <span className="font-weight-bolder">Murilo Alves</span>
+          <span className="font-weight-bolder">{props.userData[0].name + ' ' + props.userData[0].surname}</span>
           <p className="m-0">
-            Web Development Student at Strive School, MSc Digital
-            Marketing/Sales Growth/Polyglot
+          {props.userData[0].title}
           </p>
         </Col>
       </div>

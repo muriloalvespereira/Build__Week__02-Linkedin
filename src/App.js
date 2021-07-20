@@ -45,7 +45,7 @@ const App = (props) => {
     <>
 
       <div className="container-fluid p-0 m-0">
-        {window.location.pathname !== '/' && <TopNavBar userInfo={userData} setIsSearchOn={setIsSearchOn}></TopNavBar>}
+        {window.location.pathname !== '/' && <TopNavBar userData={userData} setIsSearchOn={setIsSearchOn}></TopNavBar>}
         <Router>
           <Route path="/" exact render={(routerProps) => <Login setUserData={setUserData} setLoggedUser={setLoggedUser}  {...routerProps}></Login>}></Route>
           <Route path="/home" exact render={(routerProps) => <Home userData={userData}  {...routerProps}></Home>}></Route>
