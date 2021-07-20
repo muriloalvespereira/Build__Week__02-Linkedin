@@ -149,7 +149,7 @@ function Login(props) {
 
                 <div className="container d-flex flex-column justify-content-center align-items-center mod-logo-maxWidth">
                     <h5 className="mb-4">Don't have an account?</h5>
-                    <button id="btn-sign-up-strivefy" className="btn btn-outline-dark btn-large w-100">
+                    <button id="btn-sign-up-strivefy" className="btn btn-outline-dark btn-large w-100" onClick={()=>props.history.push('signup')}>
                         SIGN UP FOR LINKEDIN
                     </button>
                 </div>

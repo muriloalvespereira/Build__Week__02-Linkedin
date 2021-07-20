@@ -26,7 +26,7 @@ const App = (props) => {
         <Router>
         {showTopNavBar && <TopNavBar userData={userData} setShowTopNavBar={setShowTopNavBar} setIsSearchOn={setIsSearchOn}></TopNavBar>}
           <Route path="/" exact render={(routerProps) => <Login setUserData={setUserData} setShowTopNavBar={setShowTopNavBar}   {...routerProps}></Login>}></Route>
-          <Route path="/" exact render={(routerProps) => <Signup setUserData={setUserData}   {...routerProps}></Signup>}></Route>
+          <Route path="/signup" exact render={(routerProps) => <Signup setUserData={setUserData}   {...routerProps}></Signup>}></Route>
           <Route path="/home" exact render={(routerProps) => <Home userData={userData}  {...routerProps}></Home>}></Route>
           <Route path="/profile" exact render={(routerProps) => <Profile userData={userData}  {...routerProps}></Profile>}></Route>
         </Router>
