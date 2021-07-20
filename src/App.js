@@ -2,11 +2,13 @@ import './Styles/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState, useEffect } from 'react'
 import { Container } from 'react-bootstrap';
-import Footer from './Components/Footer/Footer'
+import Footer from './Components/Footer/Footer';
 import TopNavBar from './Components/NavBar/TopNavBar';
 import SearchOverlay from './Components/SearchOverlay';
 import Profile from './Components/Profile'
 import Skills from './Components/skills/interests/Skills'
+import Home from './Components/Home';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 
 
@@ -42,32 +44,23 @@ const App = () => {
 
     <>
 
-      {loggedUser &&
+
+ 
+
+
+      {loggedUser && 
         <div className="container-fluid p-0 m-0">
-          <TopNavBar userInfo={loggedUser} setIsSearchOn={setIsSearchOn}></TopNavBar>
-          {isSearchOn && <SearchOverlay></SearchOverlay>}
-
-          <Profile></Profile>
-
-
-
-
-
-
+        <TopNavBar userInfo={loggedUser} setIsSearchOn={setIsSearchOn}></TopNavBar>
+        {isSearchOn && <SearchOverlay></SearchOverlay>}
+         
+          <Router>
+            <Route path="/" exact component={Home} />
+            <Route path="/profile" exact component={Profile} />
+          </Router>
 
           <Footer></Footer>
 
 
-
-
-
-
-
-
-
-
-
-          {console.log(loggedUser)}
         </div>}
     </>
 
