@@ -9,7 +9,6 @@ const UserDisplay = (props) => {
 
     return(
         <Row>
-          {console.log(props.userData, 'Inside User display')}
             <Col className="col-12 profile-area mt-5 px-0">
               <Col
                 className="bg-profile "
@@ -53,12 +52,14 @@ const UserDisplay = (props) => {
                 </div>
                 <div className="details-profile d-flex">
                   <Col className="col-8">
-                    <h4 className="mb-0">{props.userData[0].name + ' ' + props.userData[0].surname }</h4>
+                    <h4 className="mb-0">
+                      {/* {props.userData[0].name + ' ' + props.userData[0].surname } */} User Name
+                    </h4>
                     <p className="mb-0">
-                      {props.userData[0].title}
+                      {/* {props.userData[0].title} */}
                     </p>
                     <p className="text-muted details-region">
-                      {props.userData[0].area + '-' } 
+                      {/* {props.userData[0].area + '-' }  */} job title
                       <span className="span-details">Contact info</span>
                     </p>
                     <p className="details-region">

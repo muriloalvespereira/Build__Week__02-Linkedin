@@ -5,12 +5,11 @@ import avatar from "../assets/muriloavatar.png";
 
 const Post = () => {
   return (
-    <div className="post">
-      <div className="img-post d-flex">
-        {/*  <img src="https://via.placeholder.com/150" alt="" /> */}
+    <div className="post mt-5 pt-0">
+      <div className="img-post d-flex mt-0">
         <img src={`${avatar}`} alt="" />
 
-        <Button variant="light" className="btn-post">
+        <Button variant="light" className="btn-post d-flex">
           <span>Start a post</span>
         </Button>
       </div>
@@ -51,7 +50,6 @@ const Post = () => {
         </div>
         <div className="event-btn">
           <button>
-            {" "}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
