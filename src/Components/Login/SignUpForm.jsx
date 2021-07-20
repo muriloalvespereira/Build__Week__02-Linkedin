@@ -69,27 +69,31 @@ const SignupForm = () => {
     },
     validate,
     onSubmit: values => {
-      alert(JSON.stringify(values, null, 2));
+      createUser(values)
     },
   });
 
-  // const createUser = async () => {
-  //   try {
-  //     let response = await fetch('https://striveschool-api.herokuapp.com/api/account/register', {
-  //       method: 'POST',
-  //       headers: {
-  //         "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGRjNWYwNmIzNTgxNzAwMTVjMjI3MDUiLCJpYXQiOjE2MjYyNzAyMjMsImV4cCI6MTYyNzQ3OTgyM30.0IcvG8-Zqf633mRWGCRlzG5yDVI6njZjZGZzJfuGulw",
-  //         "Content-Type": "application/json"
-  //       },
-  //       body: JSON.stringify(body)
+  const createUser = async (values) => {
+    try {
+      let response = await fetch('https://striveschool-api.herokuapp.com/api/account/register', {
+        method: 'POST',
+        headers: {
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGRjNWYwNmIzNTgxNzAwMTVjMjI3MDUiLCJpYXQiOjE2MjYyNzAyMjMsImV4cCI6MTYyNzQ3OTgyM30.0IcvG8-Zqf633mRWGCRlzG5yDVI6njZjZGZzJfuGulw",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(values)
 
-  //     })
-  //     let dataRequested = await response.json()
-  //     console.log(sent)
-  //   } catch (e) {
-  //     return e
-  //   }
-  // }
+      })
+      if(response.ok){
+        console.log(response, '<<<<<<< RESPONSE')
+        let dataRequested = await response.json()
+        console.log(dataRequested, '<<<<<<< RESPONSE')
+
+      }
+    } catch (e) {
+      return e
+    }
+  }
 
   return (
     <form onSubmit={formik.handleSubmit}>
