@@ -72,7 +72,7 @@ function Login() {
             <main className="container-fluid">
                 <div className="container d-flex flex-column justify-content-center align-items-center mod-logo-maxWidth">
                     <h4 > To continue, log in to Linkedin.</h4>
-                    <div className="btn btn-primary logo-btn-FB w-100 d-flex justify-content-center p-3 m-1 ">
+                    <div className="btn btn-primary logo-btn-FB w-100 d-flex justify-content-center p-2 m-1 ">
                         <div id="FB-login">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.35c-.538 0-.65.221-.65.778v1.222h2l-.209 2h-1.791v7h-3v-7h-2v-2h2v-2.308c0-1.769.931-2.692 3.029-2.692h1.971v3z" /></svg>
                         </div>
@@ -81,7 +81,7 @@ function Login() {
                         </div>
                     </div>
 
-                    <div className="btn btn-bg-dark logo-btn-apple w-100 d-flex justify-content-center mt-3">
+                    <div className="btn btn-bg-dark logo-btn-apple w-100 d-flex justify-content-center p-2 mt-3">
                         <div id="apple-login">
 
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M22 17.607c-.786 2.28-3.139 6.317-5.563 6.361-1.608.031-2.125-.953-3.963-.953-1.837 0-2.412.923-3.932.983-2.572.099-6.542-5.827-6.542-10.995 0-4.747 3.308-7.1 6.198-7.143 1.55-.028 3.014 1.045 3.959 1.045.949 0 2.727-1.29 4.596-1.101.782.033 2.979.315 4.389 2.377-3.741 2.442-3.158 7.549.858 9.426zm-5.222-17.607c-2.826.114-5.132 3.079-4.81 5.531 2.612.203 5.118-2.725 4.81-5.531z" /></svg>
