@@ -1,5 +1,6 @@
 import { Button, Col, Image, ListGroup, Row } from "react-bootstrap"
 import "../../Styles/Ingrid.css"
+import { withRouter } from "react-router"
 
 const ProfileBox = (props) => (
   <ListGroup id="profile-Box" className="list-groupMod">
@@ -11,7 +12,7 @@ const ProfileBox = (props) => (
           roundedCircle
           className="align-self-start"
         />
-          {console.log(props.userData, 'Inside Profile box')}
+          {console.log(props, 'Inside Profile box')}
         <Col>
           <span className="font-weight-bolder">{props.userData[0].name + ' ' + props.userData[0].surname}</span>
           <p className="m-0">
@@ -47,10 +48,10 @@ const ProfileBox = (props) => (
       </Button>
     </ListGroup.Item>
     <ListGroup.Item>
-      <Button variant="link" className="btn-linkMod">
+      <Button variant="link" className="btn-linkMod" onClick={()=> props.history.push('/')}>
         Sign Out
       </Button>
     </ListGroup.Item>
   </ListGroup>
 )
-export default ProfileBox
+export default withRouter(ProfileBox)
