@@ -40,6 +40,12 @@ const validate = values => {
     errors.title = 'Title must have at least 5 characters';
   }
 
+  if (!values.username) {
+    errors.username = 'Required';
+  // } else if (values.username.length < ) {
+  //   errors.username = 'Username must have at least 5 characters';
+  }
+
   return errors;
 };
 
@@ -161,6 +167,19 @@ const SignupForm = () => {
         <div>{formik.errors.title}</div>
       ) : null}
 
+<label htmlFor="username">Username</label>
+      <input
+        id="username"
+        name="username"
+        type="username"
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        value={formik.values.username}
+      />
+      {formik.touched.username && formik.errors.username ? (
+        <div>{formik.errors.username}</div>
+      ) : null}
+
       {/* Btn */}
       <button type="submit">Submit</button>
     </form>
@@ -171,7 +190,6 @@ export default SignupForm
 
 
 // bio: "I love breads"
-// title: "wanna be a baker"
 // username: "random"
 
 
@@ -179,6 +197,7 @@ export default SignupForm
 
 
 
+// title: "wanna be a baker"
 //  area: "Breadland"
 // password: "nope123"
 // surname: "testtttt"
