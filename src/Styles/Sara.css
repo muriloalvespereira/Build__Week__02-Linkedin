@@ -71,7 +71,7 @@
 .dashboard-section__hr::before {
   content: "";
   display: block;
-  background-color: rgb(231, 229, 229);
+  background-color: #e7e5e5;
   height: 1px;
   position: absolute;
   top: 0;
@@ -95,6 +95,7 @@
   background-color: white;
   padding: 8px;
   border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 .img-post {
   display: flex;
@@ -119,6 +120,13 @@
   border-radius: 35px !important;
   padding: 10px 16px;
   /*   padding-left: 16px !important; */
+}
+.btn-light {
+  background-color: white !important;
+}
+
+.btn-light:hover {
+  background-color: #ebebeb !important;
 }
 .img-post .btn-post .photo-video-event-article {
   display: flex;
@@ -158,3 +166,146 @@
   color: #fc9295;
   margin-right: 10px;
 }
+
+/* featured */
+
+.featured {
+  background-color: white;
+  border-radius: 10px;
+  padding: 24px;
+  /* margin: 16px 0; */
+}
+.featured svg {
+  color: #5e5e5e;
+  margin-top: 9px;
+}
+.feature-icon {
+  color: #5e5e5e;
+  width: 40px;
+  height: 40px;
+}
+.feature-icon:hover {
+  background-color: #ebebeb !important;
+  border-radius: 50%;
+}
+.featured-col {
+  border: 1px solid #e7e5e5;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding: 0 12px 12px;
+}
+.featured-h2 {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 400;
+  color: #000000e6;
+}
+.feautured-certificate-p1 {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  color: #000000e6;
+}
+.feautured-certificate-span {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  color: #00000099;
+}
+.feautured-certificate-p2 {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #000000e6;
+}
+/* activity */
+.activity {
+  background-color: white;
+  border-radius: 10px;
+  padding: 24px;
+}
+.activity img {
+  width: 56px;
+  height: 56px;
+  object-position: center;
+  object-fit: cover;
+  margin-right: 8px;
+}
+.activity .followers {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #00000099;
+}
+.activity .activity-wrapper {
+  margin: 0 0 16px;
+}
+.activity h2 {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 400;
+  color: #000000e6;
+}
+.activity h3 {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  color: #000000e6;
+}
+.activity .span1 {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #000000e6;
+  display: block;
+}
+.activity .span2 {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  color: #00000099;
+  display: block;
+}
+.activity a {
+  padding: 24px;
+  margin: 16px -24px -24px;
+  text-decoration: none;
+}
+
+/* about */
+.about {
+  background-color: white;
+  border-radius: 10px;
+  padding: 24px;
+}
+.about h2 {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 400;
+  color: #000000e6;
+}
+.about p {
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 400;
+  color: #000000e6;
+}
+.about .read-more,
+.read-less {
+  margin-left: 10px;
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 400;
+  color: #000000e6;
+}
+/* .read-more-link {
+  color: blueviolet;
+  text-decoration: underline;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.extra-content {
+  color: cornflowerblue;
+  font-weight: 500;
+}
+ */

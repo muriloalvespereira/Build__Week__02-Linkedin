@@ -16,6 +16,7 @@ const Profile = () => {
             </Col>
           </Row>
         </Col>
+
         <Col className="col-4">
           <RightProfileCard></RightProfileCard>
         </Col>
