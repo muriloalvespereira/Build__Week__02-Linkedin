@@ -1,52 +1,53 @@
-.footer {
-  margin: 20px auto;
-}
-
 a {
-  color: rgb(94, 91, 91) !important;
-  font-size: small;
-  font-weight: 400;
+	color: rgb(94, 91, 91) !important;
+	font-size: small;
+	font-weight: 400;
 }
 a:hover {
-
 	color: rgb(67, 94, 201) !important;
-
-
 }
 .copyRight {
-  margin-top: 15px;
-  margin-bottom: 5px;
-  font-size: 12px;
-  color: rgb(103, 102, 102);
+	margin-top: 15px;
+	margin-bottom: 5px;
+	font-size: 12px;
+	color: rgb(103, 102, 102);
 }
 .footerIcon {
-  color: gray;
+	color: gray;
 }
 .language {
-  border: 2px solid gray;
-  text-align: start;
-  width: 300px;
+	border: 2px solid lightgrey;
+	text-align: start;
+	width: 270px;
+	height: 35px;
+	color: gray;
+	border-radius: 6px;
 }
 .language:hover {
-  border: 2px solid rgb(67, 94, 201);
+	border: 2px solid black;
 }
 #dropdown-basic {
-  font-size: 12px;
-  color: grey;
+	font-size: 12px;
+	color: grey;
 }
 .options {
-  font-size: 10px;
-  color: grey;
-  background-color: lightgrey;
+	font-size: 10px;
+	color: grey;
+	background-color: lightgrey;
 }
 
 .footerDropdown:focus {
-  box-shadow: none;
+	box-shadow: none;
 }
 .footerDropdown::after {
-  position: absolute;
-  margin-left: 150px;
-  margin-top: 10px;
+	position: absolute;
+	margin-left: 150px;
+	margin-top: 10px;
+}
+
+.footerDropdown {
+	color: gray;
+	font-size: 12px;
 }
 
 ÷
@@ -58,6 +59,7 @@ a:hover {
 	border-radius: 10px;
 	max-width: 100%;
 	margin-top: 45px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
 }
 .profile_container {
 	display: flex;
@@ -65,16 +67,15 @@ a:hover {
 }
 .profile_info {
 	padding: 5px 20px;
-
 }
 .profile_container > img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
 }
 .name {
-  font-weight: bold;
-  font-size: small;
+	font-weight: bold;
+	font-size: small;
 }
 .connect_button {
 	color: gray;
@@ -82,10 +83,126 @@ a:hover {
 	padding: 10px;
 	border-radius: 60px;
 	background-color: white;
-
 }
 .connect_button:hover {
-  border: 2px solid rgb(73, 73, 73);
-  background-color: rgb(165, 165, 165);
-  color: rgb(255, 255, 255);
+	border: 2px solid rgb(73, 73, 73);
+	background-color: rgb(165, 165, 165);
+	color: rgb(255, 255, 255);
+}
+
+/* skills */
+.skills {
+	background: white;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+	padding: 0 20px;
+	padding-top: 20px;
+	max-width: 100%;
+	margin: 0;
+	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+}
+.skill_title {
+	display: flex;
+	align-items: center;
+}
+
+.skill_title > div {
+	font-size: 17px;
+	margin-left: 20px;
+}
+.add_skill {
+	font-size: 18px;
+	/* padding-left: 10px; */
+}
+.skill_container {
+	margin-top: 10px;
+	display: flex;
+	padding: 10px 0;
+	border-bottom: 1px solid #e7e5e5;
+}
+
+.skill_info {
+	padding: 0 10px;
+}
+.skill_title {
+	font-weight: 600;
+	font-size: 16px;
+}
+.skill_views {
+	font-size: 14px;
+}
+.show_more {
+	text-align: center;
+	padding: 10px 30px;
+	background: rgb(255, 253, 253);
+	width: calc(100% + 40px);
+	align-self: center;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	cursor: pointer;
+	font-size: 17px;
+	font-weight: bold;
+	color: gray;
+}
+.show_more:hover {
+	background-color: #ebebeb;
+}
+.btn-skill {
+	border-radius: 20px;
+	background-color: white;
+	color: #0a66c2;
+	height: 35px;
+	padding-bottom: 15px;
+	font-weight: 500;
+}
+.edit-logo {
+	font-size: 22px;
+}
+
+.add-skill {
+	color: gray;
+}
+.block-title {
+	font-size: 20px;
+	font-weight: 400;
+	margin-bottom: 20px;
+}
+.numb {
+	color: gray;
+	font-weight: 400;
+	font-size: 13px;
+}
+
+/* Interests */
+
+.interests_container {
+	margin-top: 10px;
+	display: flex;
+	padding: 20px;
+}
+.interests > img {
+	width: 50px;
+	height: 50px;
+	z-index: 1;
+	cursor: pointer;
+	/* margin-top: 10px; */
+}
+
+.interests_info {
+	padding: 0 10px;
+}
+.interests_title {
+	font-weight: 600;
+	font-size: 15px;
+}
+.interests_views {
+	padding: 0;
+	color: gray;
+	font-size: 13px;
+}
+
+.ml {
+	margin-right: 110px;
 }

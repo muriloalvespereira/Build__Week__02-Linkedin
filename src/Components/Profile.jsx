@@ -7,13 +7,14 @@ import education from "../assets/dbs.jpg";
 import CustomCarousel from "./CustomCarousel";
 import Dashboard from "../components-sara/Dashboard";
 import RightProfileCard from './SideCards/RightProfileCard'
-
+import Skills from "./skills/interests/Skills"
+import Interests from './skills/interests/Interests'
 
 const Profile = () => {
   return (
     <Container>
-     <Row>
-       <Col className="col-8">
+      <Row>
+        <Col className="col-8">
           <Row>
             <Col className="col-12 profile-area mt-5 px-0">
               <Col
@@ -91,22 +92,25 @@ const Profile = () => {
                     More
                   </Button>
                 </div>
-               <CustomCarousel />
+                <CustomCarousel />
               </Col>
             </Col>
           </Row>
           <Row>
-            <Col  className="col-12 mt-5 px-0">
-                <Dashboard>
-                  
-                </Dashboard>
+            <Col className="col-12 mt-5 px-0">
+              <Dashboard>
+
+              </Dashboard>
+              <Skills></Skills>
+              <Interests></Interests>
             </Col>
           </Row>
-       </Col>
-       <Col className="col-4">
-           <RightProfileCard></RightProfileCard>
-       </Col>
-     </Row>
+        </Col>
+        <Col className="col-4">
+          <RightProfileCard></RightProfileCard>
+        </Col>
+
+      </Row>
     </Container>
   );
 };

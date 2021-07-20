@@ -5,14 +5,14 @@ import PeopleAlsoViewed from './PeopleAlsoViewed'
 
 const RightProfileCard = () => {
     return (
-        <div className='ml-3 mt-5  ' width='100%' >
+        <div className='mt-5 ' width='100%'  >
             <Col
                 className='py-3'
                 style={{
                     backgroundColor: 'white',
-                    border: 'solid 1px lightgrey',
-                    borderRadius: '10px',
 
+                    borderRadius: '10px',
+                    border: '1px solid rgba(0, 0, 0, 0.1)',
                 }}
             >
                 <Row>
@@ -59,7 +59,8 @@ const RightProfileCard = () => {
 
             </Col>
             <Row >
-                <PeopleAlsoViewed />
+                <Col>
+                    <PeopleAlsoViewed /></Col>
             </Row>
 
         </div >
