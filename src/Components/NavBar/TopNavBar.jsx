@@ -87,7 +87,7 @@ function TopNavBar(props) {
                             </a>
     
     
-                        {isClickedAvatar && <ProfileBox userData={props.userData}></ProfileBox>}
+                        {isClickedAvatar && <ProfileBox setShowTopNavBar={props.setShowTopNavBar} userData={props.userData}></ProfileBox>}
                         </div>
                         
     

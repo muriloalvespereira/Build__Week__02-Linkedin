@@ -9,13 +9,14 @@ import Profile from './Components/Profile';
 import Home from './Components/Home';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Login from './Components/Login/Login'
+import Signup from './Components/Login/Signup';
 
 
 
 const App = (props) => {
-  const [loggedUser, setLoggedUser] = useState(false)
   const [isSearchOn, setIsSearchOn] = useState(false) //not being used atm  this is to set the overlay when the search is going on
   const [userData, setUserData] = useState('')
+  const [showTopNavBar, setShowTopNavBar] = useState(false)
 
   return (
 
@@ -23,8 +24,9 @@ const App = (props) => {
 
       <div className="container-fluid p-0 m-0">
         <Router>
-        {window.location.pathname !== '/' && <TopNavBar userData={userData} setIsSearchOn={setIsSearchOn}></TopNavBar>}
-          <Route path="/" exact render={(routerProps) => <Login setUserData={setUserData} setLoggedUser={setLoggedUser}  {...routerProps}></Login>}></Route>
+        {showTopNavBar && <TopNavBar userData={userData} setShowTopNavBar={setShowTopNavBar} setIsSearchOn={setIsSearchOn}></TopNavBar>}
+          <Route path="/" exact render={(routerProps) => <Login setUserData={setUserData} setShowTopNavBar={setShowTopNavBar}   {...routerProps}></Login>}></Route>
+          <Route path="/" exact render={(routerProps) => <Signup setUserData={setUserData}   {...routerProps}></Signup>}></Route>
           <Route path="/home" exact render={(routerProps) => <Home userData={userData}  {...routerProps}></Home>}></Route>
           <Route path="/profile" exact render={(routerProps) => <Profile userData={userData}  {...routerProps}></Profile>}></Route>
         </Router>

@@ -48,7 +48,10 @@ const ProfileBox = (props) => (
       </Button>
     </ListGroup.Item>
     <ListGroup.Item>
-      <Button variant="link" className="btn-linkMod" onClick={()=> props.history.push('/')}>
+      <Button variant="link" className="btn-linkMod" onClick={()=> {props.history.push('/')
+    props.setShowTopNavBar(false) 
+    console.log(props)
+    }}>
         Sign Out
       </Button>
     </ListGroup.Item>

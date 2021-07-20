@@ -42,7 +42,7 @@ function Login(props) {
     const setLoginData = () => {
         if (userInfo.length === 1) {
             props.setUserData(userInfo)
-            props.setLoggedUser(true)
+            props.setShowTopNavBar(true)
             props.history.push('profile')
             
         } else {
