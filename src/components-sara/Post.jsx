@@ -1,12 +1,15 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 import "../Styles/Sara.css";
+import avatar from "../assets/muriloavatar.png";
 
 const Post = () => {
   return (
     <div className="post">
       <div className="img-post d-flex">
-        <img src="https://via.placeholder.com/150" alt="" />
+        {/*  <img src="https://via.placeholder.com/150" alt="" /> */}
+        <img src={`${avatar}`} alt="" />
+
         <Button variant="light" className="btn-post">
           <span>Start a post</span>
         </Button>
