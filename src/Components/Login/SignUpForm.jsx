@@ -34,6 +34,12 @@ const validate = values => {
     errors.area = 'Area must have at least 3 characters';
   }
 
+  if (!values.title) {
+    errors.title = 'Required';
+  } else if (values.title.length < 5) {
+    errors.title = 'Title must have at least 5 characters';
+  }
+
   return errors;
 };
 
@@ -129,7 +135,7 @@ const SignupForm = () => {
         <div>{formik.errors.password}</div>
       ) : null}
 
-<label htmlFor="area">Area</label>
+      <label htmlFor="area">Area</label>
       <input
         id="area"
         name="area"
@@ -142,7 +148,20 @@ const SignupForm = () => {
         <div>{formik.errors.area}</div>
       ) : null}
 
-{/* Btn */}
+      <label htmlFor="title">Job Title</label>
+      <input
+        id="title"
+        name="title"
+        type="title"
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        value={formik.values.title}
+      />
+      {formik.touched.title && formik.errors.title ? (
+        <div>{formik.errors.title}</div>
+      ) : null}
+
+      {/* Btn */}
       <button type="submit">Submit</button>
     </form>
   );
@@ -151,7 +170,6 @@ const SignupForm = () => {
 export default SignupForm
 
 
-//  area: "Breadland"
 // bio: "I love breads"
 // title: "wanna be a baker"
 // username: "random"
@@ -161,6 +179,7 @@ export default SignupForm
 
 
 
+//  area: "Breadland"
 // password: "nope123"
 // surname: "testtttt"
 // email: "tesddft@gmail.com"
