@@ -43,7 +43,6 @@ function Login(props) {
         if (userInfo.length === 1) {
             props.setUserData(userInfo)
             props.setLoggedUser(true)
-            console.log(userInfo)
             props.history.push('profile')
             
         } else {
@@ -57,7 +56,6 @@ function Login(props) {
 
     return (
         <div id="logo-main-container" className="container-fluid d-flex flex-column align-content-center p-0">
-            {console.log(props)}
             <div className="container  d-flex flex-column justify-content-center align-items-center mt-4 mb-3 mod-logo-maxWidth">
 
                 <div id="login-logo" className="d-flex justify-content-center align-items-center">
@@ -123,7 +121,6 @@ function Login(props) {
                             <label for="exampleInputEmail1">Email address</label>
                             <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onChange={(e) => {
                                 setLogin(e.target.value)
-                                console.log(login)
                             }} />
                             <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
                         </div>
