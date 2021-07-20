@@ -2,6 +2,7 @@ import React from 'react'
 import '../../Styles/Login.css'
 import { useState, useEffect } from 'react'
 
+
 function Login(props) {
     const [login, setLogin] = useState('')
     const [usersList, setUserList] = useState([])
@@ -11,11 +12,7 @@ function Login(props) {
         getUserList()
     }, [])
 
-    useEffect(() => {
-        setUserInfo(usersList.filter(user => user.email === login)
-        )
-        console.log(userInfo)
-    },
+    useEffect(() => {setUserInfo(usersList.filter(user => user.email === login))},
         [login])
 
     const getUserList = async () => {
@@ -44,6 +41,7 @@ function Login(props) {
         if (userInfo.length === 1) {
             props.setUserData(userInfo)
             props.setLoggedUser(true)
+            window.location.replace("/home")
         } else {
             alert(' User not found')
         }
@@ -134,7 +132,7 @@ function Login(props) {
                                 <input type="checkbox" className="form-check-input my-auto" id="exampleCheck1" />
                                 <label className="form-check-label" for="exampleCheck1">Remember me</label>
                             </div>
-                            <a id="login-btn" className="btn btn-success" onClick={setLoginData} href="#">Log in</a>
+                            <a id="login-btn" className="btn btn-success" onClick={setLoginData}>Log in</a>
                         </div>
                     </form>
 

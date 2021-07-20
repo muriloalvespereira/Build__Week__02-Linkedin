@@ -12,7 +12,7 @@ import Login from './Components/Login/Login'
 
 
 
-const App = () => {
+const App = (props) => {
   const [loggedUser, setLoggedUser] = useState(false)
   const [isSearchOn, setIsSearchOn] = useState(false)
   const [userData, setUserData] = useState('')
@@ -43,35 +43,19 @@ const App = () => {
   return (
 
     <>
-      {loggedUser === false && <Login setUserData={setUserData} setLoggedUser={setLoggedUser} ></Login>}
-      {loggedUser && 
+      {window.location.pathname === '/login' ? <Login setUserData={setUserData} setLoggedUser={setLoggedUser} ></Login>
+      :
         <div className="container-fluid p-0 m-0">
         <TopNavBar userInfo={loggedUser} setIsSearchOn={setIsSearchOn}></TopNavBar>
-        {isSearchOn && <SearchOverlay></SearchOverlay>}
-         
           <Router>
-            <Route path="/" exact component={Home} />
+            <Route path="/home" exact component={Home} />
             <Route path="/profile" exact component={Profile} />
           </Router>
-
-
-
-
 
         <Container>
         <Footer></Footer>
         </Container>
 
-
-
-
-
-
-
-
-
-
-        {console.log(loggedUser)}
       </div>}
     </>
 
