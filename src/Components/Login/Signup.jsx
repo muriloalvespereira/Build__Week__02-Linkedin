@@ -28,7 +28,7 @@ function Signup(props) {
                 <hr></hr>
             </div>
 
-            <div className="container p-0">
+            <div className="container p-0 my-5 d-flex flex-column mod-logo-maxWidth">
                 <SignupForm></SignupForm>
             </div>
 
