@@ -25,7 +25,13 @@ const validate = values => {
   if (!values.password) {
     errors.password = 'Required';
   } else if (values.password.length < 8) {
-    errors.password = 'Password must at least 8 characters';
+    errors.password = 'Password must have at least 8 characters';
+  }
+
+  if (!values.area) {
+    errors.area = 'Required';
+  } else if (values.area.length < 3) {
+    errors.area = 'Area must have at least 3 characters';
   }
 
   return errors;
@@ -123,6 +129,20 @@ const SignupForm = () => {
         <div>{formik.errors.password}</div>
       ) : null}
 
+<label htmlFor="area">Area</label>
+      <input
+        id="area"
+        name="area"
+        type="area"
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        value={formik.values.area}
+      />
+      {formik.touched.area && formik.errors.area ? (
+        <div>{formik.errors.area}</div>
+      ) : null}
+
+{/* Btn */}
       <button type="submit">Submit</button>
     </form>
   );
