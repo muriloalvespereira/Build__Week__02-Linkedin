@@ -4,7 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 
 const Activity = () => {
   return (
-    <div className="activity">
+    <div className="activity mt-3">
       <Row>
         <Col xs={12}>
           <h2>Activity</h2>

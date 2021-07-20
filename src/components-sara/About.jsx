@@ -31,7 +31,7 @@ const About = () => {
     </span>
   );
   return (
-    <div className="about">
+    <div className="about mt-3">
       <Row>
         <Col xs={12}>
           <h2>About</h2>

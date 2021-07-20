@@ -3,6 +3,11 @@ import "../Styles/Murilo.css";
 import Dashboard from "../components-sara/Dashboard";
 import RightProfileCard from "./SideCards/RightProfileCard";
 import UserDisplay from "./UserDisplay";
+import About from '../components-sara/About'
+import Activity from '../components-sara/Activity'
+import Featured from '../components-sara/Featured'
+
+
 
 const Profile = (props) => {
   return (
@@ -14,6 +19,10 @@ const Profile = (props) => {
           <Row>
             <Col className="col-12 mt-5 px-0">
               <Dashboard></Dashboard>
+              <About></About>
+              <Featured></Featured>
+              <Activity></Activity>
+
             </Col>
           </Row>
         </Col>
