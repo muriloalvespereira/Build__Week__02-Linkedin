@@ -5,10 +5,11 @@ import avatar from "../assets/muriloavatar.png";
 import currentJob from "../assets/eli.jpg";
 import education from "../assets/dbs.jpg";
 import {useState} from 'react'
+import React from 'react'
 import ModalComp from './Modal_Forms/ModalComp'
 
 const UserDisplay = (props) => {
-  const [modalShow, setModalShow] = useState(false);
+  const [modalShow, setModalShow] = React.useState(false)
 
     return(
         <Row>
@@ -39,10 +40,10 @@ const UserDisplay = (props) => {
                 </div>
               </Col>
               <Col className="position-relative">
-                <div className="edit-details" onClick={() => setModalShow(true)}>
-                  <ModalComp show={modalShow} onHide={() => setModalShow(false)} >
+                  <ModalComp show={modalShow}    onHide={() => setModalShow(false)} >
 
                   </ModalComp>
+                <div className="edit-details" onClick={() => setModalShow(true)}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
