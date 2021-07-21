@@ -46,28 +46,17 @@ function ModalAbout(props) {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          Edit intro
+          Edit summary
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form>
           <Form.Row>
-            <Form.Group as={Col} controlId="name">
-              <Form.Label>Fisrt Name</Form.Label>
-              <Form.Control type="text" placeholder="Enter propsName" onChange={(e)=>handleForm('name', e.target.value)} />
-            </Form.Group>
-
-            <Form.Group as={Col} controlId="surname">
-              <Form.Label>Last Name</Form.Label>
-              <Form.Control type="text" placeholder="Enter propsSurname" onChange={(e)=>handleForm('surname', e.target.value)} />
+            <Form.Group as={Col} controlId="bio">
+              <Form.Label>Description</Form.Label> 
+              <Form.Control type="text" as='textarea' rows={5} placeholder="Enter propsName" onChange={(e)=>handleForm('bio', e.target.value)} />
             </Form.Group>
           </Form.Row>
-         <Form.Row>
-            <Form.Group as={Col} controlId="title">
-              <Form.Label>Job Title</Form.Label>
-              <Form.Control as='textarea' type="text" placeholder="propsTitle" onChange={(e)=>handleForm('title', e.target.value)} />
-            </Form.Group>
-         </Form.Row>
         </Form>
       </Modal.Body>
       <Modal.Footer>
