@@ -411,6 +411,7 @@ div.modal-header > button > span:nth-child(1) {
 .post-area-container .post-area {
   border: none !important;
   padding-left: 0;
+  resize: none;
 }
 .btn-add-hashtag {
   /* padding: 6px 8px; */
