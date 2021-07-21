@@ -111,7 +111,8 @@
 .post {
   margin: 0 0 8px;
   background-color: white;
-  padding: 8px;
+
+  padding-bottom: 8px;
   border-radius: 10px;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
