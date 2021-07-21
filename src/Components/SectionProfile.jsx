@@ -9,7 +9,7 @@ const SectionProfile = (props) => {
     <Col className="mt-4 ml-2 d-flex justify-content-between">
       <h4 className="h4-section">{props.category}</h4>
       {/* Add new experience */}
-      <ModalAddNewExperience show={modalShow}    onHide={() => setModalShow(false)}></ModalAddNewExperience>
+      <ModalAddNewExperience show={modalShow}  onHide={() => setModalShow(false)}></ModalAddNewExperience>
       <div className="btn-plus" onClick={() => setModalShow(true)}>
         <svg
           xmlns="http://www.w3.org/2000/svg"

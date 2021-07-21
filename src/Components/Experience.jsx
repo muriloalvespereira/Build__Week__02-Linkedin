@@ -27,12 +27,17 @@ const Experience = (props) => {
   return (
     <Row>
       <Col className="col-12 experience-area mt-4 px-0">
-        {/* Add new experience section profile */}
+        {/* Add new experience section profile */
+        console.log(userAllExperiences, 'dasdsadadasdsada')
+        
+        }
         <SectionProfile userSignUpToken='NeedsToPassUserSignupToken API only works this way' category={"Experience"} />
     {/* Edit experience Details */}
-       <ExperienceDetails />
+    {userAllExperiences.length > 0 ? userAllExperiences.map(userExperience=> <ExperienceDetails userExperience={userExperience} ></ExperienceDetails>) :'no Experience do display'}
+       {/* <ExperienceDetails  />  To be deleted*/}
         <SectionProfile category={"Education"} />
-       <ExperienceDetails />
+        {/* Needs to create an object and pass as props to simulate the one above */}
+       {/* <ExperienceDetails /> */}
       </Col>
     </Row>
   );
