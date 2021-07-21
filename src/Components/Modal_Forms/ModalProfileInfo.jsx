@@ -1,7 +1,7 @@
 import React from 'react'
 import {Modal, Button} from 'react-bootstrap'
 
-function ModalComp(props) {
+function ModalProfileInfo(props) {
     return (
         <Modal
       {...props}
@@ -29,4 +29,4 @@ function ModalComp(props) {
     )
 }
 
-export default ModalComp
+export default ModalProfileInfo

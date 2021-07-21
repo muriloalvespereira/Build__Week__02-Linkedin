@@ -6,7 +6,7 @@ import currentJob from "../assets/eli.jpg";
 import education from "../assets/dbs.jpg";
 import {useState} from 'react'
 import React from 'react'
-import ModalComp from './Modal_Forms/ModalComp'
+import ModalComp from './Modal_Forms/ModalProfileInfo'
 
 const UserDisplay = (props) => {
   const [modalShow, setModalShow] = React.useState(false)
