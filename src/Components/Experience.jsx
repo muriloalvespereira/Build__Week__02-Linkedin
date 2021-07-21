@@ -1,6 +1,5 @@
 import { Row, Col } from "react-bootstrap";
 import SectionProfile from "./SectionProfile";
-import currentJob from "../assets/eli.jpg";
 import ExperienceDetails from "./ExperienceDetails";
 
 const Experience = () => {

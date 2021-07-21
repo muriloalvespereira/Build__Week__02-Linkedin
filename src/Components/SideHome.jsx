@@ -7,7 +7,7 @@ const SideHome = () => {
     
         <aside>
 
-            <div className="pt-2 text-left" >
+            <div className="mt-5 text-left" >
                 <section>                    
                     <ListGroup style={{ borderRadius: "7px"}}>
                         <ListGroup.Item style={{ color: "#61605F", border: "none" }}>

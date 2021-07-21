@@ -64,6 +64,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+  border-radius: 50%;
   top: 0px;
   right: 0px;
   bottom: 0px;
@@ -137,6 +138,16 @@ p > img {
   right: 17px;
   top: 10px;
   cursor: pointer;
+}
+.dots-feed {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  background-color: white;
+  cursor: pointer;
+}
+.dots-feed:hover {
+  background-color: #ebebeb;
 }
 
 .edit-details:hover {
@@ -235,6 +246,7 @@ p > img {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+  border-radius: 50%;
   top: 0px;
   right: 0px;
   bottom: 0px;
@@ -265,7 +277,7 @@ p > img {
 }
 
 .side-profile {
-  width: 225px;
+  /* width: 225px; */
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   background: white;
@@ -399,4 +411,12 @@ p > img {
 
 .svg-dots {
   color: rgba(0, 0, 0, 0.6);
+  padding-right: 4px;
+  padding-top: 4px;
+}
+
+.carousel-button-group {
+  position: absolute;
+  right: 105px;
+  top: 25px;
 }

@@ -107,16 +107,6 @@ const CustomCarousel = () => {
         </Col>
       </div>
     </Carousel>
-
-    // <Carousel interval={null} indicators={false}>
-    //   <Carousel.Item>
-    //     <div className="row-btn d-flex mt-3">
-
-    //       <Col className="card-carousel"></Col>
-    //       <Col className="card-carousel"></Col>
-    //     </div>
-    //   </Carousel.Item>
-    // </Carousel>
   );
 };
 
