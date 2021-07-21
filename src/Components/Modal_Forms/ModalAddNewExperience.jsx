@@ -1,147 +1,195 @@
 import React from 'react'
 import { Modal, Button, Form, Col } from 'react-bootstrap'
-import {useState, useEffect} from 'react'
-import {format} from 'date-fns'
+import { useState, useEffect } from 'react'
+import { format } from 'date-fns'
 
 
 function ModalAddNewExperience(props) {
-    const [formData, setFormData] = useState({
-        role: '',
-        company: 'propsCompany',
-        startDate: ' propsStartDate',
-        endDate: 'propsEndDate',
-        description: 'propsDescription',
-        area: 'propsArea'
-      })
-      const [endpoint, setEndpoint] = useState('')
+  const [formData, setFormData] = useState({
+    role: '',
+    company: 'propsCompany',
+    startDate: ' propsStartDate',
+    endDate: 'propsEndDate',
+    description: 'propsDescription',
+    area: 'propsArea'
+  })
+  const [endpoint, setEndpoint] = useState('')
 
-      
-      useEffect(()=>{
-        if(props.userExperience)
-        setFormData(
-          {
-            role: props.userExperience.role,
-            company: props.userExperience.company,
-            startDate: format(new Date (props.userExperience.startDate), 'yyyy-MM-dd'),
-            endDate: format(new Date (props.userExperience.endDate), 'yyyy-MM-dd'),
-            description: props.userExperience.description,
-            area: props.userExperience.area
-            
-          }
-          )
-      },[])
-    
-      const handleForm=(key, value)=>{
-        setFormData({
-          ...formData,
-          [key]: value
-        })
-      }
-    
-     
-    // POST Goes to the Token owner independently of the ID
-        const postUserExperience = async () => {
-            try {
-                let response = await fetch(props.endpoint, {
-                    method: props.requestmethod,
-                    headers: {
-                      // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGRjNWYwNmIzNTgxNzAwMTVjMjI3MDUiLCJpYXQiOjE2MjY3NzE0ODUsImV4cCI6MTYyNzk4MTA4NX0.LInoNCSsxHbV1FD7e-JxGb3z_-64r2PKAZ2PYIdhl5c
-                        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGRjNWYwNmIzNTgxNzAwMTVjMjI3MDUiLCJpYXQiOjE2MjY3NzE0ODUsImV4cCI6MTYyNzk4MTA4NX0.LInoNCSsxHbV1FD7e-JxGb3z_-64r2PKAZ2PYIdhl5c",
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify(formData)
-                })
-                let newExperienceSent = await response.json()
-                props.setchangeuserdata(!props.changeUserData)
 
-                props.onHide()
-            } catch (e) {
-                return e
-            }
+  useEffect(() => {
+    if (props.userExperience)
+      setFormData(
+        {
+          role: props.userExperience.role,
+          company: props.userExperience.company,
+          startDate: format(new Date(props.userExperience.startDate), 'yyyy-MM-dd'),
+          endDate: format(new Date(props.userExperience.endDate), 'yyyy-MM-dd'),
+          description: props.userExperience.description,
+          area: props.userExperience.area
+
         }
+      )
+  }, [])
 
-
-        // Delete
-        const deleteUserExperience = async () => {
-          try {
-              let response = await fetch(props.endpoint, {
-                  method: 'DELETE',
-                  headers: {
-                    // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGRjNWYwNmIzNTgxNzAwMTVjMjI3MDUiLCJpYXQiOjE2MjY3NzE0ODUsImV4cCI6MTYyNzk4MTA4NX0.LInoNCSsxHbV1FD7e-JxGb3z_-64r2PKAZ2PYIdhl5c
-                      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGRjNWYwNmIzNTgxNzAwMTVjMjI3MDUiLCJpYXQiOjE2MjY3NzE0ODUsImV4cCI6MTYyNzk4MTA4NX0.LInoNCSsxHbV1FD7e-JxGb3z_-64r2PKAZ2PYIdhl5c",
-                  },
-              })
-
-              let deleteResponse = await response.json()
-              props.setchangeuserdata(!props.changeUserData)
-              props.onHide()
-          } catch (e) {
-            props.setchangeuserdata(!props.changeUserData)
-            props.onHide()
-              return e
-          }
-      }
-        
-   
-    return (
-        <Modal
-        {...props}
-        size="lg"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
-            Edit intro
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Form>
-            <Form.Row>
-              <Form.Group as={Col} controlId="company">
-                <Form.Label>Company</Form.Label>
-                <Form.Control type="text" placeholder={endpoint === 'POST' ? "Enter propsCompany" : formData.company} onChange={(e)=>handleForm('company', e.target.value)} />
-              </Form.Group>
-  
-              <Form.Group as={Col} controlId="role">
-                <Form.Label>Role</Form.Label>
-                <Form.Control type="text" placeholder={endpoint === 'POST' ? "Enter propsrole" : formData.role} onChange={(e)=>handleForm('role', e.target.value)} />
-              </Form.Group>
-            </Form.Row>
-           <Form.Row>
-              <Form.Group as={Col} controlId="startDate">
-                <Form.Label>Start Date</Form.Label>
-                <Form.Control type="date" value={endpoint === 'POST' ? "" : formData.startDate} onChange={(e)=>handleForm('startDate', format(new Date (e.target.value), 'yyyy-MM-dd'))} />
-              </Form.Group>
-              <Form.Group as={Col} controlId="endDate">
-                <Form.Label>End Date</Form.Label>
-                <Form.Control type="date"  value={endpoint === 'POST' ? "" : formData.endDate} onChange={(e)=>handleForm('endDate', format(new Date (e.target.value), 'yyyy-MM-dd'))} />
-              </Form.Group>
-              <Form.Group as={Col} controlId="area">
-                <Form.Label>City, Country</Form.Label>
-                <Form.Control type="text" placeholder={endpoint === 'POST' ? "propsendare" : formData.area} onChange={(e)=>handleForm('area', e.target.value)} />
-              </Form.Group>
-           </Form.Row>
-          </Form>
-          <Form.Row>
-              <Form.Group as={Col} controlId="description">
-                <Form.Label>Start Date</Form.Label>
-                <Form.Control type="text" as="textarea" rows={5}  placeholder={endpoint === 'POST' ? "addDescription" : formData.description} onChange={(e)=>handleForm('description', e.target.value)} />
-              </Form.Group>
-             
-           </Form.Row>
-        </Modal.Body>
-        <Modal.Footer>
-        {props.requestmethod === 'PUT' && <Button variant="dark" 
-          onClick={()=>deleteUserExperience()}
-          >Delete</Button>}
-         
-          <Button variant="primary" 
-          onClick={()=>postUserExperience()}
-          >Save</Button>
-        </Modal.Footer>
-      </Modal>
-    )
+  const handleForm = (key, value) => {
+    setFormData({
+      ...formData,
+      [key]: value
+    })
   }
+
+
+  // POST Goes to the Token owner independently of the ID
+  const postUserExperience = async () => {
+    try {
+      let response = await fetch(props.endpoint, {
+        method: props.requestmethod,
+        headers: {
+          // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGRjNWYwNmIzNTgxNzAwMTVjMjI3MDUiLCJpYXQiOjE2MjY3NzE0ODUsImV4cCI6MTYyNzk4MTA4NX0.LInoNCSsxHbV1FD7e-JxGb3z_-64r2PKAZ2PYIdhl5c
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGRjNWYwNmIzNTgxNzAwMTVjMjI3MDUiLCJpYXQiOjE2MjY3NzE0ODUsImV4cCI6MTYyNzk4MTA4NX0.LInoNCSsxHbV1FD7e-JxGb3z_-64r2PKAZ2PYIdhl5c",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      })
+      let newExperienceSent = await response.json()
+      props.setchangeuserdata(!props.changeUserData)
+
+      props.onHide()
+    } catch (e) {
+      return e
+    }
+  }
+
+
+  // Delete
+  const deleteUserExperience = async () => {
+    try {
+      let response = await fetch(props.endpoint, {
+        method: 'DELETE',
+        headers: {
+          // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGRjNWYwNmIzNTgxNzAwMTVjMjI3MDUiLCJpYXQiOjE2MjY3NzE0ODUsImV4cCI6MTYyNzk4MTA4NX0.LInoNCSsxHbV1FD7e-JxGb3z_-64r2PKAZ2PYIdhl5c
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGRjNWYwNmIzNTgxNzAwMTVjMjI3MDUiLCJpYXQiOjE2MjY3NzE0ODUsImV4cCI6MTYyNzk4MTA4NX0.LInoNCSsxHbV1FD7e-JxGb3z_-64r2PKAZ2PYIdhl5c",
+        },
+      })
+
+      let deleteResponse = await response.json()
+      props.setchangeuserdata(!props.changeUserData)
+      props.onHide()
+    } catch (e) {
+      props.setchangeuserdata(!props.changeUserData)
+      props.onHide()
+      return e
+    }
+  }
+
+
+  return (
+    <Modal
+      {...props}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          <p className="exp-title">Add experience</p>
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <Form>
+
+          <div className="network">
+            <div className="one mb-3">
+              <p className="my-0">Notify network</p>
+              <span className="make-it-gray">If enabled, your network may be informed of job changes, education changes, and work anniversaries. It may take up to 2 hours to share your job changes with your network.</span>
+              <span className="make-it-blue"> Learn how these are shared and when</span>
+            </div>
+
+            <div className="radio">
+              <label class="switch-wrap">
+                <input type="checkbox" />
+                <div class="switch"></div>
+              </label>
+            </div>
+          </div>
+
+          <div className="split">
+            <div className="first-section">
+              <Form.Group controlId="role">
+                <Form.Label>Title*</Form.Label>
+                <Form.Control type="text" className="title-role" placeholder={endpoint === 'POST' ? "Enter propsrole" : formData.role} onChange={(e) => handleForm('role', e.target.value)} />
+              </Form.Group>
+            </div>
+            <div className="first-section">
+              <Form.Group controlId="company">
+                <Form.Label>Company name*</Form.Label>
+                <Form.Control type="text" placeholder={endpoint === 'POST' ? "Enter propsCompany" : formData.company} onChange={(e) => handleForm('company', e.target.value)} />
+              </Form.Group>
+            </div>
+            <div className="first-section">
+              <Form.Group controlId="area">
+                <Form.Label>Location (city,country)</Form.Label>
+                <Form.Control type="text" placeholder={endpoint === 'POST' ? "propsendare" : formData.area} onChange={(e) => handleForm('area', e.target.value)} />
+              </Form.Group>
+
+
+
+            </div>
+            <div className="check-check">
+
+              <label class="b-contain">
+                <input type="checkbox" className="custom-checkbox" />
+                <span>I am currently working on this role</span>
+              </label>
+            </div>
+
+          </div>
+
+
+          <Form.Row className="dateInputs">
+            <Form.Group as={Col} controlId="startDate">
+              <Form.Label>Start Date</Form.Label>
+              <Form.Control type="date" value={endpoint === 'POST' ? "" : formData.startDate} onChange={(e) => handleForm('startDate', format(new Date(e.target.value), 'yyyy-MM-dd'))} />
+            </Form.Group>
+            <Form.Group as={Col} controlId="endDate">
+              <Form.Label>End Date</Form.Label>
+              <Form.Control type="date" value={endpoint === 'POST' ? "" : formData.endDate} onChange={(e) => handleForm('endDate', format(new Date(e.target.value), 'yyyy-MM-dd'))} />
+            </Form.Group>
+
+          </Form.Row>
+        </Form>
+
+
+
+        <div className="second-section">
+
+          <Form.Group as={Col}>
+            <Form.Label>Headline</Form.Label>
+            <Form.Control type="text" />
+          </Form.Group>
+          <Form.Group as={Col}>
+            <Form.Label>Industry*</Form.Label>
+            <Form.Control type="text" />
+          </Form.Group>
+
+          <Form.Group as={Col} controlId="description">
+            <Form.Label>Description</Form.Label>
+            <Form.Control type="text" as="textarea" rows={5} placeholder={endpoint === 'POST' ? "addDescription" : formData.description} onChange={(e) => handleForm('description', e.target.value)} />
+          </Form.Group>
+        </div>
+
+      </Modal.Body>
+      <Modal.Footer>
+        {props.requestmethod === 'PUT' && <Button variant="dark"
+          onClick={() => deleteUserExperience()}
+        >Delete</Button>}
+
+        <Button variant="primary"
+          onClick={() => postUserExperience()}
+        >Save</Button>
+      </Modal.Footer>
+    </Modal >
+  )
+}
 
 export default ModalAddNewExperience
