@@ -73,7 +73,7 @@ const CreatePost = (props) => {
                   viewBox="0 0 24 24"
                   data-supported-dps="24x24"
                   fill="currentColor"
-                  className="mercado-match ml-0"
+                  className="mercado-match  "
                   width="24"
                   height="24"
                   focusable="false"
@@ -124,11 +124,8 @@ const CreatePost = (props) => {
                 </svg>
               </span>
             </div>
-            <div className="btn-who-comment-contianer mr-auto">
-              <Button
-                variant="light"
-                className="btn-who-comment d-flex align-items-center "
-              >
+            <div className="btn-who-comment-contianer d-flex align-items-center w-100">
+              <Button variant="light" className="btn-who-comment ">
                 <span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -149,7 +146,7 @@ const CreatePost = (props) => {
             <div>
               <Button
                 variant="light"
-                className="btn-post  "
+                className="btn-post mt-1 "
                 onClick={props.handleClose}
               >
                 Post

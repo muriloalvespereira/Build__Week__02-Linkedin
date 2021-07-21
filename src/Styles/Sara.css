@@ -112,10 +112,10 @@
   margin: 0 0 8px;
   background-color: white;
 
-/* Check this padding later */
+  /* Check this padding later */
   padding-bottom: 8px;
 
-/*   padding: 8px; */
+  /*   padding: 8px; */
 
   border-radius: 10px;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -419,14 +419,14 @@ div.modal-header > button > span:nth-child(1) {
   resize: none;
 }
 .btn-add-hashtag {
-  /* padding: 6px 8px; */
+  padding: 6px 8px;
   color: #3983ce;
   font-size: 16px;
   font-weight: 600;
 }
 .btn-add-hashtag:hover {
-  padding: 6px 8px;
-  background-color: #b7b7dd1a;
+  background-color: #e2f0fe;
+  border-radius: 2px;
   cursor: pointer;
 }
 .create-post-body-footer {
@@ -435,10 +435,23 @@ div.modal-header > button > span:nth-child(1) {
 .create-post-body-footer-icons {
   border-right: 1px solid #00000025;
 }
+.create-post-body-footer-icons span {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+
+  line-height: 40px;
+}
+.create-post-body-footer-icons span:hover {
+  border-radius: 50%;
+  background-color: #ebebeb;
+}
 .create-post-body-footer-icons svg {
   margin-right: 8px;
   color: #666666;
+  vertical-align: middle;
 }
+
 .create-post-body-footer .btn-who-comment-contianer {
   padding-left: 8px;
 }
