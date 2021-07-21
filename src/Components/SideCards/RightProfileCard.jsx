@@ -16,13 +16,14 @@ const RightProfileCard = () => {
                 }}
             >
                 <Row>
-                    <Col lg={10}>
+                    <Col lg={10} className='mb-3'>
                         <a
                             href='#'
                             style={{
                                 fontSize: '1em',
                                 color: 'rgb(102,102,102)',
                                 fontWeight: '600',
+
                             }}
                         >
                             Edit public profile & URL
@@ -36,7 +37,7 @@ const RightProfileCard = () => {
                 </Row>
                 <hr />
                 <Row style={{ backgroundColor: 'white' }}>
-                    <Col lg={10}>
+                    <Col lg={10} className="mt-3">
                         <a
                             href='#'
                             style={{
@@ -50,7 +51,7 @@ const RightProfileCard = () => {
                         </a>
                     </Col>
                     <Col lg={2}>
-                        <RiQuestionFill className='mr-3' style={{
+                        <RiQuestionFill className='mr-3 mt-3' style={{
                             color: 'gray'
                         }} />
                     </Col>

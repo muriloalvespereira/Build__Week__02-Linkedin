@@ -3,14 +3,13 @@ import "../Styles/Murilo.css";
 import Dashboard from "../components-sara/Dashboard";
 import RightProfileCard from "./SideCards/RightProfileCard";
 import UserDisplay from "./UserDisplay";
-import About from '../components-sara/About'
-import Activity from '../components-sara/Activity'
-import Featured from '../components-sara/Featured'
-import Experience from './Experience'
-import Interests from './skills/interests/Interests'
-import Skills from './skills/interests/Skills'
-
-
+import About from "../components-sara/About";
+import Activity from "../components-sara/Activity";
+import Featured from "../components-sara/Featured";
+import Experience from "./Experience";
+import Interests from "./skills/interests/Interests";
+import Skills from "./skills/interests/Skills";
+import CreatePost from "../components-sara/CreatePost";
 
 const Profile = (props) => {
   return (
@@ -18,7 +17,7 @@ const Profile = (props) => {
       <Row>
         <Col className="col-8">
           <UserDisplay
-          // userData={props.userData} 
+          // userData={props.userData}
           />
           <Row>
             <Col className="col-12 mt-3 px-0">
@@ -26,22 +25,21 @@ const Profile = (props) => {
               <About></About>
               <Featured></Featured>
               <Activity></Activity>
-
             </Col>
           </Row>
           <Experience></Experience>
-          <Row >
+          <Row>
             <Col className="px-0">
-              <Skills></Skills> 
+              <Skills></Skills>
               <Interests></Interests>
             </Col>
           </Row>
         </Col>
 
         <Col className="col-4">
-          <RightProfileCard 
+          <RightProfileCard
           // userData={props.userData}
-          
+
           ></RightProfileCard>
         </Col>
       </Row>
