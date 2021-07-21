@@ -7,16 +7,16 @@ const ProfileBox = (props) => (
     <ListGroup.Item className="ListGroupItem">
       <div className="image-colMod d-flex">
         <Image
-          src="https://media-exp1.licdn.com/dms/image/C4D03AQErx2totdpx7w/profile-displayphoto-shrink_800_800/0/1613497757896?e=1632355200&v=beta&t=d7Rt8Arys31OsJVFU91XBSM-u2V0R9Mu3igTyN6Y-kM"
+          src= {window.localStorage.getItem('image')}
           width="48px"
           roundedCircle
           className="align-self-start"
         />
           {console.log(props, 'Inside Profile box')}
         <Col>
-          <span className="font-weight-bolder">{props.userData[0].name + ' ' + props.userData[0].surname}</span>
+          <span className="font-weight-bolder">{window.localStorage.getItem('name') + ' ' + window.localStorage.getItem('surname')}</span>
           <p className="m-0">
-          {props.userData[0].title}
+          {window.localStorage.getItem('title')}
           </p>
         </Col>
       </div>
@@ -49,6 +49,7 @@ const ProfileBox = (props) => (
     </ListGroup.Item>
     <ListGroup.Item>
       <Button variant="link" className="btn-linkMod" onClick={()=> {props.history.push('/')
+      window.localStorage.clear()
     props.setShowTopNavBar(false) 
     console.log(props)
     }}>
