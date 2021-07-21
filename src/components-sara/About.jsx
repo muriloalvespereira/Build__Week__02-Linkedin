@@ -23,29 +23,24 @@ const About = () => {
       </p>
     </div>
   );
-  const linkName = readMore ? (
-    <span className="read-less">read less</span>
-  ) : (
-    <span className={readMore ? "read-more d-none" : "read-more d-block"}>
-      ..read more
-    </span>
-  );
+
   return (
     <div className="about mt-3">
       <Row>
         <Col xs={12}>
           <h2>About</h2>
-          <p>
+          <p className="mb-0">
             I'm passionate about user experience and web dev. After my first
             real-world projects, I felt the necessity to be able to code them.
-            I'm the kind of person who likes to learn more and more.
+            I'm the kind of person who likes to learn more and more.I like to be
+            able to participate constructively in all
             <a
               className="read-more-link d-inline-block"
               onClick={() => {
                 setReadMore(!readMore);
               }}
             >
-              <h2>{linkName}</h2>
+              {!readMore && <span className="read-more">... see more</span>}
             </a>
             {readMore && extraContent}
           </p>

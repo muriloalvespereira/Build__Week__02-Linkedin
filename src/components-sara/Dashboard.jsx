@@ -11,9 +11,7 @@ const Dashboard = () => {
       <div className="dashboard">
         <div className="dashboard-top-container">
           <h5>Your Dashboard</h5>
-          <p>
-            <em>Private to you</em>
-          </p>
+          <p>Private to you</p>
         </div>
         <div className=" dashboard-middle-container">
           <div className="profile-view">
