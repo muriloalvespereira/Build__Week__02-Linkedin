@@ -4,8 +4,11 @@ import Post from '../components-sara/Post'
 import Sidebar from "./RaiaComponents/Sidebar"
 import Feed from './Feed'
 import SideHome from './SideHome'
+import { useState } from "react"
+
 
 const Home = (props) => {
+
     return (
 
         <>
@@ -19,13 +22,15 @@ const Home = (props) => {
                         <Feed></Feed>
                     </Col>
                     <Col className="col-4">
+
                         <SideHome></SideHome>
-                        
+
                     </Col>
 
-                    {/* <Col>
+                    <Col>
                         <Sidebar />
-                    </Col> */}
+                    </Col>
+
                 </Row>
 
 

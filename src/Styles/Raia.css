@@ -125,3 +125,37 @@ a{
     color: inherit;
 }
 
+
+#show{
+    cursor: pointer;
+}
+
+
+.form-group img{
+    width: 20px;
+    margin-right: 7px;
+}
+
+textarea{
+    resize: none;
+}
+
+.form-group{
+    font-size: 15px;
+}
+
+form{
+    border: 1px solid rgb(206, 206, 206);
+    padding: 18px;
+}
+
+.signup-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   margin-bottom: 5px;
+    color: #0A66C2;
+    font-weight: 500;
+    font-size: 28px;
+}
+
