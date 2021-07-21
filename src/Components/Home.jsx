@@ -31,6 +31,7 @@ const Home = (props) => {
 
                     <Col>
                         <Sidebar />
+                        <Spinner />
                     </Col>
 
                 </Row>
