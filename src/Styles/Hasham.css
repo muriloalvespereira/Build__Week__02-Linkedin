@@ -206,3 +206,90 @@ a:hover {
 .ml {
 	margin-right: 110px;
 }
+
+/* Messenger */
+.Messaging {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	height: 80%;
+	width: 320px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	background: white;
+	box-shadow: -7px -5px 14px -5px rgba(0, 0, 0, 0.75);
+	z-index: 5;
+}
+.header_messaging {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.messaging_head {
+	display: flex;
+	align-items: center;
+	padding: 10px;
+}
+.messaging_head > img {
+	width: 40px;
+	border-radius: 50%;
+	/* margin-right: 10px; */
+}
+
+.icon {
+	display: flex;
+	padding: 0px 0px;
+	border-radius: 50%;
+	margin: 0 5px;
+	cursor: pointer;
+	font-size: 15px;
+}
+.icon:hover {
+	background: rgb(184, 184, 184);
+}
+.messagin_body {
+	padding: 10px;
+	display: flex;
+}
+.messagin_body > input {
+	width: 100%;
+	outline: 0;
+	border: 0;
+	background-color: #eef3f8;
+	padding: 10px 20px;
+	border-radius: 10px;
+}
+.messagin_body {
+	display: flex;
+	flex-direction: column;
+	padding: 0 10px;
+}
+
+/* Chat */
+.chat {
+	display: flex;
+	width: 100%;
+	margin: 10px 0;
+}
+.message_img {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	flex: 1;
+}
+.profile_info {
+	flex: 2;
+}
+.date {
+	flex: 1;
+}
+.message_name {
+	font-weight: bold;
+}
+.message {
+	font-size: 14px;
+	color: gray;
+}
+hr {
+	margin: 0;
+}

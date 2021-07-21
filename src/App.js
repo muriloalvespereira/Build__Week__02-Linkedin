@@ -11,7 +11,7 @@ import Home from './Components/Home';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Login from './Components/Login/Login'
 import Signup from './Components/Login/Signup';
-
+import Messaging from './Components/Messanger/Messaging'
 
 
 
@@ -28,26 +28,26 @@ const App = (props) => {
 
       <div className="container-fluid p-0 m-0">
         <Router>
-        {showTopNavBar && <TopNavBar 
-        // userData={userData}
-        //  setShowTopNavBar={setShowTopNavBar} 
-        setIsSearchOn={setIsSearchOn}
-        
-        ></TopNavBar>}
-          <Route path="/" exact render={(routerProps) => <Login 
-          // setUserData={setUserData} 
-          setShowTopNavBar={setShowTopNavBar}   
-          {...routerProps}
-          
+          {showTopNavBar && <TopNavBar
+            // userData={userData}
+            //  setShowTopNavBar={setShowTopNavBar} 
+            setIsSearchOn={setIsSearchOn}
+
+          ></TopNavBar>}
+          <Route path="/" exact render={(routerProps) => <Login
+            // setUserData={setUserData} 
+            setShowTopNavBar={setShowTopNavBar}
+            {...routerProps}
+
           ></Login>}></Route>
           <Route path="/signup" exact render={(routerProps) => <Signup setUserData={setUserData}   {...routerProps}></Signup>}></Route>
           <Route path="/home" exact render={(routerProps) => <Home userData={userData}  {...routerProps}></Home>}></Route>
           <Route path="/profile" exact render={(routerProps) => <Profile userData={userData}  {...routerProps}></Profile>}></Route>
         </Router>
 
-    
-          <Footer></Footer>
-       
+        <Messaging />
+        <Footer></Footer>
+
       </div>
 
     </>
