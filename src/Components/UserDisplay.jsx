@@ -11,6 +11,7 @@ import ModalProfileInfo from './Modal_Forms/ModalProfileInfo'
 const UserDisplay = (props) => {
   const [modalShow, setModalShow] = React.useState(false)
 
+
     return(
         <Row>
             <Col className="col-12 profile-area mt-5 px-0">
@@ -89,19 +90,19 @@ const UserDisplay = (props) => {
                     Open to
                   </Button>
 
-                  <Button className="btn-details-color ml-2" variant="primary">
-                    Add section
-                  </Button>
+            <Button className="btn-details-color ml-2" variant="primary">
+              Add section
+            </Button>
 
-                  <Button className="btn-details-color ml-2" variant="primary">
-                    More
-                  </Button>
-                </div>
-                <CustomCarousel />
-              </Col>
-            </Col>
-          </Row>
-    )
+            <Button className="btn-details-color ml-2" variant="primary">
+              More
+            </Button>
+          </div>
+          <CustomCarousel />
+        </Col>
+      </Col>
+    </Row>
+  )
 
 }
 

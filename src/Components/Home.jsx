@@ -4,9 +4,12 @@ import Post from '../components-sara/Post'
 import Sidebar from "./RaiaComponents/Sidebar"
 import Feed from './Feed'
 import SideHome from './SideHome'
+import { useState } from "react"
+import Spinner from "./RaiaComponents/Spinners"
+import TransitionPage from "./RaiaComponents/TransitionPage"
+
 
 const Home = (props) => {
-    console.log(props)
     return (
 
         <>
@@ -20,18 +23,19 @@ const Home = (props) => {
                         <Feed></Feed>
                     </Col>
                     <Col className="col-4">
+
                         <SideHome></SideHome>
-                        
+
                     </Col>
 
-                    {/* <Col>
+                    <Col>
                         <Sidebar />
-                    </Col> */}
+                        <Spinner />
+                    </Col>
+
                 </Row>
-
-
             </Container>
-
+            {/* <TransitionPage /> */}
 
         </>
 
