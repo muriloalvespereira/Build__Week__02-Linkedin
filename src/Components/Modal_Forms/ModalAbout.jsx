@@ -8,7 +8,6 @@ function ModalAbout(props) {
     title: 'propsTitle',
     name: ' propsName',
     bio: 'propsBio',
-    title: 'propsTitle',
     area: 'propsArea'
   })
 
@@ -61,7 +60,9 @@ function ModalAbout(props) {
       </Modal.Body>
       <Modal.Footer>
         {/* <Button onClick={props.onHide}>Close</Button> */}
-        <Button variant="primary" onClick={props.onHide}>Save</Button>
+        <Button variant="primary" 
+        // onClick={props.onHide}
+        >Save</Button>
       </Modal.Footer>
     </Modal>
   )

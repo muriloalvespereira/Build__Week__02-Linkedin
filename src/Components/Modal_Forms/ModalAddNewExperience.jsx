@@ -4,11 +4,11 @@ import {useState, useEffect} from 'react'
 
 function ModalAddNewExperience(props) {
     const [formData, setFormData] = useState({
-        surname: 'propsSurname',
-        title: 'propsTitle',
-        name: ' propsName',
-        bio: 'propsBio',
-        title: 'propsTitle',
+        role: 'propsRole',
+        company: 'propsCompany',
+        startDate: ' propsStartDate',
+        endDate: 'propsEndDate',
+        description: 'propsDescription',
         area: 'propsArea'
       })
     
@@ -19,23 +19,29 @@ function ModalAddNewExperience(props) {
         })
       }
     
-      const updateProfileInfo = async()=>{
-        try {
-                    let response = await fetch('https://striveschool-api.herokuapp.com/api/profile/', {
-                        method: 'PUT',
-                        headers: {
-                            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGRjNWYwNmIzNTgxNzAwMTVjMjI3MDUiLCJpYXQiOjE2MjYyNzAyMjMsImV4cCI6MTYyNzQ3OTgyM30.0IcvG8-Zqf633mRWGCRlzG5yDVI6njZjZGZzJfuGulw",
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify(formData)
-    
-                    })
-                    let sent = await response.json()
-                    console.log(sent)
-                } catch (e) {
-                    return e
-                }
-      }
+     
+    // POST Goes to the Token owner independently of the ID
+        const postUserExperience = async (userId) => {
+            try {
+                let response = await fetch('https://striveschool-api.herokuapp.com/api/profile/60f52a800efe7800155c3497/experiences', {
+                    method: 'POST',
+                    headers: {
+                        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGRjNWYwNmIzNTgxNzAwMTVjMjI3MDUiLCJpYXQiOjE2MjY3NzE0ODUsImV4cCI6MTYyNzk4MTA4NX0.LInoNCSsxHbV1FD7e-JxGb3z_-64r2PKAZ2PYIdhl5c",
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(formData)
+                })
+                console.log(response)
+
+                let newExperienceSent = await response.json()
+                console.log(newExperienceSent)
+
+                // props.onHide() needs to turn on after request is sent
+            } catch (e) {
+                return e
+            }
+        }
+   
     return (
         <Modal
         {...props}
@@ -51,27 +57,44 @@ function ModalAddNewExperience(props) {
         <Modal.Body>
           <Form>
             <Form.Row>
-              <Form.Group as={Col} controlId="name">
-                <Form.Label>Fisrt Name</Form.Label>
-                <Form.Control type="text" placeholder="Enter propsName" onChange={(e)=>handleForm('name', e.target.value)} />
+              <Form.Group as={Col} controlId="company">
+                <Form.Label>Company</Form.Label>
+                <Form.Control type="text" placeholder="Enter propsCompany" onChange={(e)=>handleForm('company', e.target.value)} />
               </Form.Group>
   
-              <Form.Group as={Col} controlId="surname">
-                <Form.Label>Last Name</Form.Label>
-                <Form.Control type="text" placeholder="Enter propsSurname" onChange={(e)=>handleForm('surname', e.target.value)} />
+              <Form.Group as={Col} controlId="role">
+                <Form.Label>Role</Form.Label>
+                <Form.Control type="text" placeholder="Enter propsrole" onChange={(e)=>handleForm('role', e.target.value)} />
               </Form.Group>
             </Form.Row>
            <Form.Row>
               <Form.Group as={Col} controlId="title">
-                <Form.Label>Job Title</Form.Label>
-                <Form.Control as='textarea' type="text" placeholder="propsTitle" onChange={(e)=>handleForm('title', e.target.value)} />
+                <Form.Label>Start Date</Form.Label>
+                <Form.Control type="date" placeholder="propsStartDate" onChange={(e)=>handleForm('startDate', e.target.value)} />
+              </Form.Group>
+              <Form.Group as={Col} controlId="title">
+                <Form.Label>End Date</Form.Label>
+                <Form.Control type="date" placeholder="propsEndDate" onChange={(e)=>handleForm('endDate', e.target.value)} />
+              </Form.Group>
+              <Form.Group as={Col} controlId="area">
+                <Form.Label>City, Country</Form.Label>
+                <Form.Control type="text" placeholder="propsArea" onChange={(e)=>handleForm('area', e.target.value)} />
               </Form.Group>
            </Form.Row>
           </Form>
+          <Form.Row>
+              <Form.Group as={Col} controlId="description">
+                <Form.Label>Start Date</Form.Label>
+                <Form.Control type="text" as="textarea" rows={5}  placeholder="propsDescription" onChange={(e)=>handleForm('description', e.target.value)} />
+              </Form.Group>
+             
+           </Form.Row>
         </Modal.Body>
         <Modal.Footer>
-          {/* <Button onClick={props.onHide}>Close</Button> */}
-          <Button variant="primary" onClick={props.onHide}>Save</Button>
+         
+          <Button variant="primary" 
+          onClick={()=>postUserExperience()}
+          >Save</Button>
         </Modal.Footer>
       </Modal>
     )

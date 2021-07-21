@@ -8,7 +8,6 @@ function ModalProfileInfo(props) {
     title: 'propsTitle',
     name: ' propsName',
     bio: 'propsBio',
-    title: 'propsTitle',
     area: 'propsArea'
   })
 
