@@ -1,6 +1,8 @@
 import React from 'react'
+import { Modal, Button, Form, Col } from 'react-bootstrap'
+import {useState, useEffect} from 'react'
 
-function ModalAbout() {
+function ModalAbout(props) {
    const [formData, setFormData] = useState({
     surname: 'propsSurname',
     title: 'propsTitle',
