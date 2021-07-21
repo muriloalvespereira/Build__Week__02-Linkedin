@@ -14,14 +14,19 @@ function Login(props) {
         getUserList()
     }, [])
 
-    useEffect(() => {setUserInfo(usersList.filter(user => user.email === login))},
-        [login])
+    const handleForm = (key, value) => {
+        setLogin({
+            ...login,
+          [key]: value
+        })
+      }
+
 
     const getUserList = async () => {
         try {
 
             let response = await fetch(
-                "https://striveschool-api.herokuapp.com/api/profile/", {
+                "https://striveschool-api.herokuapp.com/api/profile/me", {
                 method: "Get",
                 headers: {
                     Authorization:
@@ -118,15 +123,21 @@ function Login(props) {
                 <div className="container d-flex flex-column mod-logo-maxWidth">
                     <form>
                         <div className="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onChange={(e) => {
-                                setLogin(e.target.value)
+                            <label for="exampleInputUsername">Username</label>
+                            <input type="text" className="form-control" id="exampleInputUsername" a
+                            ria-describedby="usernameHelp" 
+                            onChange={(e) => {
+                                handleForm('username', e.target.value)
                             }} />
-                            <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
                         </div>
                         <div className="form-group">
                             <label for="exampleInputPassword1">Password</label>
-                            <input type="password" className="form-control" id="exampleInputPassword1" />
+                            <input type="password" className="form-control" id="exampleInputPassword1"
+                            onChange={(e) => {
+                                handleForm('password', e.target.value)
+                            }}
+                            
+                            />
                         </div>
                         <div className="container d-flex justify-content-between align-items-center pl-4 pr-0">
                             <div className="form-group form-check d-flex align-items-center m-0 p-0">
