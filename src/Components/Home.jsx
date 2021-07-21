@@ -5,6 +5,8 @@ import Sidebar from "./RaiaComponents/Sidebar"
 import Feed from './Feed'
 import SideHome from './SideHome'
 import { useState } from "react"
+import Spinner from "./RaiaComponents/Spinners"
+import TransitionPage from "./RaiaComponents/TransitionPage"
 
 
 const Home = (props) => {
@@ -32,10 +34,8 @@ const Home = (props) => {
                     </Col>
 
                 </Row>
-
-
             </Container>
-
+            {/* <TransitionPage /> */}
 
         </>
 

@@ -159,3 +159,91 @@ form{
     font-size: 28px;
 }
 
+/* Spinner */
+
+
+.shapes-5 {
+    width:80px;
+    height: 80px;
+    display: grid;
+  }
+  .shapes-5:before,
+  .shapes-5:after {
+    content: "";
+    grid-area: 1/1;
+    border-radius: 50%;
+    background: #539dff;
+    -webkit-mask:repeating-linear-gradient(#000 0 5px,#0000 0 10px);
+    animation: sh5 1.5s infinite;
+  }
+  .shapes-5:after {
+    -webkit-mask:repeating-linear-gradient(#0000 0 5px,#000 0 10px);
+    --s:-1;
+  }
+  
+  @keyframes sh5 {
+    0%,
+    10% {transform: translate(0) rotate(0)}
+    35% {transform: translate(calc(var(--s,1)*50%)) rotate(0)}
+    66% {transform: translate(calc(var(--s,1)*50%)) rotate(calc(var(--s,1)*180deg))}
+    90%,
+    100% {transform: translate(0) rotate(calc(var(--s,1)*180deg))}
+  }
+
+
+
+
+  
+.infinity-3 {
+    width:calc(200px / 0.707); /* 0.707 = cos(45deg) */
+    height:14px;
+    background: repeating-linear-gradient(-45deg, rgb(63, 145, 253) 0 15px,white 0 20px) left/200% 100%;
+    animation:i3 2s infinite linear;
+  }
+  @keyframes i3 {
+      100% {background-position:right}
+  }
+  
+
+  
+.wobbling-3{
+    width:20px;
+    height:20px;
+    animation: w3-0 2s linear infinite;
+  }
+  .wobbling-3::before,
+  .wobbling-3::after {
+    content: "";
+    position:absolute;
+    inset:0;
+    border-radius:50%;
+    background:radial-gradient(at 30% 30%,#0000,#000a) rgb(49, 128, 255);
+    animation: w3-1 0.5s cubic-bezier(.5,-500,.5,500) infinite;
+  }
+  .wobbling-3::after {
+    animation-delay: -0.15s;
+  }
+  
+  @keyframes w3-0 { 
+    100% { transform:rotate(360deg)} 
+  }
+  @keyframes w3-1 { 
+    100% { transform:translate(0.5px)} 
+  }
+
+
+  .transitionPageBody{
+      background-color: white;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+      
+  }
+
+  .transitionPageBody img{
+      width: 600px;
+  }
