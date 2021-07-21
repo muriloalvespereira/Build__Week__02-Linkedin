@@ -5,100 +5,99 @@ import { format } from 'date-fns'
 
 
 function ModalAddNewExperience(props) {
-  const [formData, setFormData] = useState({
-    role: '',
-    company: 'propsCompany',
-    startDate: ' propsStartDate',
-    endDate: 'propsEndDate',
-    description: 'propsDescription',
-    area: 'propsArea'
-  })
-  const [endpoint, setEndpoint] = useState('')
+const [formData, setFormData] = useState({
+        role: '',
+        company: 'propsCompany',
+        startDate: ' propsStartDate',
+        endDate: 'propsEndDate',
+        description: 'propsDescription',
+        area: 'propsArea'
+      })
+      const [endpoint, setEndpoint] = useState('')
 
+      
+      useEffect(()=>{
+        if(props.userExperience)
+        setFormData(
+          {
+            role: props.userExperience.role,
+            company: props.userExperience.company,
+            startDate: format(new Date (props.userExperience.startDate), 'yyyy-MM-dd'),
+            endDate: format(new Date (props.userExperience.endDate), 'yyyy-MM-dd'),
+            description: props.userExperience.description,
+            area: props.userExperience.area
+            
+          }
+          )
+      },[])
+    
+      const handleForm=(key, value)=>{
+        setFormData({
+          ...formData,
+          [key]: value
+        })
+      }
+    
+     
+    // POST Goes to the Token owner independently of the ID
+        const postUserExperience = async () => {
+            try {
+                let response = await fetch(props.endpoint, {
+                    method: props.requestmethod,
+                    headers: {
+                        "Authorization": "Bearer " + window.localStorage.getItem('user_Token'),
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(formData)
+                })
+                let newExperienceSent = await response.json()
+                props.setchangeuserdata(!props.changeUserData)
 
-  useEffect(() => {
-    if (props.userExperience)
-      setFormData(
-        {
-          role: props.userExperience.role,
-          company: props.userExperience.company,
-          startDate: format(new Date(props.userExperience.startDate), 'yyyy-MM-dd'),
-          endDate: format(new Date(props.userExperience.endDate), 'yyyy-MM-dd'),
-          description: props.userExperience.description,
-          area: props.userExperience.area
-
+                props.onHide()
+            } catch (e) {
+                return e
+            }
         }
-      )
-  }, [])
-
-  const handleForm = (key, value) => {
-    setFormData({
-      ...formData,
-      [key]: value
-    })
-  }
 
 
-  // POST Goes to the Token owner independently of the ID
-  const postUserExperience = async () => {
-    try {
-      let response = await fetch(props.endpoint, {
-        method: props.requestmethod,
-        headers: {
-          // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGRjNWYwNmIzNTgxNzAwMTVjMjI3MDUiLCJpYXQiOjE2MjY3NzE0ODUsImV4cCI6MTYyNzk4MTA4NX0.LInoNCSsxHbV1FD7e-JxGb3z_-64r2PKAZ2PYIdhl5c
-          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGRjNWYwNmIzNTgxNzAwMTVjMjI3MDUiLCJpYXQiOjE2MjY3NzE0ODUsImV4cCI6MTYyNzk4MTA4NX0.LInoNCSsxHbV1FD7e-JxGb3z_-64r2PKAZ2PYIdhl5c",
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(formData)
-      })
-      let newExperienceSent = await response.json()
-      props.setchangeuserdata(!props.changeUserData)
+        // Delete
+        const deleteUserExperience = async () => {
+          try {
+              let response = await fetch(props.endpoint, {
+                  method: 'DELETE',
+                  headers: {
+                      "Authorization": "Bearer " + window.localStorage.getItem('user_Token')
+                  },
+              })
 
-      props.onHide()
-    } catch (e) {
-      return e
-    }
-  }
+              let deleteResponse = await response.json()
+              props.setchangeuserdata(!props.changeUserData)
+              props.onHide()
+          } catch (e) {
+            props.setchangeuserdata(!props.changeUserData)
+            props.onHide()
+              return e
+          }
+      }
 
+    
 
-  // Delete
-  const deleteUserExperience = async () => {
-    try {
-      let response = await fetch(props.endpoint, {
-        method: 'DELETE',
-        headers: {
-          // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGRjNWYwNmIzNTgxNzAwMTVjMjI3MDUiLCJpYXQiOjE2MjY3NzE0ODUsImV4cCI6MTYyNzk4MTA4NX0.LInoNCSsxHbV1FD7e-JxGb3z_-64r2PKAZ2PYIdhl5c
-          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGRjNWYwNmIzNTgxNzAwMTVjMjI3MDUiLCJpYXQiOjE2MjY3NzE0ODUsImV4cCI6MTYyNzk4MTA4NX0.LInoNCSsxHbV1FD7e-JxGb3z_-64r2PKAZ2PYIdhl5c",
-        },
-      })
-
-      let deleteResponse = await response.json()
-      props.setchangeuserdata(!props.changeUserData)
-      props.onHide()
-    } catch (e) {
-      props.setchangeuserdata(!props.changeUserData)
-      props.onHide()
-      return e
-    }
-  }
-
-
-  return (
-    <Modal
-      {...props}
-      size="lg"
-      aria-labelledby="contained-modal-title-vcenter"
-      centered
-    >
-      <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
-          <p className="exp-title">Add experience</p>
-        </Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        <Form>
-
-          <div className="network">
+   
+    return (
+        <Modal
+        {...props}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+             <p className="exp-title">Add experience</p>
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form>
+               <div className="network">
             <div className="one mb-3">
               <p className="my-0">Notify network</p>
               <span className="make-it-gray">If enabled, your network may be informed of job changes, education changes, and work anniversaries. It may take up to 2 hours to share your job changes with your network.</span>
@@ -112,12 +111,28 @@ function ModalAddNewExperience(props) {
               </label>
             </div>
           </div>
+            <Form.Row>
+              <Form.Group as={Col} controlId="company">
+                <Form.Label>Company</Form.Label>
+                <Form.Control type="text" placeholder={endpoint === 'POST' ? "Enter propsCompany" : formData.company} onChange={(e)=>handleForm('company', e.target.value)} />
+              </Form.Group>
 
-          <div className="split">
+   <div className="split">
             <div className="first-section">
-              <Form.Group controlId="role">
+               <Form.Group controlId="role">
                 <Form.Label>Title*</Form.Label>
-                <Form.Control type="text" className="title-role" placeholder={endpoint === 'POST' ? "Enter propsrole" : formData.role} onChange={(e) => handleForm('role', e.target.value)} />
+                <Form.Control className="title-role" type="text" placeholder={endpoint === 'POST' ? "Enter propsrole" : formData.role} onChange={(e)=>handleForm('role', e.target.value)} />
+              </Form.Group>
+            </Form.Row>
+           <Form.Row>
+              <Form.Group as={Col} controlId="startDate">
+                <Form.Label>Start Date</Form.Label>
+                <Form.Control type="date" value={endpoint === 'POST' ? "" : formData.startDate} onChange={(e)=>handleForm('startDate', format(new Date (e.target.value), 'yyyy-MM-dd'))} />
+              </Form.Group>
+              <Form.Group as={Col} controlId="endDate">
+                <Form.Label>End Date</Form.Label>
+                <Form.Control type="date"  value={endpoint === 'POST' ? "" : formData.endDate} onChange={(e)=>handleForm('endDate', format(new Date (e.target.value), 'yyyy-MM-dd'))} />
+
               </Form.Group>
             </div>
             <div className="first-section">
