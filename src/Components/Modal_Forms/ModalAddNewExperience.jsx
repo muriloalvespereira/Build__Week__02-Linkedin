@@ -84,20 +84,21 @@ const [formData, setFormData] = useState({
 
    
     return (
-        <Modal
-        {...props}
-        size="lg"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
-             <p className="exp-title">Add experience</p>
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Form>
-               <div className="network">
+      <Modal
+      {...props}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          <p className="exp-title">Add experience</p>
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <Form>
+
+          <div className="network">
             <div className="one mb-3">
               <p className="my-0">Notify network</p>
               <span className="make-it-gray">If enabled, your network may be informed of job changes, education changes, and work anniversaries. It may take up to 2 hours to share your job changes with your network.</span>
@@ -111,28 +112,12 @@ const [formData, setFormData] = useState({
               </label>
             </div>
           </div>
-            <Form.Row>
-              <Form.Group as={Col} controlId="company">
-                <Form.Label>Company</Form.Label>
-                <Form.Control type="text" placeholder={endpoint === 'POST' ? "Enter propsCompany" : formData.company} onChange={(e)=>handleForm('company', e.target.value)} />
-              </Form.Group>
 
-   <div className="split">
+          <div className="split">
             <div className="first-section">
-               <Form.Group controlId="role">
+              <Form.Group controlId="role">
                 <Form.Label>Title*</Form.Label>
-                <Form.Control className="title-role" type="text" placeholder={endpoint === 'POST' ? "Enter propsrole" : formData.role} onChange={(e)=>handleForm('role', e.target.value)} />
-              </Form.Group>
-            </Form.Row>
-           <Form.Row>
-              <Form.Group as={Col} controlId="startDate">
-                <Form.Label>Start Date</Form.Label>
-                <Form.Control type="date" value={endpoint === 'POST' ? "" : formData.startDate} onChange={(e)=>handleForm('startDate', format(new Date (e.target.value), 'yyyy-MM-dd'))} />
-              </Form.Group>
-              <Form.Group as={Col} controlId="endDate">
-                <Form.Label>End Date</Form.Label>
-                <Form.Control type="date"  value={endpoint === 'POST' ? "" : formData.endDate} onChange={(e)=>handleForm('endDate', format(new Date (e.target.value), 'yyyy-MM-dd'))} />
-
+                <Form.Control type="text" className="title-role" placeholder={endpoint === 'POST' ? "Enter propsrole" : formData.role} onChange={(e) => handleForm('role', e.target.value)} />
               </Form.Group>
             </div>
             <div className="first-section">
