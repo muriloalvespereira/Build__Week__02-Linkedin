@@ -6,7 +6,7 @@ import currentJob from "../assets/eli.jpg";
 import education from "../assets/dbs.jpg";
 import {useState} from 'react'
 import React from 'react'
-import ModalComp from './Modal_Forms/ModalProfileInfo'
+import ModalProfileInfo from './Modal_Forms/ModalProfileInfo'
 
 const UserDisplay = (props) => {
   const [modalShow, setModalShow] = React.useState(false)
@@ -40,9 +40,9 @@ const UserDisplay = (props) => {
                 </div>
               </Col>
               <Col className="position-relative">
-                  <ModalComp show={modalShow}    onHide={() => setModalShow(false)} >
+                  <ModalProfileInfo show={modalShow}    onHide={() => setModalShow(false)} >
 
-                  </ModalComp>
+                  </ModalProfileInfo>
                 <div className="edit-details" onClick={() => setModalShow(true)}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
