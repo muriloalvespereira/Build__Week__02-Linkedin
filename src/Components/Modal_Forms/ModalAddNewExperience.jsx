@@ -49,10 +49,8 @@ function ModalAddNewExperience(props) {
                     },
                     body: JSON.stringify(formData)
                 })
-                console.log(response)
-
                 let newExperienceSent = await response.json()
-                console.log(newExperienceSent)
+                props.setchangeuserdata(!props.changeUserData)
 
                 // props.onHide() needs to turn on after request is sent
             } catch (e) {
@@ -73,10 +71,12 @@ function ModalAddNewExperience(props) {
               })
 
               let deleteResponse = await response.json()
+              props.setchangeuserdata(!props.changeUserData)
               console.log(deleteResponse, 'DELETE EXperience')
 
               // props.onHide() needs to turn on after request is sent
           } catch (e) {
+            props.setchangeuserdata(!props.changeUserData)
               return e
           }
       }
@@ -89,7 +89,7 @@ function ModalAddNewExperience(props) {
         aria-labelledby="contained-modal-title-vcenter"
         centered
       >
-        {console.log(props, 'UserDetails')}
+        {console.log(props, 'UserDetailsModal')}
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
             Edit intro
