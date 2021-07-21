@@ -1,9 +1,7 @@
 import React from 'react'
-import { Modal, Button, Form, Col } from 'react-bootstrap'
-import {useState, useEffect} from 'react'
 
-function ModalProfileInfo(props) {
-  const [formData, setFormData] = useState({
+function ModalAbout() {
+   const [formData, setFormData] = useState({
     surname: 'propsSurname',
     title: 'propsTitle',
     name: ' propsName',
@@ -78,4 +76,4 @@ function ModalProfileInfo(props) {
   )
 }
 
-export default ModalProfileInfo
+export default ModalAbout
