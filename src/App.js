@@ -1,4 +1,4 @@
-import './Styles/App.css';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState, useEffect } from 'react'
 import { Container } from 'react-bootstrap';
@@ -12,7 +12,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Login from './Components/Login/Login'
 import Signup from './Components/Login/Signup';
 import Messaging from './Components/Messanger/Messaging'
-
+import UserProfile from './Components/UserProfile/UserProfile'
 
 
 const App = (props) => {
@@ -43,6 +43,7 @@ const App = (props) => {
           <Route path="/signup" exact render={(routerProps) => <Signup setUserData={setUserData}   {...routerProps}></Signup>}></Route>
           <Route path="/home" exact render={(routerProps) => <Home userData={userData}  {...routerProps}></Home>}></Route>
           <Route path="/profile" exact render={(routerProps) => <Profile userData={userData}  {...routerProps}></Profile>}></Route>
+          <Route path="/userprofile" exact render={(routerProps) => <UserProfile userData={userData}{...routerProps} />} />
         </Router>
 
         <Messaging />

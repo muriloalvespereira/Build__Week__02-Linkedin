@@ -18,7 +18,7 @@ const Profile = (props) => {
       <Row>
         <Col className="col-8">
           <UserDisplay
-          // userData={props.userData} 
+          // userData={props.userData}
           />
           <Row>
             <Col className="col-12 mt-3 px-0">
@@ -32,16 +32,16 @@ const Profile = (props) => {
           <Experience></Experience>
           <Row >
             <Col className="px-0">
-              <Skills></Skills> 
+              <Skills></Skills>
               <Interests></Interests>
             </Col>
           </Row>
         </Col>
 
         <Col className="col-4">
-          <RightProfileCard 
+          <RightProfileCard
           // userData={props.userData}
-          
+
           ></RightProfileCard>
         </Col>
       </Row>

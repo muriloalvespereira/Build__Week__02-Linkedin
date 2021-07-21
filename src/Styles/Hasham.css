@@ -114,7 +114,6 @@ a:hover {
 }
 .add_skill {
 	font-size: 18px;
-	/* padding-left: 10px; */
 }
 .skill_container {
 	margin-top: 10px;
@@ -187,7 +186,6 @@ a:hover {
 	height: 50px;
 	z-index: 1;
 	cursor: pointer;
-	/* margin-top: 10px; */
 }
 
 .interests_info {
@@ -212,18 +210,17 @@ a:hover {
 	position: fixed;
 	bottom: 0;
 	right: 0;
-	height: 80%;
+	height: 88%;
 	width: 320px;
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
 	background: white;
-	box-shadow: -7px -5px 14px -5px rgba(0, 0, 0, 0.75);
+	box-shadow: -2px -1px 3px -1px rgba(0, 0, 0, 0.45);
 	z-index: 5;
 }
 .header_messaging {
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
 }
 .messaging_head {
 	display: flex;
@@ -233,38 +230,61 @@ a:hover {
 .messaging_head > img {
 	width: 40px;
 	border-radius: 50%;
-	/* margin-right: 10px; */
+	margin-right: 10px;
 }
-
+.icons {
+	display: flex;
+	align-items: center;
+}
 .icon {
 	display: flex;
-	padding: 0px 0px;
+	padding: px 5px;
 	border-radius: 50%;
 	margin: 0 5px;
 	cursor: pointer;
-	font-size: 15px;
+	font-size: 18px;
 }
 .icon:hover {
 	background: rgb(184, 184, 184);
 }
-.messagin_body {
+.messagin-body {
 	padding: 10px;
 	display: flex;
 }
-.messagin_body > input {
-	width: 100%;
-	outline: 0;
-	border: 0;
-	background-color: #eef3f8;
-	padding: 10px 20px;
-	border-radius: 10px;
-}
-.messagin_body {
+.messagin-body {
 	display: flex;
 	flex-direction: column;
-	padding: 0 10px;
+	padding: 0px 5px;
+	margin: 0 10px;
 }
 
+.icon1 {
+	margin-left: 80px;
+}
+.titleSize {
+	font-size: 15px;
+	font-weight: 700;
+	padding-top: 5px;
+}
+.search-message {
+	border-radius: 5px;
+	background-color: #eef3f8;
+	border: none;
+	height: 40px;
+}
+.search-bar {
+	padding-left: 10px;
+	position: absolute;
+	color: gray;
+	font-size: 14px;
+	padding-top: 7px;
+}
+.setting-icon {
+	margin-left: 115px;
+}
+.search-icon {
+	margin-right: 10px;
+}
 /* Chat */
 .chat {
 	display: flex;
@@ -272,10 +292,10 @@ a:hover {
 	margin: 10px 0;
 }
 .message_img {
-	width: 50px;
-	height: 50px;
+	width: 40px;
+	height: 40px;
 	border-radius: 50%;
-	flex: 1;
+	margin-top: 8px;
 }
 .profile_info {
 	flex: 2;
@@ -289,6 +309,9 @@ a:hover {
 .message {
 	font-size: 14px;
 	color: gray;
+}
+.chat:hover {
+	background-color: #ebebeb;
 }
 hr {
 	margin: 0;
