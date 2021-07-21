@@ -31,6 +31,7 @@ function ModalProfileInfo(props) {
                 })
                 let sent = await response.json()
                 console.log(sent)
+                props.setChangeUserdata(!props.ChangeUserdata)
                 props.onHide()
             } catch (e) {
               console.log(e)
