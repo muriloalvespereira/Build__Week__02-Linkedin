@@ -31,6 +31,8 @@ function ModalAbout(props) {
       })
       let sent = await response.json()
       console.log(sent)
+      props.setChangeUserdata(!props.changeUserData)
+              props.onHide()
       props.onHide()
     } catch (e) {
       console.log(e)
