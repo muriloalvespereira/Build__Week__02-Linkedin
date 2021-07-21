@@ -4,11 +4,11 @@ import { useState, useEffect } from 'react'
 
 function ModalAbout(props) {
   const [formData, setFormData] = useState({
-    surname: 'propsSurname',
-    title: 'propsTitle',
-    name: ' propsName',
-    bio: 'propsBio',
-    area: 'propsArea'
+    surname: window.localStorage.getItem('surname'),
+    title: window.localStorage.getItem('title'),
+    name: window.localStorage.getItem('name'),
+    bio: window.localStorage.getItem('bio'),
+    area: window.localStorage.getItem('area')
   })
 
   const handleForm = (key, value) => {
@@ -23,7 +23,7 @@ function ModalAbout(props) {
       let response = await fetch('https://striveschool-api.herokuapp.com/api/profile/', {
         method: 'PUT',
         headers: {
-          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGRjNWYwNmIzNTgxNzAwMTVjMjI3MDUiLCJpYXQiOjE2MjYyNzAyMjMsImV4cCI6MTYyNzQ3OTgyM30.0IcvG8-Zqf633mRWGCRlzG5yDVI6njZjZGZzJfuGulw",
+          "Authorization": "Bearer " + window.localStorage.getItem('user_Token'),
           "Content-Type": "application/json"
         },
         body: JSON.stringify(formData)
@@ -31,7 +31,9 @@ function ModalAbout(props) {
       })
       let sent = await response.json()
       console.log(sent)
+      props.onHide()
     } catch (e) {
+      console.log(e)
       return e
     }
   }
@@ -61,7 +63,7 @@ function ModalAbout(props) {
       <Modal.Footer>
         {/* <Button onClick={props.onHide}>Close</Button> */}
         <Button variant="primary"
-        // onClick={props.onHide}
+        onClick={()=> updateProfileInfo()}
         >Save</Button>
       </Modal.Footer>
     </Modal>
