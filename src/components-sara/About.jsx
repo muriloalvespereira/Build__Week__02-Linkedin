@@ -23,13 +23,9 @@ const About = () => {
       </p>
     </div>
   );
-  const linkName = readMore ? (
-    <span className="read-less ">read less</span>
-  ) : (
-    <span className="read-more ">... see more</span>
-  );
+
   return (
-    <div className="about my-3">
+    <div className="about mt-3">
       <Row>
         <Col xs={12}>
           <h2>About</h2>
@@ -44,7 +40,7 @@ const About = () => {
                 setReadMore(!readMore);
               }}
             >
-              <h2>{linkName}</h2>
+              {!readMore && <span className="read-more">... see more</span>}
             </a>
             {readMore && extraContent}
           </p>

@@ -59,8 +59,8 @@ const CustomCarousel = () => {
       <div className="mr-3 mb-1">
         <Col className="card-carousel pt-3">
           <p className="mb-0 p-card">
-            <span className="card-details-top">Share that you're hiring</span> and
-            attract qualified candidates.
+            <span className="card-details-top">Share that you're hiring</span>{" "}
+            and attract qualified candidates.
           </p>
           <p>
             <span className="span-card">Get started</span>
