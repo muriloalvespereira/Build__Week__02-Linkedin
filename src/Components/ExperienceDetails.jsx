@@ -31,7 +31,7 @@ const ExperienceDetails = (props) => {
       <ModalAddNewExperience
         show={modalShow}
         // need to change the id to the user id
-        endpoint={'https://striveschool-api.herokuapp.com/api/profile/60dc5f06b358170015c22705/experiences/' + props.userExperience._id}
+        endpoint={'https://striveschool-api.herokuapp.com/api/profile/' +  window.localStorage.getItem('_id') + '/experiences/' + props.userExperience._id}
         requestmethod='PUT'
         userExperience={props.userExperience}
         changeUserData={props.changeUserData}
