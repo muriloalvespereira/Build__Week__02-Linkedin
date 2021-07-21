@@ -6,6 +6,7 @@ import Feed from './Feed'
 import SideHome from './SideHome'
 
 const Home = (props) => {
+    console.log(props)
     return (
 
         <>

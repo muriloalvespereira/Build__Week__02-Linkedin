@@ -35,7 +35,7 @@ const App = (props) => {
 
           ></TopNavBar>}
           <Route path="/" exact render={(routerProps) => <Login
-            // setUserData={setUserData} 
+            setUserData={setUserData} 
             setShowTopNavBar={setShowTopNavBar}
             {...routerProps}
 

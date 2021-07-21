@@ -13,6 +13,7 @@ import Skills from './skills/interests/Skills'
 
 
 const Profile = (props) => {
+  console.log(props, 'Profile')
   return (
     <Container>
       <Row>
