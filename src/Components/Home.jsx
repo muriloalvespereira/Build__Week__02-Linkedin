@@ -10,7 +10,6 @@ import TransitionPage from "./RaiaComponents/TransitionPage"
 
 
 const Home = (props) => {
-
     return (
 
         <>

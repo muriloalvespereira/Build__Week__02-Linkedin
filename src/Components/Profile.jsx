@@ -12,6 +12,7 @@ import Skills from "./skills/interests/Skills";
 import CreatePost from "../components-sara/CreatePost";
 
 const Profile = (props) => {
+  console.log(props, 'Profile')
   return (
     <Container>
       <Row>
