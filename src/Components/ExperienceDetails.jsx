@@ -1,4 +1,5 @@
 import { Col } from "react-bootstrap"
+import {format} from 'date-fns'
 import React from "react";
 import currentJob from "../assets/eli.jpg";
 import ModalAddNewExperience from "./Modal_Forms/ModalAddNewExperience";
@@ -15,7 +16,7 @@ const ExperienceDetails = (props) => {
         <div className="company-details">
           <h6>{props.userExperience.role}</h6>
           <p className="company-title">{props.userExperience.company}</p>
-          <p className="company-duration"><span>{props.userExperience.startDate}</span> <span>- {props.userExperience.endDate}</span></p>
+          <p className="company-duration"><span>{format(new Date (props.userExperience.startDate), 'dd-mm-yyyy')}</span> <span>- {format(new Date (props.userExperience.endDate), 'dd-mm-yyyy')}</span></p>
           <p className="company-duration"><span>{props.userExperience.area}</span></p>
         </div>
         <div className="company-details pt-3 pb-3">

@@ -1,6 +1,8 @@
 import React from 'react'
 import { Modal, Button, Form, Col } from 'react-bootstrap'
 import {useState, useEffect} from 'react'
+import {format} from 'date-fns'
+
 
 function ModalAddNewExperience(props) {
     const [formData, setFormData] = useState({
@@ -20,8 +22,8 @@ function ModalAddNewExperience(props) {
           {
             role: props.userExperience.role,
             company: props.userExperience.company,
-            startDate: props.userExperience.startDate,
-            endDate: props.userExperience.endDate,
+            startDate: format(new Date (props.userExperience.startDate), 'yyyy-MM-dd'),
+            endDate: format(new Date (props.userExperience.endDate), 'yyyy-MM-dd'),
             description: props.userExperience.description,
             area: props.userExperience.area
             
@@ -52,7 +54,7 @@ function ModalAddNewExperience(props) {
                 let newExperienceSent = await response.json()
                 props.setchangeuserdata(!props.changeUserData)
 
-                // props.onHide() needs to turn on after request is sent
+                props.onHide()
             } catch (e) {
                 return e
             }
@@ -72,11 +74,10 @@ function ModalAddNewExperience(props) {
 
               let deleteResponse = await response.json()
               props.setchangeuserdata(!props.changeUserData)
-              console.log(deleteResponse, 'DELETE EXperience')
-
-              // props.onHide() needs to turn on after request is sent
+              props.onHide()
           } catch (e) {
             props.setchangeuserdata(!props.changeUserData)
+            props.onHide()
               return e
           }
       }
@@ -89,7 +90,6 @@ function ModalAddNewExperience(props) {
         aria-labelledby="contained-modal-title-vcenter"
         centered
       >
-        {console.log(props, 'UserDetailsModal')}
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
             Edit intro
@@ -111,11 +111,11 @@ function ModalAddNewExperience(props) {
            <Form.Row>
               <Form.Group as={Col} controlId="startDate">
                 <Form.Label>Start Date</Form.Label>
-                <Form.Control type="date" value={endpoint === 'POST' ? "" : formData.startDate} onChange={(e)=>handleForm('startDate', e.target.value)} />
+                <Form.Control type="date" value={endpoint === 'POST' ? "" : formData.startDate} onChange={(e)=>handleForm('startDate', format(new Date (e.target.value), 'yyyy-MM-dd'))} />
               </Form.Group>
               <Form.Group as={Col} controlId="endDate">
                 <Form.Label>End Date</Form.Label>
-                <Form.Control type="date"  value={endpoint === 'POST' ? "" : formData.endDate} onChange={(e)=>handleForm('endDate', e.target.value)} />
+                <Form.Control type="date"  value={endpoint === 'POST' ? "" : formData.endDate} onChange={(e)=>handleForm('endDate', format(new Date (e.target.value), 'yyyy-MM-dd'))} />
               </Form.Group>
               <Form.Group as={Col} controlId="area">
                 <Form.Label>City, Country</Form.Label>
