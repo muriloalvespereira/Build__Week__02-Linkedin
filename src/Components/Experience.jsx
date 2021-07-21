@@ -33,7 +33,7 @@ const Experience = (props) => {
         }
         <SectionProfile userSignUpToken='NeedsToPassUserSignupToken API only works this way' category={"Experience"} />
     {/* Edit experience Details */}
-    {userAllExperiences.length > 0 ? userAllExperiences.map(userExperience=> <ExperienceDetails userExperience={userExperience} ></ExperienceDetails>) :'no Experience do display'}
+    {userAllExperiences.length > 0 ? userAllExperiences.map(userExperience=> <ExperienceDetails key={userExperience._id}  userExperience={userExperience} ></ExperienceDetails>) :'no Experience do display'}
        {/* <ExperienceDetails  />  To be deleted*/}
         <SectionProfile category={"Education"} />
         {/* Needs to create an object and pass as props to simulate the one above */}

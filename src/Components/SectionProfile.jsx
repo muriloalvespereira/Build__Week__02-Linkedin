@@ -8,8 +8,17 @@ const SectionProfile = (props) => {
   return (
     <Col className="mt-4 ml-2 d-flex justify-content-between">
       <h4 className="h4-section">{props.category}</h4>
+
       {/* Add new experience */}
-      <ModalAddNewExperience show={modalShow}  onHide={() => setModalShow(false)}></ModalAddNewExperience>
+      <ModalAddNewExperience 
+        show={modalShow} 
+        // need to change the id to the user id
+        endpoint='https://striveschool-api.herokuapp.com/api/profile/60f52a800efe7800155c3497/experiences'
+        requestmethod='POST' 
+        onHide={() => setModalShow(false)}>
+      </ModalAddNewExperience>
+
+      
       <div className="btn-plus" onClick={() => setModalShow(true)}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
