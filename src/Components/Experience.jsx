@@ -28,7 +28,7 @@ const Experience = (props) => {
     <Row>
       <Col className="col-12 experience-area mt-4 px-0">
         {/* Add new experience section profile */}
-        <SectionProfile category={"Experience"} />
+        <SectionProfile userSignUpToken='NeedsToPassUserSignupToken API only works this way' category={"Experience"} />
     {/* Edit experience Details */}
        <ExperienceDetails />
         <SectionProfile category={"Education"} />

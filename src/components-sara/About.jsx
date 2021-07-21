@@ -6,7 +6,7 @@ import ModalAbout from '../Components/Modal_Forms/ModalAbout'
 
 const About = () => {
   const [readMore, setReadMore] = useState(false);
-   const [modalShow, setModalShow] = React.useState(false)
+  const [modalShow, setModalShow] = React.useState(false)
   const extraContent = (
     <div>
       <p className="extra-content">

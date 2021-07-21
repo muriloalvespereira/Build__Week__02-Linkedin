@@ -1,10 +1,16 @@
+import React from "react";
 import { Col } from "react-bootstrap";
+import ModalAddNewExperience from "./Modal_Forms/ModalAddNewExperience";
 
 const SectionProfile = (props) => {
+  const [modalShow, setModalShow] = React.useState(false)
+
   return (
     <Col className="mt-4 ml-2 d-flex justify-content-between">
       <h4 className="h4-section">{props.category}</h4>
-      <div className="btn-plus">
+      {/* Add new experience */}
+      <ModalAddNewExperience show={modalShow}    onHide={() => setModalShow(false)}></ModalAddNewExperience>
+      <div className="btn-plus" onClick={() => setModalShow(true)}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
