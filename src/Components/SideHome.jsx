@@ -1,123 +1,416 @@
 import { ListGroup } from "react-bootstrap";
-import { ChevronCompactDown, Dot, InfoSquareFill, ThreeDots } from "react-bootstrap-icons";
+import {
+  ArrowRight,
+  ChevronCompactDown,
+  Dot,
+  ThreeDots
+} from "react-bootstrap-icons";
+import "../Styles/Lea.css";
 
 const SideHome = () => {
+  return (
+    <aside className="aside-sidehome">
+      <div className="mt-5 text-left">
+        <section>
+          <ListGroup>
+            <ListGroup.Item
+              className="d-flex align-items-center"
+              style={{ border: "none" }}
+            >
+              <h5 style={{ flex: "1" }}>LinkedIn News</h5>
+              <span className="mb-2">
+                <button className="button-sidehome">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 18 18"
+                    data-supported-dps="18x18"
+                    fill="#61605F"
+                    className="mercado-match svg-sidehome"
+                    width="20"
+                    height="20"
+                    focusable="false"
+                  >
+                    <path
+                      d="M12 2H4a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 
+                  00-2-2zm-3 8v2H7.5A1.5 1.5 0 016 10.5a1.56 1.56 0 01.1-.5l1.08-3h2.13l-1.09 
+                  3zm0-3.75A1.25 1.25 0 1110.25 5 1.25 1.25 0 019 6.25z"
+                    ></path>
+                  </svg>
+                </button>
+              </span>
+            </ListGroup.Item>
 
-    return (
-    
-        <aside>
+            <ListGroup.Item
+              className="hoverable-link"
+              style={{ border: "none" }}
+            >
+              <strong>
+                <Dot size={20} />
+                My salary? Shhh, it´s a secret
+              </strong>
+              <span className="float-right d-none"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 16 16"
+                data-supported-dps="16x16"
+                fill="#61605F"
+                className="mercado-match"
+                width="16"
+                height="16"
+                focusable="false"
+              >
+                <path d="M15 1v6h-2V4.41L7.41 10 6 8.59 11.59 3H9V1zm-4 10a1 1 0 01-1 1H5a1 1 0 01-1-1V6a1 1 0 011-1h2V3H5a3 3 0 00-3 3v5a3 3 0 003 3h5a3 3 0 003-3V9h-2z"></path>
+              </svg>
+              </span>
+              <p>
+                <small className="ml-3">
+                  1d ago <Dot size={16} />
+                  6,791 readers
+                </small>
+              </p>
+            </ListGroup.Item>
 
-            <div className="mt-5 text-left" >
-                <section>                    
-                    <ListGroup style={{ borderRadius: "7px"}}>
-                        <ListGroup.Item style={{ color: "#61605F", border: "none" }}>
-                        <h5>LinkedIn News<InfoSquareFill className="float-right" size={16} /></h5>
-                        
-                        </ListGroup.Item>
+            <ListGroup.Item
+              className="hoverable-link"
+              style={{ border: "none" }}
+            >
+              <strong>
+                <Dot size={20} />
+                Netflix CEO responds to Slack firing
+              </strong>
+              <p>
+                <small className="ml-3">
+                  17h ago <Dot size={16} />
+                  246,486 readers
+                </small>
+              </p>
+            </ListGroup.Item>
 
-                        <ListGroup.Item                         
-                        style={{ color: "#61605F", border: "none" }}>
-                            <strong><Dot size={20} />My salary? Shhh, it´s a secret</strong>
-                            <p><small className="ml-3">1d ago <Dot size={16} />6,791 readers</small></p>
-                        </ListGroup.Item>                    
+            <ListGroup.Item
+              className="hoverable-link"
+              style={{ border: "none" }}
+            >
+              <strong>
+                <Dot size={20} />
+                Virus infiltrates Olympic Village
+              </strong>
+              <p>
+                <small className="ml-3">
+                  1d ago <Dot size={16} />
+                  8,706 readers
+                </small>
+              </p>
+            </ListGroup.Item>
 
-                        <ListGroup.Item style={{ color: "#61605F", border: "none" }}>
-                        <h5 className="text-left">Show more
-                        <span className="ml-2"><ChevronCompactDown size={16} /></span></h5>
-                        
-                        </ListGroup.Item>  
+            <ListGroup.Item
+              className="hoverable-link"
+              style={{ border: "none" }}
+            >
+              <strong>
+                <Dot size={20} />
+                Govt invests €375m in tech startups
+              </strong>
+              <p>
+                <small className="ml-3">
+                  6h ago <Dot size={16} />
+                  1,114 readers
+                </small>
+              </p>
+            </ListGroup.Item>
 
-                    </ListGroup>
-                </section>
-            </div>
-
-            <div className="pt-4 text-left"  >
-                <section >
-                    
-                    <ListGroup style={{ borderRadius: "7px"}}>
-                        <ListGroup.Item style={{ color: "#61605F", border: "none" }}>
-                        <h5 className="text-left" 
-                        >Today´s top courses<InfoSquareFill className="float-right" size={16} /></h5>
-                        
-                        </ListGroup.Item>
-
-                        <ListGroup.Item 
-                        style={{ color: "#61605F", border: "none", type: "1" }}>
-                            <strong>1. Leadership foundations</strong>
-                            <p><small className="ml-3">Dr. Shirley Davis</small></p>
-                        </ListGroup.Item>                    
-                    </ListGroup>
-
-                </section>
-            </div>
-
-
-            <div className="pt-4 text-left" >
-                <section >
-                    
-                    <ListGroup style={{ borderRadius: "7px"}}>
-                        <ListGroup.Item style={{ color: "#61605F", border: "none" }}>
-                        <h5 className="text-left" 
-                        >Promoted<ThreeDots className="float-right" size={16} /></h5>
-                        
-                        </ListGroup.Item>
-
-                        <ListGroup.Item 
-                        style={{ color: "#61605F", border: "none" }}>
-                           
-                        </ListGroup.Item>                    
-                    </ListGroup>
-
-                </section>
-            </div>
-           
-            <footer >
-            <ListGroup className="pt-5 d-flex flex-wrap justify-content-center align-items-center" >
-
-                <ListGroup.Item className="pb-0"
-                style={{ background: "#F3F2EF", border: "none" }}
+            <ListGroup.Item style={{ border: "none" }}>
+              <div className=" m-2">
+                <a
+                  href="/home"
+                  className="text-left hoverable-link"
+                  style={{ fontSize: "18px" }}
                 >
-                <a href="#" style={{color: "#61605F",
-                textDecorationLine: "none"}}>About</a>
-                </ListGroup.Item>
-                <ListGroup.Item  className="pb-0" style={{ background: "#F3F2EF", border: "none" }}>
-                <a href="#" style={{color: "#61605F", textDecorationLine: "none"}}>
-                    Accessibility</a>
-                </ListGroup.Item>
-                <ListGroup.Item className="pb-0" style={{ background: "#F3F2EF", border: "none" }}>
-                <a href="#" style={{color: "#61605F", textDecorationLine: "none"}}>Help Center</a>
-                </ListGroup.Item>
-           
+                  Show more
+                  <span className="ml-2 text-left">
+                    <ChevronCompactDown size={16} />
+                  </span>
+                </a>
+              </div>
+            </ListGroup.Item>
+          </ListGroup>
+        </section>
+      </div>
 
-            
-            <a  href="#" style={{color: "#61605F", textDecorationLine: "none"}}>Privacy & Terms</a>
-            <span >
-                <a href="#" style={{color: "#61605F", textDecorationLine: "none"}}>Ad Choices</a>
+      <div className="pt-4 text-left">
+        <section>
+          <ListGroup>
+            <ListGroup.Item
+              className="d-flex align-items-center"
+              style={{ border: "none" }}
+            >
+              <h5 className="text-left" style={{ flex: "1" }}>
+                Today´s top courses
+              </h5>
+              <span className="mb-2">
+                <button className="button-sidehome">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 18 18"
+                    data-supported-dps="18x18"
+                    fill="#61605F"
+                    className="mercado-match svg-sidehome"
+                    width="20"
+                    height="20"
+                    focusable="false"
+                  >
+                    <path
+                      d="M12 2H4a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 
+                  00-2-2zm-3 8v2H7.5A1.5 1.5 0 016 10.5a1.56 1.56 0 01.1-.5l1.08-3h2.13l-1.09 
+                  3zm0-3.75A1.25 1.25 0 1110.25 5 1.25 1.25 0 019 6.25z"
+                    ></path>
+                  </svg>
+                </button>
+              </span>
+            </ListGroup.Item>
+
+            <ListGroup.Item
+              className="hoverable-link"
+              style={{ border: "none" }}
+            >
+              <strong>1. Leadership foundations</strong>
+              <p>
+                <small className="ml-3">Dr. Shirley Davis</small>
+              </p>
+            </ListGroup.Item>
+
+            <ListGroup.Item
+              className="hoverable-link"
+              style={{ border: "none" }}
+            >
+              <strong>2. Leading with a Heavy Heart</strong>
+              <p>
+                <small className="ml-3">Kat Cole</small>
+              </p>
+            </ListGroup.Item>
+
+            <ListGroup.Item
+              className="hoverable-link"
+              style={{ border: "none" }}
+            >
+              <strong>3. Staying Positive in the Face of Neg...</strong>
+              <p>
+                <small className="ml-3">Scott Mautz</small>
+              </p>
+            </ListGroup.Item>
+            <ListGroup.Item style={{ border: "none" }}>
+              <a
+                href="/home"
+                className="text-left hoverable-link"
+                style={{ fontSize: "18px" }}
+              >
+                Show more on LinkedIn Learning
+                <span className="ml-2">
+                  <ArrowRight size={16} />
                 </span>
-                <span>
-            <a href="#" style={{color: "#61605F", textDecorationLine: "none"}}>Advertising</a>
+              </a>
+            </ListGroup.Item>
+          </ListGroup>
+        </section>
+      </div>
+
+      <div className="pt-4 text-left">
+        <section>
+          <ListGroup>
+            <ListGroup.Item style={{ border: "none" }}>
+              <h5 className="text-left">
+                Promoted
+                <ThreeDots className="float-right" size={16} />
+              </h5>
+            </ListGroup.Item>
+
+            <ListGroup.Item className="d-flex" style={{ border: "none" }}>
+              <a
+                href="/home"
+                className="mr-2"
+                style={{ position: "relative", flex: "0 0 auto" }}
+              >
+                <img
+                  src="https://picsum.photos/60"
+                  alt="promoted"
+                  style={{ width: "100%", objectFit: "cover" }}
+                />
+              </a>
+              <div>
+                <h6 className="promoted-sidehome">Impact--made to purchase</h6>
+                <p className="promoted-sidehome" style={{ lineHeight: "1.2" }}>
+                  <small>
+                    Complete your most pressing work with Project Catalog™ by
+                    Upwork.
+                  </small>
+                </p>
+              </div>
+
+              <div className="mt-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  className="mercado-match"
+                  data-supported-dps="24x24"
+                  fill="#61605F"
+                  width="24"
+                  height="24"
+                  focusable="false"
+                >
+                  <path d="M9.5 2L17 12 9.5 22H7l7.5-10L7 2z"></path>
+                </svg>
+              </div>
+            </ListGroup.Item>
+
+            <ListGroup.Item className="d-flex" style={{ border: "none" }}>
+              <a
+                href="/home"
+                className="mr-2"
+                style={{ position: "relative", flex: "0 0 auto" }}
+              >
+                <img
+                  src="https://picsum.photos/id/1/60"
+                  alt="promoted"
+                  style={{ width: "100%", objectFit: "cover" }}
+                />
+              </a>
+              <div>
+                <h6 className="promoted-sidehome">Build better products</h6>
+                <p className="promoted-sidehome" style={{ lineHeight: "1.2" }}>
+                  <small>
+                    Canny helps you keep track of customer feedback. Free 14-day
+                    trial.
+                  </small>
+                </p>
+              </div>
+
+              <div className="mt-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  className="mercado-match"
+                  data-supported-dps="24x24"
+                  fill="#61605F"
+                  width="24"
+                  height="24"
+                  focusable="false"
+                >
+                  <path d="M9.5 2L17 12 9.5 22H7l7.5-10L7 2z"></path>
+                </svg>
+              </div>
+            </ListGroup.Item>
+          </ListGroup>
+        </section>
+      </div>
+
+      <footer>
+        <div
+          className="pt-3 mx-3 px-4 d-flex flex-wrap justify-content-center align-items-center"
+          style={{ background: "#F3F2EF", border: "none" }}
+        >
+          <a
+            href="/home"
+            className="mx-3 my-1"
+            style={{ textDecorationLine: "none" }}
+          >
+            About
+          </a>
+
+          <a
+            href="/home"
+            className="mx-3 my-1"
+            style={{ textDecorationLine: "none" }}
+          >
+            Accessibility
+          </a>
+
+          <a
+            href="/home"
+            className="mx-3 my-1"
+            style={{ textDecorationLine: "none" }}
+          >
+            Help Center
+          </a>
+
+          <a
+            href="/home"
+            className="mx-3 my-1"
+            style={{ textDecorationLine: "none" }}
+          >
+            Privacy & Terms
+            <span className="ml-2">
+              <ChevronCompactDown size={16} />
             </span>
-           
+          </a>
 
-           
-            <a  href="#" style={{color: "#61605F", textDecorationLine: "none"}}>Business Services</a>
-            <span >
-                <a href="#" style={{color: "#61605F", textDecorationLine: "none"}}>Get the LinkedIn app</a>
-                </span>
-                <span >
-            <a href="#" style={{color: "#61605F", textDecorationLine: "none"}}>More</a>
+          <a
+            href="/home"
+            className="mx-3 my-1"
+            style={{ textDecorationLine: "none" }}
+          >
+            Ad Choices
+          </a>
+
+          <a
+            href="/home"
+            className="mx-3 my-1"
+            style={{ textDecorationLine: "none" }}
+          >
+            Advertising
+          </a>
+
+          <a
+            href="/home"
+            className="mx-3 my-1"
+            style={{ textDecorationLine: "none" }}
+          >
+            Business Services
+            <span className="ml-2">
+              <ChevronCompactDown size={16} />
             </span>
-            </ListGroup>
- 
+          </a>
 
-            <div className="pt-4"><img src="LI-Logo.png" style={{width: "5rem"}} alt="" /> <span>LinkedIn Corporation © 2021</span>
+          <a
+            href="/home"
+            className="mx-3 my-1"
+            style={{ textDecorationLine: "none" }}
+          >
+            Get the LinkedIn app
+          </a>
 
-            </div>
-            </footer>
+          <a
+            href="/home"
+            className="mx-3 my-1"
+            style={{ textDecorationLine: "none" }}
+          >
+            More
+          </a>
+        </div>
 
-        </aside>   
-
-    )
-}
+        <div className="pt-4 text-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 56 14"
+            data-supported-dps="56x14"
+            fill="currentColor"
+            className="mercado-match mb-1 mr-1"
+            width="56"
+            height="14"
+            focusable="false"
+          >
+            <g>
+              <path
+                className="background-mercado"
+                d="M22.1 8.2l3.09 3.8h-2.44L20 8.51V12h-2V2h2v5.88L22.54 5h2.55zm-8-3.4A2.71 2.71 0 0011.89 6V5H10v7h2V8.73a1.74 1.74 0 011.66-1.93C14.82 6.8 15 7.94 15 8.73V12h2V8.29c0-2.2-.73-3.49-2.86-3.49zM32 8.66a4.22 4.22 0 010 .44h-5.25v.07a1.79 1.79 0 001.83 1.43 2.51 2.51 0 001.84-.69l1.33 1a4.31 4.31 0 01-3.25 1.29 3.49 3.49 0 01-3.7-3.75 3.58 3.58 0 013.76-3.65C30.44 4.8 32 6.13 32 8.66zm-1.86-.86a1.46 1.46 0 00-1.59-1.4 1.64 1.64 0 00-1.8 1.4zM2 2H0v10h6v-2H2zm36 0h2v10h-1.89v-.7a2.44 2.44 0 01-2 .9 3.41 3.41 0 01-3.31-3.7 3.36 3.36 0 013.3-3.7 2.62 2.62 0 011.9.7zm.15 6.5a1.63 1.63 0 00-1.62-1.85A1.76 1.76 0 0034.9 8.5a1.76 1.76 0 001.63 1.85 1.63 1.63 0 001.62-1.85zM8 1.8A1.27 1.27 0 006.75 3a1.25 1.25 0 002.5 0A1.27 1.27 0 008 1.8zM7 12h2V5H7zM56 1v12a1 1 0 01-1 1H43a1 1 0 01-1-1V1a1 1 0 011-1h12a1 1 0 011 1zM46 5h-2v7h2zm.25-2a1.25 1.25 0 00-2.5 0 1.25 1.25 0 002.5 0zM54 8.29c0-2.2-.73-3.49-2.86-3.49A2.71 2.71 0 0048.89 6V5H47v7h2V8.73a1.74 1.74 0 011.66-1.93C51.82 6.8 52 7.94 52 8.73V12h2z"
+              ></path>
+            </g>
+          </svg>
+          <span>
+            <small>LinkedIn Corporation © 2021</small>
+          </span>
+        </div>
+      </footer>
+    </aside>
+  );
+};
 
 export default SideHome;
