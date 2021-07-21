@@ -39,6 +39,7 @@ const Profile = (props) => {
         <Col className="col-4">
           <RightProfileCard
           // userData={props.userData}
+
           ></RightProfileCard>
         </Col>
       </Row>

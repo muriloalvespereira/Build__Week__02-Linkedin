@@ -78,16 +78,26 @@ const Interests = () => {
 
 
 
-                    <div className='interests ml-auto mr-3'>
+                    <div className='interests ml-auto'>
                         <img
                             src='https://media-exp1.licdn.com/dms/image/C4D0BAQGnoXT8Ty8whg/company-logo_200_200/0/1622566352666?e=2159024400&v=beta&t=N25JIgaaMgiPz6k--dhmMLi1i4ciqUvzNHzOYArQZlo'
                             alt=''
                         />
                     </div>
-                    <div className='interests_info ml-1 '>
-                        <div className='interests_title'>Amazon Web Services(AWS)</div>
+                    <div className='interests_info ml ml-3 '>
+                        <div className='interests_title'>Amazon Web</div>
                         <div className='interests_views '>537,775 viewers</div>
                     </div>
+                    {/* <div className='interests ml-auto'>
+                        <img
+                            src='https://toppng.com/uploads/preview/instagram-logo-transparent-logo-instagram-vector-2021-116177766354twhxoagvv.png'
+                            alt=''
+                        />
+                    </div>
+                    <div className='interests_info ml ml-3'>
+                        <div className='interests_title'>Instagram</div>
+                        <div className='interests_views'>554,655 viewers</div>
+                    </div> */}
                 </div>
 
             </div>
