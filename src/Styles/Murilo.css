@@ -521,3 +521,55 @@ p > img {
 .bg-reactions:hover {
   background-color: #ebebeb;
 }
+
+.different-reactions {
+  background-color: white;
+  border-radius: 30px;
+  position: absolute;
+  top: -65px;
+  left: -30px;
+  padding: 10px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+  display: none;
+}
+
+.like-display:hover .different-reactions {
+  display: block;
+}
+
+.like-reaction {
+  transition: all 0.3s ease-in;
+}
+.like-reaction:hover {
+  transform: translateY(-20px);
+}
+.claps-reaction {
+  transition: all 0.3s ease-in;
+}
+.claps-reaction:hover {
+  transform: translateY(-20px);
+}
+.care-reaction {
+  transition: all 0.3s ease-in;
+}
+.care-reaction:hover {
+  transform: translateY(-20px);
+}
+.heart-reaction {
+  transition: all 0.3s ease-in;
+}
+.heart-reaction:hover {
+  transform: translateY(-20px);
+}
+.light-reaction {
+  transition: all 0.3s ease-in;
+}
+.light-reaction:hover {
+  transform: translateY(-20px);
+}
+.think-reaction {
+  transition: all 0.3s ease-in;
+}
+.think-reaction:hover {
+  transform: translateY(-20px);
+}
