@@ -90,7 +90,7 @@ function ModalAddNewExperience(props) {
         body: userImage
 
       })
-      props.setchangeuserdata(!props.changeUserData)
+      props.setchangeExpImg(!props.changeExpImg)
       props.onHide()
     } catch (error) {
       console.log(error)
