@@ -18,7 +18,8 @@ function ModalProfileImage(props) {
                 body: userImage
 
             })
-            let sent = await response.json()
+            props.setChangeUserdata(!props.changeUserData)
+            props.onHide()
         } catch (error) {
             console.log(error)
 
@@ -54,7 +55,6 @@ function ModalProfileImage(props) {
                 </Form>
             </Modal.Body>
             <Modal.Footer>
-                <Button>Close</Button>
                 <Button variant="primary"
                     onClick={(e) => replaceUserProfilePic(e)}
                 >Save</Button>
