@@ -3,37 +3,38 @@ import { Row, Col } from "react-bootstrap";
 import "../Styles/Sara.css";
 
 import { useState, useEffect } from "react";
-import ModalAbout from '../Components/Modal_Forms/ModalAbout'
+import ModalAbout from "../Components/Modal_Forms/ModalAbout";
 
 const About = () => {
   const [readMore, setReadMore] = useState(false);
-  const [modalShow, setModalShow] = React.useState(false)
-  const [userData, setuserData] = useState('')
-  const [changeUserData, setChangeUserdata] = useState(false)
+  const [modalShow, setModalShow] = React.useState(false);
+  const [userData, setuserData] = useState("");
+  const [changeUserData, setChangeUserdata] = useState(false);
 
   const getUserData = async () => {
-    let userToken =  "Bearer " + window.localStorage.getItem('user_Token')
+    let userToken = "Bearer " + window.localStorage.getItem("user_Token");
     try {
-        let response = await fetch('https://striveschool-api.herokuapp.com/api/profile/me', {
-            method: 'Get',
-            headers: {
-                "Authorization": userToken,  
-            },
-            
-        })
-        let userData = await response.json()
-        let userDataKeyList = Object.keys(userData)
-        setuserData(userData)
-        userDataKeyList.forEach(key => window.localStorage.setItem(key, userData[key]))
+      let response = await fetch(
+        "https://striveschool-api.herokuapp.com/api/profile/me",
+        {
+          method: "Get",
+          headers: {
+            Authorization: userToken,
+          },
+        }
+      );
+      let userData = await response.json();
+      let userDataKeyList = Object.keys(userData);
+      setuserData(userData);
+      userDataKeyList.forEach((key) =>
+        window.localStorage.setItem(key, userData[key])
+      );
     } catch (e) {
-        console.log(e)
-        return e
+      console.log(e);
+      return e;
     }
-}
-useEffect(()=> getUserData(),[changeUserData])
-
-
-
+  };
+  useEffect(() => getUserData(), [changeUserData]);
 
   const extraContent = (
     <div>
@@ -61,25 +62,38 @@ useEffect(()=> getUserData(),[changeUserData])
           <div className="d-flex justify-content-between">
             <h2>About</h2>
 
-
-
-          <ModalAbout show={modalShow} changeUserData={changeUserData} setChangeUserdata={setChangeUserdata}    onHide={() => setModalShow(false)}></ModalAbout>
-          <div class="feature-icon" onClick={() => setModalShow(true)}>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
-              <path d="M21.13 2.86a3 3 0 00-4.17 0l-13 13L2 22l6.19-2L21.13 7a3 3 0 000-4.16zM6.77 18.57l-1.35-1.34L16.64 6 18 7.35z"></path>
-            </svg></div>
-        </div>
+            <ModalAbout
+              show={modalShow}
+              changeUserData={changeUserData}
+              setChangeUserdata={setChangeUserdata}
+              onHide={() => setModalShow(false)}
+            ></ModalAbout>
+            <div class="feature-icon" onClick={() => setModalShow(true)}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                data-supported-dps="24x24"
+                fill="currentColor"
+                class="mercado-match"
+                width="24"
+                height="24"
+                focusable="false"
+              >
+                <path d="M21.13 2.86a3 3 0 00-4.17 0l-13 13L2 22l6.19-2L21.13 7a3 3 0 000-4.16zM6.77 18.57l-1.35-1.34L16.64 6 18 7.35z"></path>
+              </svg>
+            </div>
+          </div>
 
           <p className="mb-0">
             {userData.bio}
-            <a
+            <p
               className="read-more-link d-inline-block"
               onClick={() => {
                 setReadMore(!readMore);
               }}
             >
               {!readMore && <span className="read-more">... see more</span>}
-            </a>
+            </p>
             {readMore && extraContent}
           </p>
         </Col>
