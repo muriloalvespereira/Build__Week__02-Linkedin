@@ -516,3 +516,66 @@ form{
   input:checked + .switch::after {
     background-color: #ffffff;
   }
+
+
+  .set-size img{
+    width: 90%;
+    padding-bottom: 25px;
+  }
+
+  .set-size{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+  }
+
+  .set-size-company-title{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 92%;
+  }
+
+  .little-padding{
+      padding-left: 25px;
+  }
+
+
+
+  /* ========Education section========== */
+
+.ed-1{
+    display: flex;
+    align-items: center;
+    padding: 0 25px;
+    margin: 15px 0;
+}
+
+.ed-info{
+    display: flex;
+    flex-direction: column;
+
+}
+
+  .ed-img img{
+      width: 50px;
+      height: 50px;
+      margin-right: 15px;
+  }
+
+  .ed-title{
+      font-size: 14px;
+      color: black;
+      font-weight: 500;
+  }
+
+  .ed-smaller{
+      font-weight: 300;
+      font-size: 12px;
+      color: black;
+  }
+
+  .ed-tiny{
+      color: gray;
+      font-size: 12px;
+  }
