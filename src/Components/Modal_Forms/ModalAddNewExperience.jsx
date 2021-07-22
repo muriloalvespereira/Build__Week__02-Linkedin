@@ -52,7 +52,6 @@ function ModalAddNewExperience(props) {
         body: JSON.stringify(formData)
       })
       let newExperienceSent = await response.json()
-      console.log(newExperienceSent, '<<<<<<<<<<<<<,,new experience response')
       props.setchangeuserdata(!props.changeUserData)
       addExperienceImage(newExperienceSent._id)
 
@@ -82,7 +81,6 @@ function ModalAddNewExperience(props) {
 
   const addExperienceImage = async (expID) => {
 
-    console.log(userImage)
     try {
       let response = await fetch('https://striveschool-api.herokuapp.com/api/profile/' + window.localStorage.getItem('_id') + '/experiences/' + expID + '/picture', {
         method: 'POST',
@@ -92,12 +90,10 @@ function ModalAddNewExperience(props) {
         body: userImage
 
       })
-      console.log(response, 'from image xp')
       props.setchangeuserdata(!props.changeUserData)
       props.onHide()
     } catch (error) {
       console.log(error)
-
     }
 
   }
