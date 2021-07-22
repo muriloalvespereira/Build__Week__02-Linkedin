@@ -71,7 +71,6 @@ function Login(props) {
                 let userDataKeyList = Object.keys(userData)
                 userDataKeyList.forEach(key => window.localStorage.setItem(key, userData[key]))
                 props.history.push('transitionPage')
-                props.setShowTopNavBar(true)
             } else{
                 setLoginValidation(true)
             }
