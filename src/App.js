@@ -18,20 +18,20 @@ import UserProfile from './Components/UserProfile/UserProfile'
 const App = (props) => {
   const [isSearchOn, setIsSearchOn] = useState(false) //not being used atm  this is to set the overlay when the search is going on
   const [userData, setUserData] = useState('')
-  const [showTopNavBar, setShowTopNavBar] = useState(true)
+  const [showTopNavBar, setShowTopNavBar] = useState(false)
 
 
   return (
 
     <>
+    {console.log(props)}
 
 
       <div className="container-fluid p-0 m-0">
         <Router>
           {showTopNavBar && <TopNavBar
-            // userData={userData}
-            //  setShowTopNavBar={setShowTopNavBar} 
             setIsSearchOn={setIsSearchOn}
+            setShowTopNavBar={setShowTopNavBar}
 
           ></TopNavBar>}
           <Route path="/" exact render={(routerProps) => <Login

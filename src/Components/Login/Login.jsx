@@ -5,8 +5,10 @@ import { withRouter } from 'react-router'
 
 
 
+
 function Login(props) {
     const [login, setLogin] = useState('')
+    const [loginValidation, setLoginValidation] = useState(false)
 
 
     const handleForm = (key, value) => {
@@ -30,16 +32,17 @@ function Login(props) {
                 body: JSON.stringify(login)
             }
             )
-         
             if (response.ok) {
                 let userToken = await response.json()
+                console.log(userToken, 'dsadas dsainside toekn')
                 window.localStorage.setItem('user_Token', userToken.access_token)
                 getUserData()
-        
-
+            } else {
+                setLoginValidation(true)
             }
 
         } catch (err) {
+            setLoginValidation(true)
             console.log(err)
             return err
         }
@@ -56,12 +59,23 @@ function Login(props) {
                 },
                 
             })
+            if(response.ok){
             let userData = await response.json()
-            let userDataKeyList = Object.keys(userData)
-            userDataKeyList.forEach(key => window.localStorage.setItem(key, userData[key]))
-            props.history.push('profile')
+            if(userData.name === undefined){
+                setLoginValidation(true)
+                return
+            }
+
+                let userDataKeyList = Object.keys(userData)
+                userDataKeyList.forEach(key => window.localStorage.setItem(key, userData[key]))
+                props.history.push('profile')
+                props.setShowTopNavBar(true)
+            } else{
+                setLoginValidation(true)
+            }
            
         } catch (e) {
+            // setLoginValidation(true)
             console.log(e)
             return e
         }
@@ -128,6 +142,9 @@ function Login(props) {
                     <div className="section-line"></div>
 
                 </div>
+                {loginValidation && <div className="container d-flex justify-content-center">
+                    <p className="text-danger"><strong>Sorry incorrect username/password :(</strong></p>
+                    </div>}
 
 
                 <div className="container d-flex flex-column mod-logo-maxWidth">
