@@ -600,3 +600,7 @@ div.modal-header > button > span:nth-child(1) {
   width: 63px;
   text-align: center;
 }
+
+.edit-disable {
+  cursor: not-allowed !important;
+}
