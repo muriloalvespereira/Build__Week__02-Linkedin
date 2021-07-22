@@ -5,12 +5,17 @@ import { useState } from "react"
 import TriangleIcon from "./TriangleIcon"
 import RedCircleIcon from "./RedCircleIcon"
 import ProfileBox from "./ProfileBox"
+import Sidebar from "../RaiaComponents/Sidebar.jsx"
 
 function TopNavBar(props) {
   const [isClickedAvatar, setIsClickedAvatar] = useState(false)
-  const [isClickedWork, setIsClickedWork] = useState(false)
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   return (
+    <>
     <Navbar id="NavBar" className="container-fluid p-0">
       {console.log(props.userData, " Inside NavBar")}
       <Container>
@@ -66,7 +71,7 @@ function TopNavBar(props) {
               <span className="txt-span">Messaging</span>
             </Nav.Link>
 
-            <Nav.Link className="d-flex flex-column justify-content-center align-items-center position-relative small-inlink">
+            <Nav.Link className="d-flex flex-column justify-content-center align-items-center position-relative small-inlink ml-1">
               <svg height="24" width="24">
                 <path d="M13.7 19C13.9 19.3 14 19.6 14 20C14 21.1 13.1 22 12 22C10.9 22 10 21.1 10 20C10 19.6 10.1 19.3 10.3 19H2V18C2 17 2.4 16.1 3.2 15.2L4.2 14H19.9L20.9 15.2C21.7 16.2 22.1 17.1 22.1 18V19H13.7ZM18.2 7.4C17.8 4.3 15.1 2 12 2C8.9 2 6.2 4.3 5.8 7.4L5 13H19L18.2 7.4Z"></path>
               </svg>
@@ -75,7 +80,7 @@ function TopNavBar(props) {
             </Nav.Link>
 
             <div
-              className="nav-item transformMod position-relative"
+              className="nav-item transformMod position-relative pb-2 mb-1"
               onClick={() => setIsClickedAvatar(!isClickedAvatar)}
             >
               <a
@@ -110,7 +115,7 @@ function TopNavBar(props) {
 
             <Nav.Link
               className="d-flex flex-column justify-content-center align-items-center small-inlink position-relative border-left-Work"
-              onClick={() => setIsClickedWork(!isClickedWork)}
+              onClick={handleShow}
             >
               <svg height="24" width="24">
                 <path d="M10 10h4v4h-4v-4zm0 11h4v-4h-4v4zm-7-7h4v-4H3v4zm0 7h4v-4H3v4zM3 7h4V3H3v4zm14 7h4v-4h-4v4zm0-11v4h4V3h-4zm-7 4h4V3h-4v4zm7 14h4v-4h-4v4z"></path>
@@ -119,6 +124,8 @@ function TopNavBar(props) {
                 <span className="mr-1 txt-span">Work</span>
                 <TriangleIcon></TriangleIcon>
               </div>
+              
+              
             </Nav.Link>
             <Nav.Link className="txt-span d-flex flex-column justify-content-center align-items-center small-inlink premium-inlink">
               Try Premium for Free
@@ -127,6 +134,14 @@ function TopNavBar(props) {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+
+     <Sidebar
+        handleClose={handleClose}
+        handleShow={handleShow}
+        show={show}
+     ></Sidebar>
+
+     </>
   )
 }
 
