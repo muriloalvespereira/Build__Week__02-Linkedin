@@ -14,7 +14,7 @@ const ExperienceDetails = (props) => {
       </div>
       <div className="pl-4 experience-border w-100">
         <div className="company-details">
-          <h6>{props.userExperience.role}</h6>
+          <h6 className="mt-3">{props.userExperience.role}</h6>
           <p className="company-title mb-0">{props.userExperience.company} - {props.userExperience.area}</p>
           <p className="company-duration">
             <span>
