@@ -70,7 +70,7 @@ a:hover {
 
 .people_also_viewed {
   background: white !important;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   max-width: 100%;
   margin-top: 45px;
   border: 1px solid rgba(0, 0, 0, 0.1);
