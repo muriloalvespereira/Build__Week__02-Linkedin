@@ -14,6 +14,7 @@ import Signup from './Components/Login/Signup';
 import Messaging from './Components/Messanger/Messaging'
 import UserProfile from './Components/UserProfile/UserProfile'
 import TransitionPage from './Components/RaiaComponents/TransitionPage';
+import NewSignUpForm from './Components/Login/NewSignUpForm'
 
 
 const App = (props) => {
@@ -40,7 +41,7 @@ const App = (props) => {
             setShowTopNavBar={setShowTopNavBar}
             {...routerProps}
           ></Login>}></Route>
-          <Route path="/signup" exact render={(routerProps) => <Signup setUserData={setUserData}   {...routerProps}></Signup>}></Route>
+          <Route path="/signup" exact render={(routerProps) => <NewSignUpForm setUserData={setUserData}   {...routerProps}></NewSignUpForm>}></Route>
           <Route path="/home" exact render={(routerProps) => <Home setShowTopNavBar={setShowTopNavBar} userData={userData}  {...routerProps}></Home>}></Route>
           <Route path="/profile" exact render={(routerProps) => <Profile userData={userData}  {...routerProps}></Profile>}></Route>
           <Route path="/userprofile" exact render={(routerProps) => <UserProfile userData={userData}{...routerProps} />} />
