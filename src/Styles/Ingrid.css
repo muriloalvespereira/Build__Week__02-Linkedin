@@ -1,3 +1,5 @@
+/* #5d3b09 */
+
 #NavBar {
   background-color: white;
 }
@@ -54,83 +56,29 @@
   z-index: 10;
 }
 
-.nav-link-span {
+.nav-icons * {
   color: #666666;
-}
-
-.nav-link-span:hover {
-  color: #1a1a1a;
-}
-
-.nav-icons {
-  fill-opacity: 1;
-  stroke-opacity: 1;
-  stroke: transparent;
-  fill: #666666;
-}
-#global-nav-icon--mercado__home {
-  fill-opacity: 1;
-  stroke-opacity: 1;
-  stroke: transparent;
-  fill: #666666;
-}
-#global-nav-icon--mercado__my-network {
-  fill-opacity: 1;
-  stroke-opacity: 1;
-  stroke: transparent;
-  fill: #666666;
-}
-#global-nav-icon--mercado__notifications {
-  fill-opacity: 1;
-  stroke-opacity: 1;
-  stroke: transparent;
-  fill: #666666;
-}
-#global-nav-icon--mercado__messaging {
   fill-opacity: 1;
   stroke-opacity: 1;
   stroke: transparent;
   fill: #666666;
 }
 
-.nav-icons :hover {
+.nav-icons a:hover * {
   fill-opacity: 1;
   stroke-opacity: 1;
   stroke: transparent;
   fill: #1a1a1a;
-  color: #1a1a1a;
+  color: rgb(26, 26, 26);
 }
-#global-nav-icon--mercado__home :hover {
-  fill-opacity: 1;
-  stroke-opacity: 1;
-  stroke: transparent;
-  fill: #1a1a1a;
-  color: #1a1a1a;
-}
-#global-nav-icon--mercado__my-network :hover {
-  fill-opacity: 1;
-  stroke-opacity: 1;
-  stroke: transparent;
-  fill: #1a1a1a;
-  color: #1a1a1a;
-}
-#global-nav-icon--mercado__notifications :hover {
-  fill-opacity: 1;
-  stroke-opacity: 1;
-  stroke: transparent;
-  fill: #1a1a1a;
-  color: #1a1a1a;
-}
-#global-nav-icon--mercado__messaging :hover {
-  fill-opacity: 1;
-  stroke-opacity: 1;
-  stroke: transparent;
-  fill: #1a1a1a;
-  color: #1a1a1a;
+
+.premium-inlink:hover {
+  color: #5d3b09 !important;
+  text-decoration: underline;
 }
 
 @media only screen and (max-width: 850px) {
-  .nav-link-span {
+  .txt-span {
     display: none;
   }
 }
