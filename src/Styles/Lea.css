@@ -1,3 +1,5 @@
+/* SideHome component on the Home page - third right column */
+
 .aside-sidehome {
   color: #61605f;
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -49,4 +51,9 @@
 
 .promoted-sidehome:hover {
   text-decoration: underline;
+}
+
+#modal-sidebar {
+  position: absolute!important;
+  right: 0;
 }
