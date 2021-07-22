@@ -1,21 +1,36 @@
-import { useState } from "react"
+/* import { useState } from "react"; */
+import { Container, Modal } from "react-bootstrap";
 
-const Sidebar = () => {
-    const [slide, setSlide] = useState(false)
+
+const Sidebar = (props) => {
+ /*    const [slide, setSlide] = useState(false) */
+ 
 
     return (
-        <>
+        <div>
             {/* <div id="show" onClick={() => setSlide({ slide: !slide })}> */}
-            <div id="show" onClick={() => setSlide(!slide)}>
+           {/*  <div id="show" onClick={() => setSlide(!slide)}>
                 Show
-            </div>
+            </div> */}
+        <Modal  show={props.show} onHide={props.handleClose} 
+                id="modal-sidebar">
+            <div  style={{overflowY: "auto", height: "100vh"}}>
+           {/*  <div className={slide ? 'd-block ' : ' d-none'}> */}
+               {/*  <div className="main-container"> */}
+                <Modal.Header className="border-0 pr-3 mr-2"  closeButton>
+                
+                </Modal.Header>
 
-            <div className={slide ? 'd-block ' : ' d-none'}>
-                <div className="main-container">
-                    <div className="title">
-                        <p>Visit More LinkedIn Products</p>
+                <Modal.Body className="px-4 mx-5 mb-3 pb-0"                     
+                style={{ borderRadius: "1rem", border: "1px solid #d4d3d1" }}>
+
+                    <div >
+                    <h5 className="pb-1" 
+                    >Visit More LinkedIn Products</h5>
                     </div>
-                    <div className="side-container">
+
+                    <div className="side-container pb-0" 
+                    >
 
                         <div className="icon-section-one">
                             <div className="icons">
@@ -63,16 +78,24 @@ const Sidebar = () => {
                             </div>
                         </div><br></br>
                     </div>
+                    </Modal.Body>
+
+{/* ======================Section Services================= */}
+
+                <Modal.Body className="px-4 mx-5 mb-5 pb-0"                     
+                style={{ borderRadius: "1rem", border: "1px solid #d4d3d1" }}>
+                      {/*   <div className="services"> */}
+
+                    <div>
+                        <h5 className="pb-1" 
+                        >LinkedIn Business Services</h5>
+                    </div>
 
 
-                    {/* ======================Section Services================= */}
-
-
-                    <div className="services">
-                        <div className="title-two">
+                        {/* <div className="title-two">
                             LinkedIn Business Services
-                        </div>
-                        <div className="list-services">
+                        </div> */}
+                        <div className="list-services ">
                             <ul>
                                 <li>
                                     <a href="">
@@ -109,18 +132,26 @@ const Sidebar = () => {
                                     </a>
 
                                 </li>
-                                <button className="create">Create a Company Page <span>+</span></button>
+                                <button className="create d-flex align-items-start pb-0">
+                                    <h6 className="pt-2 mt-1 pr-1">Create a Company Page</h6> 
+                                    <span style={{ fontSize: "26px"}}
+                                    className=""
+                                    >+</span>
+                                </button>
                             </ul>
 
                         </div>
 
 
-                    </div>
-                </div>
+                  {/*   </div> */}
 
-            </div>
-        </>
+               
+                    </Modal.Body>
+
+                    </div>
+           </Modal>
+        </div>
     )
 }
 
-export default Sidebar
+export default Sidebar;

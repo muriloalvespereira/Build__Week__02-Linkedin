@@ -1,7 +1,6 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 import "../Styles/Sara.css";
-import avatar from "../assets/muriloavatar.png";
 import { useState } from "react";
 import CreatePost from "./CreatePost";
 
@@ -14,7 +13,7 @@ const Post = () => {
     <>
       <div className="post mt-5 pt-0">
         <div className="img-post d-flex mt-0">
-          <img src={`${avatar}`} alt="" />
+          <img src={`${window.localStorage.getItem('image')}`} alt="" />
 
           <Button
             variant="light"

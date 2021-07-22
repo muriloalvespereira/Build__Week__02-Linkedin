@@ -153,7 +153,6 @@ p > img {
 .dots-feed:hover {
   background-color: #ebebeb;
 }
-
 .edit-details:hover {
   background-color: #ebebeb;
 }
@@ -451,10 +450,10 @@ p > img {
   font-size: 13px;
   color: gray;
 }
-
-/* .div-post-user {
-  line-height: 0.5;
-} */
+.about-feed-popup {
+  font-size: 14px;
+  color: gray;
+}
 .follow-feed {
   font-size: 16px;
   color: #0a66c2;
@@ -472,6 +471,7 @@ p > img {
 .text-post {
   font-size: 14px;
   color: rgba(0, 0, 0, 0.8);
+  word-break: break-all;
 }
 
 .see-more {
@@ -581,10 +581,74 @@ p > img {
 }
 .popup-user {
   position: absolute;
-  background-color: red;
+  background-color: white;
   height: 150px;
-  width: 250px;
-  left: 20px;
-  top: -70px;
-  display: none;
+  width: 300px;
+  left: -240px;
+  top: 0px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 10px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: all 0.2ms ease-in;
+}
+.edit-post-user {
+  position: absolute;
+  background-color: white;
+  height: 120px;
+  width: 300px;
+  right: 4px;
+  top: 48px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 10px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  opacity: 1;
+  transition: all 0.2ms ease-in;
+  z-index: 4;
+  flex-direction: column;
+}
+
+.edit-post-user > div > div > svg {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.button-popup {
+  padding-right: 103px;
+  padding-left: 103px;
+  border-radius: 20px;
+  font-weight: 600;
+  background-color: #015ebb;
+  border-color: #015ebb;
+}
+.button-popup:hover {
+  background-color: #004182;
+  border-color: #004182;
+}
+
+.display-popup:hover .popup-user {
+  opacity: 1;
+}
+
+.edit-post {
+  cursor: pointer;
+  line-height: 1;
+}
+.delete-post {
+  cursor: pointer;
+  line-height: 1;
+}
+.edit-post:hover {
+  background-color: #d8d8d8;
+}
+.delete-post:hover {
+  background-color: #d8d8d8;
+}
+
+.edit-font {
+  font-size: 12px;
+  color: gray;
 }
