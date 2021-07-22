@@ -149,7 +149,6 @@ p > img {
 .dots-feed:hover {
   background-color: #ebebeb;
 }
-
 .edit-details:hover {
   background-color: #ebebeb;
 }
@@ -591,6 +590,27 @@ p > img {
   opacity: 0;
   transition: all 0.2ms ease-in;
 }
+.edit-post-user {
+  position: absolute;
+  background-color: white;
+  height: 120px;
+  width: 300px;
+  right: 4px;
+  top: 48px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 10px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  opacity: 1;
+  transition: all 0.2ms ease-in;
+  z-index: 4;
+  flex-direction: column;
+}
+
+.edit-post-user > div > div > svg {
+  color: rgba(0, 0, 0, 0.6);
+}
 
 .button-popup {
   padding-right: 103px;
@@ -607,4 +627,24 @@ p > img {
 
 .display-popup:hover .popup-user {
   opacity: 1;
+}
+
+.edit-post {
+  cursor: pointer;
+  line-height: 1;
+}
+.delete-post {
+  cursor: pointer;
+  line-height: 1;
+}
+.edit-post:hover {
+  background-color: #d8d8d8;
+}
+.delete-post:hover {
+  background-color: #d8d8d8;
+}
+
+.edit-font {
+  font-size: 12px;
+  color: gray;
 }
