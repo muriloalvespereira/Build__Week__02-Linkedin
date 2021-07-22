@@ -2,6 +2,7 @@ import React from 'react'
 import '../../Styles/Login.css'
 import { useState } from 'react'
 import { withRouter } from 'react-router'
+import TransitionPage from '../RaiaComponents/TransitionPage'
 
 
 
@@ -9,6 +10,7 @@ import { withRouter } from 'react-router'
 function Login(props) {
     const [login, setLogin] = useState('')
     const [loginValidation, setLoginValidation] = useState(false)
+    const [isTransitionPage, setTransitionPage] = useState(false)
 
 
     const handleForm = (key, value) => {
@@ -65,10 +67,10 @@ function Login(props) {
                 setLoginValidation(true)
                 return
             }
-
+                setTransitionPage(true)
                 let userDataKeyList = Object.keys(userData)
                 userDataKeyList.forEach(key => window.localStorage.setItem(key, userData[key]))
-                props.history.push('profile')
+                props.history.push('transitionPage')
                 props.setShowTopNavBar(true)
             } else{
                 setLoginValidation(true)
@@ -85,6 +87,7 @@ function Login(props) {
 
     return (
         <div id="logo-main-container" className="container-fluid d-flex flex-column align-content-center p-0">
+            
             <div className="container  d-flex flex-column justify-content-center align-items-center mt-4 mb-3 mod-logo-maxWidth">
 
                 <div id="login-logo" className="d-flex justify-content-center align-items-center">
