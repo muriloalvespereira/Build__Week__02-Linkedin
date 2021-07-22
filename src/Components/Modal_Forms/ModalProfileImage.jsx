@@ -48,7 +48,6 @@ function ModalProfileImage(props) {
                                  let newUserImage = new FormData()
                                  newUserImage.append('profile', e.target.files[0])
                                  setUserImage(newUserImage)
-                                console.log(userImage)
                             }} />
                         </Form.Group>
                     </Form.Row>

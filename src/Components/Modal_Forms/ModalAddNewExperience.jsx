@@ -52,7 +52,9 @@ function ModalAddNewExperience(props) {
         body: JSON.stringify(formData)
       })
       let newExperienceSent = await response.json()
+      console.log(newExperienceSent, '<<<<<<<<<<<<<,,new experience response')
       props.setchangeuserdata(!props.changeUserData)
+      addExperienceImage(newExperienceSent._id)
 
       props.onHide()
     } catch (e) {
@@ -76,6 +78,28 @@ function ModalAddNewExperience(props) {
       console.log(e)
       return e
     }
+  }
+
+  const addExperienceImage = async (expID) => {
+
+    console.log(userImage)
+    try {
+      let response = await fetch('https://striveschool-api.herokuapp.com/api/profile/' + window.localStorage.getItem('_id') + '/experiences/' + expID + '/picture', {
+        method: 'POST',
+        headers: {
+          "Authorization": "Bearer " + window.localStorage.getItem('user_Token'),
+        },
+        body: userImage
+
+      })
+      console.log(response, 'from image xp')
+      props.setchangeuserdata(!props.changeUserData)
+      props.onHide()
+    } catch (error) {
+      console.log(error)
+
+    }
+
   }
 
 
@@ -174,6 +198,18 @@ function ModalAddNewExperience(props) {
             <Form.Label>Description</Form.Label>
             <Form.Control type="text" as="textarea" rows={5} placeholder={endpoint === 'POST' ? "addDescription" : formData.description} onChange={(e) => handleForm('description', e.target.value)} />
           </Form.Group>
+          <Form>
+            <Form.Group>
+              <Form.File id="exampleFormControlFile1" label="Example file input"
+                onChange={(e) => {
+                  let newUserImage = new FormData()
+                  newUserImage.append('experience', e.target.files[0])
+                  setUserImage(newUserImage)
+                }}
+
+              />
+            </Form.Group>
+          </Form>
         </div>
 
       </Modal.Body>
