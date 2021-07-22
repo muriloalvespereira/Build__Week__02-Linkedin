@@ -7,6 +7,7 @@ import education from "../assets/dbs.jpg";
 import {useState, useEffect} from 'react'
 import React from 'react'
 import ModalProfileInfo from './Modal_Forms/ModalProfileInfo'
+import ModalProfileImage from './Modal_Forms/ModalProfileImage'
 
 const UserDisplay = (props) => {
   const [modalShow, setModalShow] = React.useState(false)
@@ -60,6 +61,13 @@ useEffect(()=> getUserData(),[changeUserData])
                     <path d="M14.13 1.86a3 3 0 00-4.17 0l-7 7L1 15l6.19-2 6.94-7a3 3 0 000-4.16zm-8.36 9.71l-1.35-1.34L9.64 5 11 6.35z"></path>
                   </svg>
                 </div>
+                <ModalProfileImage 
+                  show={modalImg} 
+                  changeUserData={changeUserData} 
+                  setChangeUserdata={setChangeUserdata}   
+                  onHide={() => setModalImg(false)}>
+
+                </ModalProfileImage>
                 <div className="profile-pic" onClick={() => setModalImg(true)}>
                   <div
                     className="bg-photo"
