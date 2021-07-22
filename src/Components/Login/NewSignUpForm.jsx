@@ -8,6 +8,7 @@ const NewSignUpForm = () => {
 
   const createUser = async (values) => {
     console.log("inside create user")
+
     try {
       let response = await fetch(
         "https://striveschool-api.herokuapp.com/api/account/register",
@@ -20,6 +21,7 @@ const NewSignUpForm = () => {
         }
       )
       if (response.ok) {
+        alert("USER SAVED!")
         let dataRequested = await response.json()
         console.log(dataRequested)
         window.localStorage.setItem("user_Token", dataRequested.access_token)
@@ -74,7 +76,6 @@ const NewSignUpForm = () => {
               type="text"
             />
           </div>
-
           <div className="form-group">
             <label htmlFor="email">
               {" "}
@@ -91,7 +92,6 @@ const NewSignUpForm = () => {
               type="email"
             />
           </div>
-
           <div className="form-group">
             <label htmlFor="password">
               {" "}
@@ -119,7 +119,6 @@ const NewSignUpForm = () => {
             </label>
             <Field id="area" className="form-control" name="area" type="area" />
           </div>
-
           <div className="form-group">
             <label htmlFor="title">
               <img
@@ -135,7 +134,6 @@ const NewSignUpForm = () => {
               type="title"
             />
           </div>
-
           <div className="form-group">
             <label htmlFor="username">
               <img
@@ -151,7 +149,6 @@ const NewSignUpForm = () => {
               type="username"
             />
           </div>
-
           <div className="form-group">
             <label htmlFor="bio">
               <img
