@@ -15,33 +15,33 @@ const Dashboard = () => {
         </div>
         <div className=" dashboard-middle-container">
           <div className="profile-view">
-            <a href="">
+            <p href="">
               <div className="dashboard-view">
                 <span className="no-view">40</span>
                 <span>Who viewed your profile</span>
               </div>
-            </a>
+            </p>
           </div>
           <div className="article-view">
-            <a href="">
+            <p href="">
               <div className="dashboard-view">
                 <span className="no-view">19</span>
                 <span>Article views</span>
               </div>
-            </a>
+            </p>
           </div>
           <div className="search-appearances">
-            <a href="">
+            <p href="">
               <div className="dashboard-view">
                 <span className="no-view">19</span>
                 <span>Search appearances</span>
               </div>
-            </a>
+            </p>
           </div>
         </div>
         <div className="dashboard-bottom-container">
           <div className="creator-mode">
-            <a href="">
+            <p href="">
               <div className="creatormode-content">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -67,10 +67,10 @@ const Dashboard = () => {
                   </p>
                 </div>
               </div>{" "}
-            </a>
+            </p>
           </div>
           <div className="mynetwork dashboard-section__hr">
-            <a href="" className="">
+            <p href="" className="">
               <div className="mynetwork-content ">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -89,10 +89,10 @@ const Dashboard = () => {
                   <p>Manage your connections, events, and interests.</p>
                 </div>
               </div>
-            </a>
+            </p>
           </div>
           <div className="salary-insights dashboard-section__hr">
-            <a href="">
+            <p href="">
               <div className="salaryinsights-content ">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -113,10 +113,10 @@ const Dashboard = () => {
                   </p>
                 </div>
               </div>
-            </a>
+            </p>
           </div>
           <div className="myitems d-flex dashboard-section__hr">
-            <a href="">
+            <p href="">
               <div className="myitems-content ">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -136,7 +136,7 @@ const Dashboard = () => {
                   <p>Keep track of your jobs, courses and articles.</p>
                 </div>
               </div>
-            </a>
+            </p>
           </div>
         </div>
       </div>
