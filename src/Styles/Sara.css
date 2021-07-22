@@ -32,11 +32,11 @@
   border-left: 1px solid #dde6f1;
   flex-grow: 1;
 }
-/* @media (max-width: 400px) {
+@media (max-width: 400px) {
   .dashboard-middle-container {
     flex-direction: column;
   }
-} */
+}
 .dashboard .dashboard-top-container h5 {
   font-size: 20px;
   font-weight: 400;
@@ -350,8 +350,9 @@
   color: #000000e6;
 }
 .about .read-more {
-  display: inline-block;
-  margin-left: 100px;
+  /* display: inline-block; */
+  right: 15px;
+  position: absolute;
   font-size: 14px;
   line-height: 19px;
   font-weight: 400;
