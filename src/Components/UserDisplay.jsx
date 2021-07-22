@@ -10,6 +10,7 @@ import ModalProfileInfo from './Modal_Forms/ModalProfileInfo'
 
 const UserDisplay = (props) => {
   const [modalShow, setModalShow] = React.useState(false)
+  const [modalImg, setModalImg] = React.useState(false)
   const [userData, setuserData] = useState('')
   const [changeUserData, setChangeUserdata] = useState(false)
 
@@ -59,7 +60,7 @@ useEffect(()=> getUserData(),[changeUserData])
                     <path d="M14.13 1.86a3 3 0 00-4.17 0l-7 7L1 15l6.19-2 6.94-7a3 3 0 000-4.16zm-8.36 9.71l-1.35-1.34L9.64 5 11 6.35z"></path>
                   </svg>
                 </div>
-                <div className="profile-pic">
+                <div className="profile-pic" onClick={() => setModalImg(true)}>
                   <div
                     className="bg-photo"
                     style={{ backgroundImage: `url(${userData.image})` }}
