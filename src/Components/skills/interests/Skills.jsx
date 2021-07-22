@@ -52,7 +52,7 @@ const Skills = () => {
           </div>
         </div>
       </div>
-      <div className="show_more_skills py-2">
+      <div className="show_more_container py-2">
         <span>Show more</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
