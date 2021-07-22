@@ -10,47 +10,65 @@ function Login(props) {
     const [usersList, setUserList] = useState([])
     const [userInfo, setUserInfo] = useState([])
 
-    useEffect(() => {
-        getUserList()
-    }, [])
 
-    useEffect(() => {setUserInfo(usersList.filter(user => user.email === login))},
-        [login])
 
-    const getUserList = async () => {
+    const handleForm = (key, value) => {
+        setLogin({
+            ...login,
+            [key]: value
+        })
+    }
+
+
+
+    const getUserToken = async (e) => {
+        e.preventDefault()
         try {
-
             let response = await fetch(
-                "https://striveschool-api.herokuapp.com/api/profile/", {
-                method: "Get",
+                'https://striveschool-api.herokuapp.com/api/account/register', {
+                method: "POST",
                 headers: {
-                    Authorization:
-                        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGRjNWYwNmIzNTgxNzAwMTVjMjI3MDUiLCJpYXQiOjE2MjYyNzAyMjMsImV4cCI6MTYyNzQ3OTgyM30.0IcvG8-Zqf633mRWGCRlzG5yDVI6njZjZGZzJfuGulw",
+                    "Content-Type": "application/json"
                 },
+                body: JSON.stringify(login)
             }
             )
+         
             if (response.ok) {
-                let dataRequested = await response.json()
-                setUserList(dataRequested)
+                let userToken = await response.json()
+                window.localStorage.setItem('user_Token', userToken.access_token)
+                getUserData()
+        
+
             }
 
+        } catch (err) {
+            console.log(err)
+            return err
+        }
+    }
+
+    const getUserData = async () => {
+        let userToken =  "Bearer " + window.localStorage.getItem('user_Token')
+        console.log(userToken)
+        try {
+            let response = await fetch('https://striveschool-api.herokuapp.com/api/profile/me', {
+                method: 'Get',
+                headers: {
+                    "Authorization": userToken,  
+                },
+                
+            })
+            let userData = await response.json()
+            let userDataKeyList = Object.keys(userData)
+            userDataKeyList.forEach(key => window.localStorage.setItem(key, userData[key]))
+            props.history.push('profile')
+           
         } catch (e) {
+            console.log(e)
             return e
         }
     }
-
-    const setLoginData = () => {
-        if (userInfo.length === 1) {
-            props.setUserData(userInfo)
-            props.setShowTopNavBar(true)
-            props.history.push('profile')
-            
-        } else {
-            alert(' User not found')
-        }
-    }
-
-
 
 
 
@@ -118,22 +136,28 @@ function Login(props) {
                 <div className="container d-flex flex-column mod-logo-maxWidth">
                     <form>
                         <div className="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onChange={(e) => {
-                                setLogin(e.target.value)
-                            }} />
-                            <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+                            <label for="exampleInputUsername">Username</label>
+                            <input type="text" className="form-control" id="exampleInputUsername" a
+                                ria-describedby="usernameHelp"
+                                onChange={(e) => {
+                                    handleForm('username', e.target.value)
+                                }} />
                         </div>
                         <div className="form-group">
                             <label for="exampleInputPassword1">Password</label>
-                            <input type="password" className="form-control" id="exampleInputPassword1" />
+                            <input type="password" className="form-control" id="exampleInputPassword1"
+                                onChange={(e) => {
+                                    handleForm('password', e.target.value)
+                                }}
+
+                            />
                         </div>
                         <div className="container d-flex justify-content-between align-items-center pl-4 pr-0">
                             <div className="form-group form-check d-flex align-items-center m-0 p-0">
                                 <input type="checkbox" className="form-check-input my-auto" id="exampleCheck1" />
                                 <label className="form-check-label" for="exampleCheck1">Remember me</label>
                             </div>
-                            <a  id="login-btn" className="btn btn-success" onClick={setLoginData}>Log in</a>
+                            <a id="login-btn" className="btn btn-success" onClick={(e)=>getUserToken(e)} >Log in</a>
                         </div>
                     </form>
 
@@ -149,7 +173,7 @@ function Login(props) {
 
                 <div className="container d-flex flex-column justify-content-center align-items-center mod-logo-maxWidth">
                     <h5 className="mb-4">Don't have an account?</h5>
-                    <button id="btn-sign-up-strivefy" className="btn btn-outline-dark btn-large w-100" onClick={()=>props.history.push('signup')}>
+                    <button id="btn-sign-up-strivefy" className="btn btn-outline-dark btn-large w-100" onClick={() => props.history.push('signup')}>
                         SIGN UP FOR LINKEDIN
                     </button>
                 </div>

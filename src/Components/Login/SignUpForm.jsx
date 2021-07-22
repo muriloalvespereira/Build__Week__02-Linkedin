@@ -2,6 +2,7 @@ import React from 'react';
 import { useFormik } from 'formik';
 import { useState, useEffect } from 'react';
 import { Col, Row } from 'react-bootstrap';
+import { withRouter } from 'react-router'
 
 const validate = values => {
   const errors = {};
@@ -57,8 +58,7 @@ const validate = values => {
   return errors;
 };
 
-const SignupForm = () => {
-  const [newUserToken, setNewToken] = useState('')
+const SignupForm = (props) => {
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -72,16 +72,17 @@ const SignupForm = () => {
     },
     validate,
     onSubmit: values => {
+      console.log('inside Submit')
       createUser(values, ' <<<<<< inside Signupform on submit')
     },
   });
 
   const createUser = async (values) => {
+    console.log('inside create user')
     try {
       let response = await fetch('https://striveschool-api.herokuapp.com/api/account/register', {
         method: 'POST',
         headers: {
-          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGRjNWYwNmIzNTgxNzAwMTVjMjI3MDUiLCJpYXQiOjE2MjYyNzAyMjMsImV4cCI6MTYyNzQ3OTgyM30.0IcvG8-Zqf633mRWGCRlzG5yDVI6njZjZGZzJfuGulw",
           "Content-Type": "application/json"
         },
         body: JSON.stringify(values)
@@ -89,8 +90,11 @@ const SignupForm = () => {
       })
       if (response.ok) {
         let dataRequested = await response.json()
-        setNewToken(dataRequested.access_token)
-        alert('userCreated')
+        console.log(dataRequested)
+        window.localStorage.setItem('user_Token', dataRequested.access_token)
+        // getUserData()
+       
+   
 
       } else {
         alert('User not created')
@@ -100,21 +104,28 @@ const SignupForm = () => {
     }
   }
 
-  const getLoggedUser = async () => {
+  const getUserData = async () => {
+    let userToken =  "Bearer " + window.localStorage.getItem('user_Token')
+    console.log(userToken)
     try {
-      let response = await fetch('https://striveschool-api.herokuapp.com/api/profile/me', {
-        method: 'Get',
-        headers: {
-          "Authorization": "Bearer" + newUserToken,
-        }
-      })
-      let dataRequested = await response.json()
-      console.log(dataRequested, 'Meeeeeeeeeee')
+        let response = await fetch('https://striveschool-api.herokuapp.com/api/profile/me', {
+            method: 'Get',
+            headers: {
+                "Authorization": userToken,  
+            },
+            
+        })
+        let userData = await response.json()
+        let userDataKeyList = Object.keys(userData)
+        userDataKeyList.forEach(key => window.localStorage.setItem(key, userData[key]))
+        props.history.push('profile')
+       
     } catch (e) {
-      return e
+        console.log(e)
+        return e
     }
-  }
-  useEffect(() => getLoggedUser, [newUserToken])
+}
+
 
 
 
@@ -266,4 +277,4 @@ const SignupForm = () => {
   );
 };
 
-export default SignupForm
+export default withRouter(SignupForm)

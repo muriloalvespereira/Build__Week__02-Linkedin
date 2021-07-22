@@ -4,12 +4,38 @@ import imgBk from "../assets/bklinkedin.jpg";
 import avatar from "../assets/muriloavatar.png";
 import currentJob from "../assets/eli.jpg";
 import education from "../assets/dbs.jpg";
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import React from 'react'
 import ModalProfileInfo from './Modal_Forms/ModalProfileInfo'
 
 const UserDisplay = (props) => {
   const [modalShow, setModalShow] = React.useState(false)
+  const [userData, setuserData] = useState('')
+  const [changeUserData, setChangeUserdata] = useState(false)
+
+  const getUserData = async () => {
+    let userToken =  "Bearer " + window.localStorage.getItem('user_Token')
+    try {
+        let response = await fetch('https://striveschool-api.herokuapp.com/api/profile/me', {
+            method: 'Get',
+            headers: {
+                "Authorization": userToken,  
+            },
+            
+        })
+        let userData = await response.json()
+        let userDataKeyList = Object.keys(userData)
+        setuserData(userData)
+        userDataKeyList.forEach(key => window.localStorage.setItem(key, userData[key]))
+    } catch (e) {
+        console.log(e)
+        return e
+    }
+}
+useEffect(()=> getUserData(),[changeUserData])
+
+
+  
 
 
     return(
@@ -36,12 +62,12 @@ const UserDisplay = (props) => {
                 <div className="profile-pic">
                   <div
                     className="bg-photo"
-                    style={{ backgroundImage: `url(${avatar})` }}
+                    style={{ backgroundImage: `url(${userData.image})` }}
                   ></div>
                 </div>
               </Col>
               <Col className="position-relative">
-                  <ModalProfileInfo show={modalShow}    onHide={() => setModalShow(false)} >
+                  <ModalProfileInfo show={modalShow} changeUserData={changeUserData} setChangeUserdata={setChangeUserdata}   onHide={() => setModalShow(false)} >
 
                   </ModalProfileInfo>
                 <div className="edit-details" onClick={() => setModalShow(true)}>
@@ -61,14 +87,14 @@ const UserDisplay = (props) => {
                 <div className="details-profile d-flex">
                   <Col className="col-8">
                     <h4 className="mb-0">
-                      {/* {props.userData[0].name + ' ' + props.userData[0].surname } */} User Name
+                      {userData.name + ' ' + userData.surname }
                     </h4>
                     <p className="mb-0">
-                      {/* {props.userData[0].title} */}
+                      {userData.title}
                     </p>
                     <p className="text-muted details-region">
-                      {/* {props.userData[0].area + '-' }  */} job title
-                      <span className="span-details">Contact info</span>
+                      {window.localStorage.getItem('area')}
+                      <span className="span-details"> Contact info</span>
                     </p>
                     <p className="details-region">
                       <span className="span-details">500+ connections</span>

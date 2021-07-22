@@ -16,16 +16,20 @@ const Experience = (props) => {
   
   
   const getUserExperiences = async () => {
+    console.log('inside get all experiences')
             try {
-                let response = await fetch('https://striveschool-api.herokuapp.com/api/profile/60dc5f06b358170015c22705/experiences', {
+                let response = await fetch('https://striveschool-api.herokuapp.com/api/profile/'+ window.localStorage.getItem('_id') + '/experiences', {
                     method: 'GET',
                     headers: {
-                        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGRjNWYwNmIzNTgxNzAwMTVjMjI3MDUiLCJpYXQiOjE2MjYyNzAyMjMsImV4cCI6MTYyNzQ3OTgyM30.0IcvG8-Zqf633mRWGCRlzG5yDVI6njZjZGZzJfuGulw",
+                        "Authorization": "Bearer " + window.localStorage.getItem('user_Token') ,
                     },
-                })             
+                })   
+                console.log('inside get all experiences AFTER FETCH', response)          
                 let dataRequested = await response.json()
                 setUserAllExperiences(dataRequested)
+                console.log(dataRequested , '<<<<<<<<<<<<<<<<<<<<<ALL Experriences')
             } catch (e) {
+              console.log(e)
                 return e
             }
         }
