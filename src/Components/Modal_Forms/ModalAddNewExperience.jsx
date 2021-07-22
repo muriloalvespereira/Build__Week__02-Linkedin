@@ -69,13 +69,10 @@ const [formData, setFormData] = useState({
                       "Authorization": "Bearer " + window.localStorage.getItem('user_Token')
                   },
               })
-
-              let deleteResponse = await response.json()
               props.setchangeuserdata(!props.changeUserData)
               props.onHide()
           } catch (e) {
-            props.setchangeuserdata(!props.changeUserData)
-            props.onHide()
+            console.log(e)
               return e
           }
       }
