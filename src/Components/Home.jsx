@@ -20,7 +20,10 @@ const Home = (props) => {
                     </Col>
                     <Col className="col-6 pr-0">
                         <Post></Post>
-                        <Feed></Feed>
+                        <Feed />
+                        <Feed />
+                        <Feed />
+                        <Feed />
                     </Col>
                     <Col className="col-4">
 

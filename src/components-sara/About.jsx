@@ -1,6 +1,7 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
 import "../Styles/Sara.css";
+
 import { useState, useEffect } from "react";
 import ModalAbout from '../Components/Modal_Forms/ModalAbout'
 
@@ -32,6 +33,8 @@ const About = () => {
 useEffect(()=> getUserData(),[changeUserData])
 
 
+
+
   const extraContent = (
     <div>
       <p className="extra-content">
@@ -55,8 +58,9 @@ useEffect(()=> getUserData(),[changeUserData])
     <div className="about mt-3">
       <Row>
         <Col className="d-flex flex-column" xs={12}>
-        <div className="d-flex justify-content-between">
-          <h2>About</h2>
+          <div className="d-flex justify-content-between">
+            <h2>About</h2>
+
 
 
           <ModalAbout show={modalShow} changeUserData={changeUserData} setChangeUserdata={setChangeUserdata}    onHide={() => setModalShow(false)}></ModalAbout>
@@ -65,6 +69,7 @@ useEffect(()=> getUserData(),[changeUserData])
               <path d="M21.13 2.86a3 3 0 00-4.17 0l-13 13L2 22l6.19-2L21.13 7a3 3 0 000-4.16zM6.77 18.57l-1.35-1.34L16.64 6 18 7.35z"></path>
             </svg></div>
         </div>
+
           <p className="mb-0">
             {userData.bio}
             <a
