@@ -1,15 +1,12 @@
 import React from 'react'
 import '../../Styles/Login.css'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { withRouter } from 'react-router'
 
 
 
 function Login(props) {
     const [login, setLogin] = useState('')
-    const [usersList, setUserList] = useState([])
-    const [userInfo, setUserInfo] = useState([])
-
 
 
     const handleForm = (key, value) => {
