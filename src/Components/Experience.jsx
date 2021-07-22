@@ -43,7 +43,7 @@ const Experience = (props) => {
           setIsLoading={setIsLoading}
           setchangeuserdata={setchangeuserdata}
           category={"Experience"} />
-        {isLoading && <Spinners></Spinners>}
+        
         {userAllExperiences.length > 0 ? userAllExperiences.reverse().slice(0,5).map(userExperience =>
           <ExperienceDetails
             changeExpImg={changeExpImg}
@@ -53,7 +53,7 @@ const Experience = (props) => {
 
             setchangeuserdata={setchangeuserdata} key={userExperience._id}
             userExperience={userExperience} ></ExperienceDetails>) : <p className="little-padding">Let's add your first experience</p>}
-     
+     {isLoading && <Spinners></Spinners>}
         <SectionProfile category={"Education"} />
 
         <EducationSection />

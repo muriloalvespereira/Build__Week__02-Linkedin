@@ -17,7 +17,6 @@ function TopNavBar(props) {
   return (
     <>
     <Navbar id="NavBar" className="container-fluid p-0">
-      {console.log(props, " Inside NavBar")}
       <Container>
         <div>
           <svg
