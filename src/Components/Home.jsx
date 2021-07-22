@@ -49,11 +49,11 @@ const Home = (props) => {
                         <LeftProfile />
                     </Col>
                     <Col className="col-6 pr-0">
-                        <Post />
+                        <Post renderAgain={renderAgain}/>
                         {
                             posts.map((post, index) => 
                                 <Feed renderAgain={renderAgain} key={index} data={post}/>
-                                ).slice(1073, 1076)
+                                ).slice(posts.length -5).reverse()
                         }
                     </Col>
                     <Col className="col-4">

@@ -2,9 +2,11 @@ import EditPost from "./EditPost"
 import { useState } from "react"
 import { useEffect } from "react"
 import EditModalPost from "./EditModalPost"
+import DeleteModal from "./DeleteModal"
 
 const HeaderPost = (props) => {
   const [show, setShow] = useState(false);
+  const [showDelete, setShowDelete] = useState(false);
   const [showEdit, setShowEdit] = useState(false)
   const [checkId, setCheckId] = useState(false)
 
@@ -36,13 +38,19 @@ useEffect(() => {
                   <path d="M14 12a2 2 0 11-2-2 2 2 0 012 2zM4 10a2 2 0 102 2 2 2 0 00-2-2zm16 0a2 2 0 102 2 2 2 0 00-2-2z"></path>
                 </svg>
               </div>
-                { showEdit && checkId && <EditPost setShow={setShow} id={props.id} setShowEdit={setShowEdit} />}
+                { showEdit && checkId && <EditPost setShow={setShow} setShowDelete={setShowDelete} id={props.id} setShowEdit={setShowEdit} />}
             </div>
                { show && <EditModalPost 
                renderAgain={props.renderAgain}
                 id={props.postId}
        setShow={setShow}
        show={show}
+       />}
+               { showDelete && <DeleteModal
+               renderAgain={props.renderAgain}
+                id={props.postId}
+       setShowDelete={setShowDelete}
+       showDelete={showDelete}
        />}
             </>
       

@@ -4,7 +4,7 @@ import "../Styles/Sara.css";
 import { useState } from "react";
 import CreatePost from "./CreatePost";
 
-const Post = () => {
+const Post = (props) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -97,6 +97,7 @@ const Post = () => {
         </div>
       </div>
       <CreatePost
+        renderAgain={props.renderAgain}
         handleClose={handleClose}
         handleShow={handleShow}
         show={show}

@@ -42,7 +42,7 @@ const EditPost = (props) => {
             <p className="edit-font mb-0">Edit your post and make it great</p>
           </div>
        </div>
-       <div className="d-flex py-2 delete-post align-items-center" onClick={() => props.setShow(true)}>
+       <div className="d-flex py-2 delete-post align-items-center" onClick={() => props.setShowDelete(true)}>
           <div className="pl-3">
          <FaTrashAlt className="trash" />
           </div>

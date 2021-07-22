@@ -1,44 +1,64 @@
 import React from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import { useState } from "react";
+import { useEffect } from "react";
 
-const CreatePost = (props) => {
+const DeleteModal = (props) => {
   const [text, setText] = useState();
+  const [textEdit, setTextEdit] = useState();
 
   const handleChange = (key, value) => {
     setText({[key]: value});
   };
 
-  const handleSubmit = async () => {
+  useEffect(() => {
+handleEdit()
+  }, [])
+
+  const handleEdit = async () => {
+    console.log(props.id, "unique ID")
     try {
-      let response = await fetch("https://striveschool-api.herokuapp.com/api/posts/",
+      let response = await fetch("https://striveschool-api.herokuapp.com/api/posts/" + props.id,
         {
-          method: "POST",
+          method: "GET",
           headers: {
             "Authorization": "Bearer " + window.localStorage.getItem('user_Token'),
-            "Content-Type": "application/json",
           },
-          body: JSON.stringify(text),
+        }
+        );
+        let data = await response.json()
+        setTextEdit(data.text)
+    } catch (e) {
+      console.log(e);
+      return e;
+    }
+  };
+
+  const handleSubmit = async () => {
+    try {
+      let response = await fetch("https://striveschool-api.herokuapp.com/api/posts/" + props.id,
+        {
+          method: "DELETE",
+          headers: {
+            "Authorization": "Bearer " + window.localStorage.getItem('user_Token'),
+          },
         }
       );
-      // console.log("inside get all POSTS AFTER FETCH", response);
-      // let dataRequested = await response.json();
-      // console.log(dataRequested);
     } catch (e) {
       console.log(e);
       return e;
     }
 
-    props.handleClose()
+    props.setShowDelete(false)
     props.renderAgain()
   };
 
   return (
     <div className="create-post">
-      <Modal show={props.show} onHide={props.handleClose}>
+      <Modal show={props.showDelete} onHide={props.setShowDelete}>
         <Modal.Header closeButton>
           <div className="create-post-header d-flex justify-content-between">
-            <h2>Create a Post</h2>
+            <h2>Delete Post</h2>
           </div>
         </Modal.Header>
         <div className="create-post-body">
@@ -50,46 +70,13 @@ const CreatePost = (props) => {
                   " " +
                   window.localStorage.getItem("surname")}
               </div>
-              <Button
-                variant="light"
-                className="btn-who-see-post d-flex align-items-center "
-              >
-                <span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 16 16"
-                    data-supported-dps="16x16"
-                    fill="currentColor"
-                    className="mercado-match"
-                    width="16"
-                    height="16"
-                    focusable="false"
-                  >
-                    <path d="M8 1a7 7 0 107 7 7 7 0 00-7-7zM3 8a5 5 0 011-3l.55.55A1.5 1.5 0 015 6.62v1.07a.75.75 0 00.22.53l.56.56a.75.75 0 00.53.22H7v.69a.75.75 0 00.22.53l.56.56a.75.75 0 01.22.53V13a5 5 0 01-5-5zm6.24 4.83l2-2.46a.75.75 0 00.09-.8l-.58-1.16A.76.76 0 0010 8H7v-.19a.51.51 0 01.28-.45l.38-.19a.74.74 0 01.68 0L9 7.5l.38-.7a1 1 0 00.12-.48v-.85a.78.78 0 01.21-.53l1.07-1.09a5 5 0 01-1.54 9z"></path>
-                  </svg>
-                </span>
-                <span className="mt-1 ml-1 btn-who-see-post-text">Anyone</span>
-                <span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 16 16"
-                    data-supported-dps="16x16"
-                    fill="currentColor"
-                    className="mercado-match"
-                    width="16"
-                    height="16"
-                    focusable="false"
-                  >
-                    <path d="M8 11L3 6h10z" fill-rule="evenodd"></path>
-                  </svg>
-                </span>
-              </Button>
             </div>
           </div>
           <div className="post-area-container">
             <Form.Group controlId="exampleForm.ControlTextarea1">
               <Form.Control
                 as="textarea"
+                defaultValue={textEdit}
                 rows={3}
                 placeholder="What do you want to talk about?"
                 className="post-area"
@@ -97,10 +84,7 @@ const CreatePost = (props) => {
               />
             </Form.Group>
           </div>
-          <div>
-            <span className="btn-add-hashtag">Add hashtag</span>
-          </div>
-          <div className="create-post-body-footer d-flex pt-2">
+          <div className="create-post-body-footer edit-disable d-flex pt-2">
             <div className="create-post-body-footer-icons d-flex justify-content-around">
               <span>
                 <svg
@@ -160,7 +144,7 @@ const CreatePost = (props) => {
               </span>
             </div>
             <div className="btn-who-comment-contianer d-flex align-items-center w-100">
-              <Button variant="light" className="btn-who-comment ">
+              <Button variant="light" className="btn-who-comment edit-disable">
                 <span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -175,7 +159,6 @@ const CreatePost = (props) => {
                     <path d="M5 8h5v1H5zm11-.5v.08a6 6 0 01-2.75 5L8 16v-3H5.5A5.51 5.51 0 010 7.5 5.62 5.62 0 015.74 2h4.76A5.5 5.5 0 0116 7.5zm-2 0A3.5 3.5 0 0010.5 4H5.74A3.62 3.62 0 002 7.5 3.53 3.53 0 005.5 11H10v1.33l2.17-1.39A4 4 0 0014 7.58zM5 7h6V6H5z"></path>
                   </svg>
                 </span>
-                <span className="btn-who-comment-text mt-1 ml-1">Anyone</span>
               </Button>
             </div>
             <div>
@@ -184,7 +167,7 @@ const CreatePost = (props) => {
                 className="btn-post mt-1 "
                 onClick={handleSubmit}
               >
-                Post
+                Delete
               </Button>
             </div>
           </div>
@@ -194,4 +177,4 @@ const CreatePost = (props) => {
   );
 };
 
-export default CreatePost;
+export default DeleteModal;

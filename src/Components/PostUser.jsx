@@ -7,11 +7,13 @@ const PostUser = (props) => {
         <img src={props.post.user.image} className="circle-img-post" alt="" />
       </div>
       <div className="ml-2 my-3 w-100">
-        <p className="d-flex mb-0 align-items-center display-popup">
-          <h6 className="mb-0 mr-1 h6-post links-feed">{props.post.user.name + ' ' + props.post.user.surname}</h6>
-          <h6 className="mb-0 span-feed"> • 2nd</h6>
+        <div className="d-flex mb-0 align-items-center">
+          <h6 className="mb-0 mr-1 h6-post links-feed display-popup">{props.post.user.name + ' ' + props.post.user.surname}
           <PopUpUser post={props.post} />
-        </p>
+          </h6>
+          <h6 className="mb-0 span-feed"> • 2nd</h6>
+          
+        </div>
         <div className="mr-1 d-flex justify-content-between align-items-center">
           <p className="mb-0 about-feed">
           {props.post.user.title}
