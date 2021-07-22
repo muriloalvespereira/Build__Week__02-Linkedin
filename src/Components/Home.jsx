@@ -38,7 +38,7 @@ const Home = (props) => {
 
                 </Row>
             </Container>
-            {/* <TransitionPage /> */}
+            {props.setShowTopNavBar(true)}
 
         </>
 
