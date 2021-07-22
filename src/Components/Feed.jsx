@@ -20,7 +20,7 @@ const Feed = () => {
           style={{ backgroundImage: `url(${PostImg})` }}
         ></div>
       </Col>
-      <Col className="feed-area-end">
+      <Col className="feed-area-end mb-3">
         <Likes />
         <Reactions />
       </Col>

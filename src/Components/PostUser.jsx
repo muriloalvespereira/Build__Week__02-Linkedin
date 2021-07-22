@@ -2,8 +2,11 @@ import AvatarPost from "../assets/drake.png";
 const PostUser = () => {
   return (
     <div className="d-flex align-items-center">
-      <div className="img-post-feed my-3">
+      <div className="img-post-feed my-3 position-relative">
         <img src={AvatarPost} className="circle-img-post" alt="" />
+        <div className="popup-user">
+test
+        </div>
       </div>
       <div className="ml-2 my-3 w-100">
         <p className="d-flex mb-0 align-items-center">
