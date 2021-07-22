@@ -54,8 +54,28 @@
   z-index: 10;
 }
 
-.nav-link-span {
+.nav-link-pizza * {
   color: #666666;
+  fill-opacity: 1;
+  stroke-opacity: 1;
+  stroke: transparent;
+  fill: #666666;
+}
+
+.nav-link-pizza a:hover * {
+  fill-opacity: 1;
+  stroke-opacity: 1;
+  stroke: transparent;
+  fill: #1a1a1a;
+  color: #1a1a1a;
+}
+
+/* .nav-link-span {
+  color: #666666;
+  fill-opacity: 1;
+  stroke-opacity: 1;
+  stroke: transparent;
+  fill: #666666;
 }
 
 .nav-link-span:hover {
@@ -68,13 +88,20 @@
   stroke: transparent;
   fill: #666666;
 }
-#global-nav-icon--mercado__home {
+.nav-icons :hover {
+  fill-opacity: 1;
+  stroke-opacity: 1;
+  stroke: transparent;
+  fill: #1a1a1a;
+  color: #1a1a1a;
+} */
+/* #global-nav-icon--mercado__home {
   fill-opacity: 1;
   stroke-opacity: 1;
   stroke: transparent;
   fill: #666666;
-}
-#global-nav-icon--mercado__my-network {
+} */
+/* #global-nav-icon--mercado__my-network {
   fill-opacity: 1;
   stroke-opacity: 1;
   stroke: transparent;
@@ -93,13 +120,6 @@
   fill: #666666;
 }
 
-.nav-icons :hover {
-  fill-opacity: 1;
-  stroke-opacity: 1;
-  stroke: transparent;
-  fill: #1a1a1a;
-  color: #1a1a1a;
-}
 #global-nav-icon--mercado__home :hover {
   fill-opacity: 1;
   stroke-opacity: 1;
@@ -127,7 +147,7 @@
   stroke: transparent;
   fill: #1a1a1a;
   color: #1a1a1a;
-}
+} */
 
 @media only screen and (max-width: 850px) {
   .nav-link-span {
