@@ -44,7 +44,7 @@ const Experience = (props) => {
           setchangeuserdata={setchangeuserdata}
           category={"Experience"} />
         {isLoading && <Spinners></Spinners>}
-        {userAllExperiences.length > 0 ? userAllExperiences.reverse().map(userExperience =>
+        {userAllExperiences.length > 0 ? userAllExperiences.reverse().slice(0,5).map(userExperience =>
           <ExperienceDetails
             changeExpImg={changeExpImg}
             setIsLoading={setIsLoading}

@@ -96,6 +96,8 @@ function ModalAddNewExperience(props) {
       })
       props.setchangeExpImg(!props.changeExpImg)
       props.onHide()
+      setUserImage('')
+
     } catch (error) {
       console.log(error)
     }
