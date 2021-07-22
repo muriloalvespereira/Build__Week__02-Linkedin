@@ -126,12 +126,16 @@ a:hover {
 
 .skill_title > div {
   font-size: 17px;
-  margin-left: 20px;
+  /* margin-left: 20px; */
 }
 .add_skill {
   font-size: 18px;
 }
-
+.skill_views .bold {
+  font-size: 14px;
+  font-weight: 600;
+  color: #000000e6;
+}
 .skill_container,
 .skill_container-last {
   margin-top: 10px;
@@ -191,6 +195,26 @@ a:hover {
   height: 35px;
   padding-bottom: 15px;
   font-weight: 500;
+}
+.btn-endorse {
+  border-radius: 50px;
+  background-color: white;
+  border: 1px solid #5f5f5f;
+  color: #00000099;
+  height: 32px;
+  width: 32px;
+  font-weight: 500;
+  padding: 0;
+}
+.btn-endorse:hover {
+  background-color: #ebebeb;
+  border: 1px solid #5f5f5f;
+  box-shadow: 0 0 0 1px #5f5f5f;
+}
+.img-endorse {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
 }
 .edit-logo {
   font-size: 22px;

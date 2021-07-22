@@ -22,32 +22,159 @@ const Skills = () => {
         <div className="skill_container">
           <div className="skill"></div>
           <div className="skill_info">
-            <div className="skill_title">
-              Web Design <p className="pt-3 ml-1 numb">· 1 </p>
+            <div className="skill_title d-flex">
+              <Button className=" btn btn-endorse d-flex justify-content-center align-items-center mr-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  data-supported-dps="16x16"
+                  fill="currentColor"
+                  class="mercado-match m-0"
+                  width="16"
+                  height="16"
+                  focusable="false"
+                >
+                  <path d="M14 9H9v5H7V9H2V7h5V2h2v5h5z"></path>
+                </svg>
+              </Button>
+              <span> Web Design</span> <p className="pt-3 ml-1 numb">· 1 </p>
             </div>
-            <div className="skill_views">
-              Endorsed by <strong>1 connection</strong>{" "}
+            <div className="skill_views ml-5 d-flex justify-content-between w-100">
+              <div>
+                <img
+                  src="https://media-exp3.licdn.com/dms/image/C560BAQGOfFrOCEeHgQ/company-logo_100_100/0/1561044766722?e=1634774400&v=beta&t=HGdhesNpg7ZJJt5mxdHRA8mOcBwTP_XShYJHEmNX3X8"
+                  alt=""
+                  className="img-endorse"
+                />
+                Endorsed by
+                <span className="bold">
+                  {" "}
+                  2 of Maksym’s colleagues at AppQuality
+                </span>{" "}
+              </div>
+              <div className="d-flex align-items-center">
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    data-supported-dps="24x24"
+                    fill="currentColor"
+                    class="mercado-match"
+                    width="24"
+                    height="24"
+                    focusable="false"
+                  >
+                    <path d="M14.73 10H17l-5.5 8L8 14.5l1.34-1.34L11.21 15zM20 3v16a3 3 0 01-3 3H7a3 3 0 01-3-3V3h5.69l.52-1A2 2 0 0112 1a2 2 0 011.76 1l.52 1zm-2 2h-2.6l.6 1.1V7H8v-.9L8.6 5H6v14a1 1 0 001 1h10a1 1 0 001-1z"></path>
+                  </svg>{" "}
+                </span>
+                <span>LinkedIn Skill Assessment badge</span>
+              </div>
             </div>
           </div>
         </div>
         <div className="skill_container">
           <div className="skill"></div>
           <div className="skill_info">
-            <div className="skill_title">
-              Web Development<p className="pt-3 ml-1 numb">· 1 </p>
+            <div className="skill_title d-flex">
+              <Button className=" btn btn-endorse d-flex justify-content-center align-items-center mr-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  data-supported-dps="16x16"
+                  fill="currentColor"
+                  class="mercado-match m-0"
+                  width="16"
+                  height="16"
+                  focusable="false"
+                >
+                  <path d="M14 9H9v5H7V9H2V7h5V2h2v5h5z"></path>
+                </svg>
+              </Button>
+              <span> Visual Merchandising</span>{" "}
+              <p className="pt-3 ml-1 numb">· 6 </p>
             </div>
-            <div className="skill_views">
-              Endorsed by <strong>1 connection</strong>{" "}
-            </div>{" "}
+            <div className="skill_views ml-5 d-flex justify-content-between w-100 flex-nowrap">
+              <div>
+                <img
+                  src="https://media-exp1.licdn.com/dms/image/C560BAQHKruVJIKOWqw/company-logo_100_100/0/1626117794907?e=1634774400&v=beta&t=3ELp9K1R3MN6NtLO5zWzbcz6ljmM7OcNBu2dGxv6dpU"
+                  alt=""
+                  className="img-endorse pr-2"
+                />
+                Endorsed by
+                <span className="bold ">
+                  {" "}
+                  2 of Hedri Helena’s colleagues at Princess Cruises
+                </span>{" "}
+              </div>
+              {/*  <div className="d-flex align-items-center">
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    data-supported-dps="24x24"
+                    fill="currentColor"
+                    class="mercado-match"
+                    width="24"
+                    height="24"
+                    focusable="false"
+                  >
+                    <path d="M14.73 10H17l-5.5 8L8 14.5l1.34-1.34L11.21 15zM20 3v16a3 3 0 01-3 3H7a3 3 0 01-3-3V3h5.69l.52-1A2 2 0 0112 1a2 2 0 011.76 1l.52 1zm-2 2h-2.6l.6 1.1V7H8v-.9L8.6 5H6v14a1 1 0 001 1h10a1 1 0 001-1z"></path>
+                  </svg>{" "}
+                </span>
+                <span>LinkedIn Skill Assessment badge</span>
+              </div> */}
+            </div>
           </div>
         </div>
         <div className="skill_container-last">
           <div className="skill_info">
-            <div className="skill_title">
-              Design <p className="pt-3 ml-1 numb">· 1 </p>
+            <div className="skill_title d-flex">
+              <Button className=" btn btn-endorse d-flex justify-content-center align-items-center mr-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  data-supported-dps="16x16"
+                  fill="currentColor"
+                  class="mercado-match m-0"
+                  width="16"
+                  height="16"
+                  focusable="false"
+                >
+                  <path d="M14 9H9v5H7V9H2V7h5V2h2v5h5z"></path>
+                </svg>
+              </Button>
+              <span> Node.js</span> <p className="pt-3 ml-1 numb">· 1 </p>
             </div>
-            <div className="skill_views">
-              Endorsed by <strong>1 connection</strong>{" "}
+            <div className="skill_views ml-5 d-flex justify-content-between w-100 flex-nowrap">
+              <div>
+                <img
+                  src="https://media-exp1.licdn.com/dms/image/C4D0BAQGkZgktFsltFQ/company-logo_100_100/0/1519910513271?e=1634774400&v=beta&t=n2oo_SaTpeBLaStkr-Evz6jTYueJzw9boz4BlnqVJOk"
+                  alt=""
+                  className="img-endorse pr-2"
+                />
+                Endorsed by
+                <span className="bold ">
+                  {" "}
+                  2 of Stefano’s colleagues at Nucleode Srl
+                </span>{" "}
+              </div>
+              {/*  <div className="d-flex align-items-center">
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    data-supported-dps="24x24"
+                    fill="currentColor"
+                    class="mercado-match"
+                    width="24"
+                    height="24"
+                    focusable="false"
+                  >
+                    <path d="M14.73 10H17l-5.5 8L8 14.5l1.34-1.34L11.21 15zM20 3v16a3 3 0 01-3 3H7a3 3 0 01-3-3V3h5.69l.52-1A2 2 0 0112 1a2 2 0 011.76 1l.52 1zm-2 2h-2.6l.6 1.1V7H8v-.9L8.6 5H6v14a1 1 0 001 1h10a1 1 0 001-1z"></path>
+                  </svg>{" "}
+                </span>
+                <span>LinkedIn Skill Assessment badge</span>
+              </div> */}
             </div>
           </div>
         </div>
