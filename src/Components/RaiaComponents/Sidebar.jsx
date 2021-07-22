@@ -1,5 +1,5 @@
 /* import { useState } from "react"; */
-import { Modal } from "react-bootstrap";
+import { Container, Modal } from "react-bootstrap";
 
 
 const Sidebar = (props) => {
@@ -14,7 +14,7 @@ const Sidebar = (props) => {
             </div> */}
         <Modal  show={props.show} onHide={props.handleClose} 
                 id="modal-sidebar">
-
+            <div  style={{overflowY: "auto", height: "100vh"}}>
            {/*  <div className={slide ? 'd-block ' : ' d-none'}> */}
                {/*  <div className="main-container"> */}
                 <Modal.Header className="border-0 pr-3 mr-2"  closeButton>
@@ -148,7 +148,7 @@ const Sidebar = (props) => {
                
                     </Modal.Body>
 
-
+                    </div>
            </Modal>
         </div>
     )
