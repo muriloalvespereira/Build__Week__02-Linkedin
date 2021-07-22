@@ -297,6 +297,18 @@
   color: #fc9295;
   margin-right: 10px;
 }
+.photo-btn span {
+  margin-right: 10px;
+}
+.video-btn span {
+  margin-right: 10px;
+}
+.event-btn span {
+  margin-right: 10px;
+}
+.write-article-btn span {
+  margin-right: 10px;
+}
 
 /* featured */
 
