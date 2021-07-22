@@ -15,28 +15,26 @@ const ExperienceDetails = (props) => {
       <div className="pl-4 experience-border w-100">
         <div className="company-details">
           <h6>{props.userExperience.role}</h6>
-          <p className="company-title">{props.userExperience.company}</p>
+          <p className="company-title mb-0">{props.userExperience.company} - {props.userExperience.area}</p>
           <p className="company-duration">
             <span>
-              {format(new Date(props.userExperience.startDate), "dd-mm-yyyy")}
+              {format(new Date(props.userExperience.startDate), "dd-MM-yyyy")}
             </span>{" "}
             <span>
-              - {format(new Date(props.userExperience.endDate), "dd-mm-yyyy")}
+              - {format(new Date(props.userExperience.endDate), "dd-MM-yyyy")}
             </span>
           </p>
-          <p className="company-duration">
+          {/* <p className="company-duration">
             <span>{props.userExperience.area}</span>
-          </p>
+          </p> */}
         </div>
-        <div className="d-flex company-details pt-3 pb-3">
-          <p className="company-title set-size-company-title">{props.userExperience.description}
-            I'm passionate about user experience and web dev. After my first real-world projects, I felt the necessity to be able to code them. I'm the kind of person who likes to learn more and more.I like to be able to participate constructively in all
-            I like to be able to participate constructively in all stages of the process. Also, to provide useful feedback and to receive them as well. It's funny but people tend to seek my advice on a wide range of subjects, perhaps because often I hear things like How can you keep calm like this? (extremely stressful situation). Keep my mind clear will help me to UNDERSTAND the situation. I do think that feedbacks are important to be able not only to build a better project but also to be a better person. So I always do feedback with kindness and being positive. Have worked in teams since Uni taught that if you need to tackle a PROBLEM it's important to have a team that you can rely on. Being organized and knowing how to handle all the information is key as well. Because it will help to see the data TO PROPOSE SOLUTIONS.
+        <div className="d-flex company-details justify-content-start">
+          <p className="company-title set-size-company-title justify-content-start">{props.userExperience.description}
           </p>
 
         </div>
-        {props.userExperience.image && <div className="Needs to fix Styling set-size">
-          <img src={props.userExperience.image} alt="" />
+        {props.userExperience.image && <div className="set-size">
+          <img src={props.userExperience.image} alt="" style={{maxHeight: '256px', maxWidth: '256px', objectFit:'cover'}} />
         </div>}
       </div>
       <ModalAddNewExperience
