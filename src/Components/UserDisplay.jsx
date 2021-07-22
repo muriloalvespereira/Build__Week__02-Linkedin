@@ -76,7 +76,9 @@ useEffect(()=> getUserData(),[changeUserData])
                 </div>
               </Col>
               <Col className="position-relative">
-                  <ModalProfileInfo show={modalShow} changeUserData={changeUserData} setChangeUserdata={setChangeUserdata}   onHide={() => setModalShow(false)} >
+                  <ModalProfileInfo show={modalShow} 
+                  changeUserData={changeUserData} 
+                  setChangeUserdata={setChangeUserdata}   onHide={() => setModalShow(false)} >
 
                   </ModalProfileInfo>
                 <div className="edit-details" onClick={() => setModalShow(true)}>

@@ -31,7 +31,7 @@ function ModalProfileInfo(props) {
       })
       let sent = await response.json()
       console.log(sent)
-      props.setChangeUserdata(!props.ChangeUserdata)
+      props.setChangeUserdata(!props.changeUserData)
       props.onHide()
     } catch (e) {
       console.log(e)
@@ -119,11 +119,11 @@ function ModalProfileInfo(props) {
             <Form.Row>
               <Form.Group className="col-4">
                 <Form.Label>Postal code</Form.Label>
-                <Form.Control className="change-border" type="text" placeholder="Enter propsName" onChange={(e) => handleForm('name', e.target.value)} />
+                <Form.Control className="change-border" type="text" placeholder="Enter propsName" />
               </Form.Group>
               <Form.Group as={Col}>
                 <Form.Label>Locations within this area</Form.Label>
-                <Form.Control className="change-border" type="text" placeholder="Enter propsName" onChange={(e) => handleForm('name', e.target.value)} />
+                <Form.Control className="change-border" type="text" placeholder="Enter propsName" onChange={(e) => handleForm('area', e.target.value)} />
               </Form.Group>
             </Form.Row>
 
@@ -147,7 +147,7 @@ function ModalProfileInfo(props) {
         </Modal.Body>
         <Modal.Footer>
           {/* <Button onClick={props.onHide}>Close</Button> */}
-          <Button className="custom-btn" onClick={props.onHide}>Save</Button>
+          <Button className="custom-btn" onClick={()=>updateProfileInfo()}>Save</Button>
         </Modal.Footer>
       </Modal>
 
