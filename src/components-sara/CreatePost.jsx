@@ -1,8 +1,37 @@
 import React from "react";
-import avatar from "../assets/muriloavatar.png";
 import { Button, Form, Modal } from "react-bootstrap";
+import { useState } from "react";
 
 const CreatePost = (props) => {
+  const [text, setText] = useState();
+
+  const handleChange = (key, value) => {
+    setText({[key]: value});
+  };
+
+  const handleSubmit = async () => {
+    try {
+      let response = await fetch("https://striveschool-api.herokuapp.com/api/posts/",
+        {
+          method: "POST",
+          headers: {
+            "Authorization": "Bearer " + window.localStorage.getItem('user_Token'),
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(text),
+        }
+      );
+      // console.log("inside get all POSTS AFTER FETCH", response);
+      // let dataRequested = await response.json();
+      // console.log(dataRequested);
+    } catch (e) {
+      console.log(e);
+      return e;
+    }
+
+    props.handleClose()
+  };
+
   return (
     <div className="create-post">
       <Modal show={props.show} onHide={props.handleClose}>
@@ -13,9 +42,13 @@ const CreatePost = (props) => {
         </Modal.Header>
         <div className="create-post-body">
           <div className="create-post-user d-flex">
-            <img src={`${avatar}`} alt="" />
+            <img src={`${window.localStorage.getItem("image")}`} alt="" />
             <div className="d-flex flex-column user-name-btn-container">
-              <div className="user-name">User Name</div>
+              <div className="user-name">
+                {window.localStorage.getItem("name") +
+                  " " +
+                  window.localStorage.getItem("surname")}
+              </div>
               <Button
                 variant="light"
                 className="btn-who-see-post d-flex align-items-center "
@@ -59,6 +92,7 @@ const CreatePost = (props) => {
                 rows={3}
                 placeholder="What do you want to talk about?"
                 className="post-area"
+                onChange={(e) => handleChange('text', e.target.value)}
               />
             </Form.Group>
           </div>
@@ -147,7 +181,7 @@ const CreatePost = (props) => {
               <Button
                 variant="light"
                 className="btn-post mt-1 "
-                onClick={props.handleClose}
+                onClick={handleSubmit}
               >
                 Post
               </Button>

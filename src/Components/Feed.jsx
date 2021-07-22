@@ -6,18 +6,18 @@ import PostImg from "../assets/postfeed.jpg";
 import Likes from "./Likes";
 import Reactions from "./Reactions"
 
-const Feed = () => {
+const Feed = (props) => {
   return (
     <>
       <Col className="feed-area">
         <HeaderPost />
-        <PostUser />
-        <TextPost />
+        <PostUser post={props.data} />
+        <TextPost post={props.data}/>
       </Col>
       <Col className="px-0">
         <div
           className="media-feed w-100"
-          style={{ backgroundImage: `url(${PostImg})` }}
+          style={{ backgroundImage: `url(${props.data.image})` }}
         ></div>
       </Col>
       <Col className="feed-area-end mb-3">
