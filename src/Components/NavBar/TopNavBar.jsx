@@ -17,7 +17,7 @@ function TopNavBar(props) {
   return (
     <>
     <Navbar id="NavBar" className="container-fluid p-0">
-      {console.log(props.userData, " Inside NavBar")}
+      {console.log(props, " Inside NavBar")}
       <Container>
         <div>
           <svg
@@ -108,7 +108,7 @@ function TopNavBar(props) {
               {isClickedAvatar && (
                 <ProfileBox
                   setShowTopNavBar={props.setShowTopNavBar}
-                  userData={props.userData}
+                  
                 ></ProfileBox>
               )}
             </div>

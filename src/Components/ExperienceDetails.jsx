@@ -29,24 +29,23 @@ const ExperienceDetails = (props) => {
           </p>
         </div>
         <div className="d-flex company-details pt-3 pb-3">
-          <p className="company-title">{props.userExperience.description}
-          I'm passionate about user experience and web dev. After my first real-world projects, I felt the necessity to be able to code them. I'm the kind of person who likes to learn more and more.I like to be able to participate constructively in all
-I like to be able to participate constructively in all stages of the process. Also, to provide useful feedback and to receive them as well. It's funny but people tend to seek my advice on a wide range of subjects, perhaps because often I hear things like How can you keep calm like this? (extremely stressful situation). Keep my mind clear will help me to UNDERSTAND the situation. I do think that feedbacks are important to be able not only to build a better project but also to be a better person. So I always do feedback with kindness and being positive. Have worked in teams since Uni taught that if you need to tackle a PROBLEM it's important to have a team that you can rely on. Being organized and knowing how to handle all the information is key as well. Because it will help to see the data TO PROPOSE SOLUTIONS.
+          <p className="company-title set-size-company-title">{props.userExperience.description}
+            I'm passionate about user experience and web dev. After my first real-world projects, I felt the necessity to be able to code them. I'm the kind of person who likes to learn more and more.I like to be able to participate constructively in all
+            I like to be able to participate constructively in all stages of the process. Also, to provide useful feedback and to receive them as well. It's funny but people tend to seek my advice on a wide range of subjects, perhaps because often I hear things like How can you keep calm like this? (extremely stressful situation). Keep my mind clear will help me to UNDERSTAND the situation. I do think that feedbacks are important to be able not only to build a better project but also to be a better person. So I always do feedback with kindness and being positive. Have worked in teams since Uni taught that if you need to tackle a PROBLEM it's important to have a team that you can rely on. Being organized and knowing how to handle all the information is key as well. Because it will help to see the data TO PROPOSE SOLUTIONS.
           </p>
-          {/* <p className="company-title">+ Prospecting for new students.</p>
-                        <p className="company-title">+ I manage the social media. (Developing and analyzing results and reports of marketing action)</p>
-                        <p className="company-title">+ Monitoring the sales pipeline, Payment Default and KPI's.</p>
-                        <p className="company-title">+ I doubled the number of students in the first 45 days of work</p>
-                        <p className="company-title">+ Achived more than 160 new students in 1 year.</p> */}
+
         </div>
+        {props.userExperience.image && <div className="Needs to fix Styling set-size">
+          <img src={props.userExperience.image} alt="" />
+        </div>}
       </div>
       <ModalAddNewExperience
         show={modalShow}
-        // need to change the id to the user id
-
-        endpoint={'https://striveschool-api.herokuapp.com/api/profile/' +  window.localStorage.getItem('_id') + '/experiences/' + props.userExperience._id}
+        endpoint={'https://striveschool-api.herokuapp.com/api/profile/' + window.localStorage.getItem('_id') + '/experiences/' + props.userExperience._id}
         requestmethod='PUT'
-
+        changeExpImg={props.changeExpImg}
+        setIsLoading={props.setIsLoading}
+        setchangeExpImg={props.setchangeExpImg}
         userExperience={props.userExperience}
         changeUserData={props.changeUserData}
         setchangeuserdata={props.setchangeuserdata}

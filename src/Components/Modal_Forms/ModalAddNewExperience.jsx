@@ -5,83 +5,108 @@ import { format } from 'date-fns'
 
 
 function ModalAddNewExperience(props) {
-const [formData, setFormData] = useState({
-        role: '',
-        company: 'propsCompany',
-        startDate: ' propsStartDate',
-        endDate: 'propsEndDate',
-        description: 'propsDescription',
-        area: 'propsArea'
-      })
-      const [endpoint, setEndpoint] = useState('')
+  const [formData, setFormData] = useState({
+    role: '',
+    company: 'propsCompany',
+    startDate: ' propsStartDate',
+    endDate: 'propsEndDate',
+    description: 'propsDescription',
+    area: 'propsArea'
+  })
+  const [endpoint, setEndpoint] = useState('')
+  const [userImage, setUserImage] = useState('')
 
-      
-      useEffect(()=>{
-        if(props.userExperience)
-        setFormData(
-          {
-            role: props.userExperience.role,
-            company: props.userExperience.company,
-            startDate: format(new Date (props.userExperience.startDate), 'yyyy-MM-dd'),
-            endDate: format(new Date (props.userExperience.endDate), 'yyyy-MM-dd'),
-            description: props.userExperience.description,
-            area: props.userExperience.area
-            
-          }
-          )
-      },[])
-    
-      const handleForm=(key, value)=>{
-        setFormData({
-          ...formData,
-          [key]: value
-        })
-      }
-    
-     
-    // POST Goes to the Token owner independently of the ID
-        const postUserExperience = async () => {
-            try {
-                let response = await fetch(props.endpoint, {
-                    method: props.requestmethod,
-                    headers: {
-                        "Authorization": "Bearer " + window.localStorage.getItem('user_Token'),
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify(formData)
-                })
-                let newExperienceSent = await response.json()
-                props.setchangeuserdata(!props.changeUserData)
 
-                props.onHide()
-            } catch (e) {
-                return e
-            }
+  useEffect(() => {
+    if (props.userExperience)
+      setFormData(
+        {
+          role: props.userExperience.role,
+          company: props.userExperience.company,
+          startDate: format(new Date(props.userExperience.startDate), 'yyyy-MM-dd'),
+          endDate: format(new Date(props.userExperience.endDate), 'yyyy-MM-dd'),
+          description: props.userExperience.description,
+          area: props.userExperience.area
+
         }
+      )
+  }, [])
+
+  const handleForm = (key, value) => {
+    setFormData({
+      ...formData,
+      [key]: value
+    })
+  }
 
 
-        // Delete
-        const deleteUserExperience = async () => {
-          try {
-              let response = await fetch(props.endpoint, {
-                  method: 'DELETE',
-                  headers: {
-                      "Authorization": "Bearer " + window.localStorage.getItem('user_Token')
-                  },
-              })
-              props.setchangeuserdata(!props.changeUserData)
-              props.onHide()
-          } catch (e) {
-            console.log(e)
-              return e
-          }
-      }
+  // POST Goes to the Token owner independently of the ID
+  const postUserExperience = async () => {
+    props.setIsLoading(true)
+    try {
+      let response = await fetch(props.endpoint, {
+        method: props.requestmethod,
+        headers: {
+          "Authorization": "Bearer " + window.localStorage.getItem('user_Token'),
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      })
+      let newExperienceSent = await response.json()
+      props.setIsLoading(false)
+      props.setchangeuserdata(!props.changeUserData)
+      addExperienceImage(newExperienceSent._id)
 
-    
+      props.onHide()
+    } catch (e) {
+      return e
+    }
+  }
 
-   
-    return (
-      <Modal
+
+  // Delete
+  const deleteUserExperience = async () => {
+    props.setIsLoading(true)
+    try {
+      let response = await fetch(props.endpoint, {
+        method: 'DELETE',
+        headers: {
+          "Authorization": "Bearer " + window.localStorage.getItem('user_Token')
+        },
+      })
+      props.setIsLoading(false)
+      props.setchangeuserdata(!props.changeUserData)
+      props.onHide()
+    } catch (e) {
+      console.log(e)
+      return e
+    }
+  }
+
+  const addExperienceImage = async (expID) => {
+
+    try {
+      let response = await fetch('https://striveschool-api.herokuapp.com/api/profile/' + window.localStorage.getItem('_id') + '/experiences/' + expID + '/picture', {
+        method: 'POST',
+        headers: {
+          "Authorization": "Bearer " + window.localStorage.getItem('user_Token'),
+        },
+        body: userImage
+
+      })
+      props.setchangeExpImg(!props.changeExpImg)
+      props.onHide()
+    } catch (error) {
+      console.log(error)
+    }
+
+  }
+
+
+
+
+  return (
+    <Modal
       {...props}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
@@ -173,6 +198,18 @@ const [formData, setFormData] = useState({
             <Form.Label>Description</Form.Label>
             <Form.Control type="text" as="textarea" rows={5} placeholder={endpoint === 'POST' ? "addDescription" : formData.description} onChange={(e) => handleForm('description', e.target.value)} />
           </Form.Group>
+          <Form>
+            <Form.Group>
+              <Form.File id="exampleFormControlFile1" label="Example file input"
+                onChange={(e) => {
+                  let newUserImage = new FormData()
+                  newUserImage.append('experience', e.target.files[0])
+                  setUserImage(newUserImage)
+                }}
+
+              />
+            </Form.Group>
+          </Form>
         </div>
 
       </Modal.Body>

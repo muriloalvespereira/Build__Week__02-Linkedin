@@ -1,15 +1,16 @@
 import React from 'react'
 import '../../Styles/Login.css'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { withRouter } from 'react-router'
+import TransitionPage from '../RaiaComponents/TransitionPage'
+
 
 
 
 function Login(props) {
     const [login, setLogin] = useState('')
-    const [usersList, setUserList] = useState([])
-    const [userInfo, setUserInfo] = useState([])
-
+    const [loginValidation, setLoginValidation] = useState(false)
+    const [isTransitionPage, setTransitionPage] = useState(false)
 
 
     const handleForm = (key, value) => {
@@ -33,16 +34,17 @@ function Login(props) {
                 body: JSON.stringify(login)
             }
             )
-         
             if (response.ok) {
                 let userToken = await response.json()
+                console.log(userToken, 'dsadas dsainside toekn')
                 window.localStorage.setItem('user_Token', userToken.access_token)
                 getUserData()
-        
-
+            } else {
+                setLoginValidation(true)
             }
 
         } catch (err) {
+            setLoginValidation(true)
             console.log(err)
             return err
         }
@@ -59,12 +61,23 @@ function Login(props) {
                 },
                 
             })
+            if(response.ok){
             let userData = await response.json()
-            let userDataKeyList = Object.keys(userData)
-            userDataKeyList.forEach(key => window.localStorage.setItem(key, userData[key]))
-            props.history.push('profile')
+            if(userData.name === undefined){
+                setLoginValidation(true)
+                return
+            }
+                setTransitionPage(true)
+                let userDataKeyList = Object.keys(userData)
+                userDataKeyList.forEach(key => window.localStorage.setItem(key, userData[key]))
+                props.history.push('transitionPage')
+                props.setShowTopNavBar(true)
+            } else{
+                setLoginValidation(true)
+            }
            
         } catch (e) {
+            // setLoginValidation(true)
             console.log(e)
             return e
         }
@@ -74,6 +87,7 @@ function Login(props) {
 
     return (
         <div id="logo-main-container" className="container-fluid d-flex flex-column align-content-center p-0">
+            
             <div className="container  d-flex flex-column justify-content-center align-items-center mt-4 mb-3 mod-logo-maxWidth">
 
                 <div id="login-logo" className="d-flex justify-content-center align-items-center">
@@ -131,6 +145,9 @@ function Login(props) {
                     <div className="section-line"></div>
 
                 </div>
+                {loginValidation && <div className="container d-flex justify-content-center">
+                    <p className="text-danger"><strong>Sorry incorrect username/password :(</strong></p>
+                    </div>}
 
 
                 <div className="container d-flex flex-column mod-logo-maxWidth">

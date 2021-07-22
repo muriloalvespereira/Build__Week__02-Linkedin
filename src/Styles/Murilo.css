@@ -58,6 +58,10 @@
   top: 50px;
 }
 
+.profile-pic:hover{
+  cursor: pointer;
+}
+
 .bg-photo {
   height: 143px;
   width: 143px;
