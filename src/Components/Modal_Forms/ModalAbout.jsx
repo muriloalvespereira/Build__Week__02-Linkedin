@@ -48,23 +48,23 @@ function ModalAbout(props) {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          Edit summary
+          <p className="edit-title">Edit info</p>
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form>
           <Form.Row>
-            <Form.Group as={Col} controlId="bio">
-              <Form.Label>Description</Form.Label>
-              <Form.Control type="text" as='textarea' rows={5} placeholder="Enter propsName" onChange={(e) => handleForm('bio', e.target.value)} />
+            <Form.Group as={Col} controlId="bio" className="descriptionAbout" >
+              <Form.Label><span className="sum-title ">Summary </span></Form.Label>
+              <Form.Control type="text" as='textarea' rows={5} onChange={(e) => handleForm('bio', e.target.value)} />
             </Form.Group>
           </Form.Row>
         </Form>
       </Modal.Body>
       <Modal.Footer>
         {/* <Button onClick={props.onHide}>Close</Button> */}
-        <Button variant="primary"
-        onClick={()=> updateProfileInfo()}
+        <Button className="custom-btn"
+          onClick={() => updateProfileInfo()}
         >Save</Button>
       </Modal.Footer>
     </Modal>
