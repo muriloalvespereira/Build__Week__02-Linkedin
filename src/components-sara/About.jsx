@@ -68,7 +68,7 @@ const About = () => {
               setChangeUserdata={setChangeUserdata}
               onHide={() => setModalShow(false)}
             ></ModalAbout>
-            <div class="feature-icon" onClick={() => setModalShow(true)}>
+            <div class="about-icon" onClick={() => setModalShow(true)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"

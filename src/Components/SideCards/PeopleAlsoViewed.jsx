@@ -36,16 +36,26 @@ const PeopleAlsoViewed = () => {
           People also viewed
         </h2>
         {Profiles.slice(3, 10).map((profile) => (
-          <div className="profile_container py-2" key={profile._id}>
+          <div className="profile_container pt-2" key={profile._id}>
             <img
               src={profile.image}
               alt={profile.name + " " + profile.surname}
               className="mt-1"
             />
             <div className="profile_info">
-              <p href={"@" + profile.name + "/" + profile._id}>
-                <div className="name">
-                  {profile.name + " " + profile.surname}
+              <div href={"@" + profile.name + "/" + profile._id}>
+                <div className="name d-flex align-items-center">
+                  <span>{profile.name + " " + profile.surname}</span>
+                  <span
+                    className="ml-1 pb-1"
+                    style={{
+                      color: " gray",
+                      fontSize: "14px",
+                      fontWeight: "400",
+                    }}
+                  >
+                    • 2nd
+                  </span>
                 </div>
                 <div
                   className="speciality text-muted"
@@ -57,8 +67,8 @@ const PeopleAlsoViewed = () => {
                 >
                   {profile.title}
                 </div>
-              </p>
-              <button className="connect_button  mt-1">Connect</button>
+              </div>
+              <button className="connect_button  mt-2">Connect</button>
             </div>
           </div>
         ))}

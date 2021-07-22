@@ -50,9 +50,23 @@ a:hover {
   font-size: 12px;
 }
 
-÷
+.select-label {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.6);
+}
+.footer-select {
+  font-size: 12px;
+  font-weight: 600;
+  border: 2px solid lightgrey;
+  background-color: #ffffff00;
+  text-align: start;
+  width: 270px;
+  height: 35px;
+  color: rgba(0, 0, 0, 0.5);
+  border-radius: 6px;
+}
 /* people also viewed */
-
 
 .people_also_viewed {
   background: white !important;
@@ -94,7 +108,9 @@ a:hover {
 .skills {
   background: white;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
   padding: 0 20px;
   padding-top: 20px;
   max-width: 100%;
@@ -115,10 +131,15 @@ a:hover {
 .add_skill {
   font-size: 18px;
 }
-.skill_container {
+
+.skill_container,
+.skill_container-last {
   margin-top: 10px;
   display: flex;
   padding: 10px 0;
+  /*; */
+}
+.skill_container {
   border-bottom: 1px solid #e7e5e5;
 }
 
@@ -132,12 +153,17 @@ a:hover {
 .skill_views {
   font-size: 14px;
 }
-.show_more {
+.show_more_skills {
   text-align: center;
-  padding: 10px 30px;
-  background: rgb(255, 253, 253);
-  width: calc(100% + 40px);
+  /* padding: 10px 30px; */
+  background: white;
+  /*  width: calc(100% + 40px); */
   align-self: center;
+  max-width: 100%;
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
   cursor: pointer;
@@ -145,8 +171,18 @@ a:hover {
   font-weight: bold;
   color: gray;
 }
-.show_more:hover {
+.show_more_skills:hover {
   background-color: #ebebeb;
+}
+.show_more_skills span {
+  color: rgba(0, 0, 0, 0.9);
+  font-weight: 600;
+  font-size: 16px;
+}
+.show_more_skills svg {
+  font-size: 16px;
+  font-weight: 600;
+  color: #5f5f5f;
 }
 .btn-skill {
   border-radius: 20px;

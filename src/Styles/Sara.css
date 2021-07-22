@@ -67,7 +67,7 @@
   color: #00000099;
   font-size: 16px;
   font-weight: 600;
-  border: 2px solid gray;
+  border: 1px solid gray;
   padding: 2px 16px;
   border-radius: 60px;
 
@@ -75,7 +75,7 @@
 }
 .connect_button:hover {
   box-shadow: 0 0 0 1px #5f5f5f;
-  border: 2px solid #5f5f5f;
+  border: 1px solid #5f5f5f;
   background-color: #ebebeb;
   color: #00000099;
   overflow: hidden;
@@ -85,7 +85,8 @@
 /* dashboard */
 .dashboard {
   background-color: #dde6f1;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: none;
   border-radius: 10px;
   box-shadow: none;
 
@@ -352,7 +353,8 @@
 /* activity */
 .activity {
   background-color: white;
-  border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   padding: 24px;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -401,14 +403,25 @@
   color: #00000099;
   display: block;
 }
-.activity .all-activity {
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 24px;
-  margin: 16px -24px -24px;
+.all-activity {
+  background: white;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  max-width: 100%;
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  margin-left: 0;
   text-decoration: none;
   cursor: pointer;
 }
-.activity .all-activity:hover {
+.all-activity span {
+  font-size: 16px;
+  font-weight: 600;
+  color: #5f5f5f;
+}
+.all-activity:hover {
   background-color: #ebebeb;
 }
 .activity .a {
@@ -427,6 +440,19 @@
   line-height: 28px;
   font-weight: 400;
   color: #000000e6;
+}
+.about svg {
+  color: #5e5e5e;
+  margin-top: 9px;
+}
+.about-icon {
+  color: #5e5e5e;
+  width: 40px;
+  height: 40px;
+}
+.about-icon:hover {
+  background-color: #ebebeb !important;
+  border-radius: 50%;
 }
 .about p {
   font-size: 14px;
