@@ -3,6 +3,28 @@ import { Modal, Button, Form, Col } from 'react-bootstrap'
 import { useState, useEffect } from 'react'
 
 function ModalProfileImage(props) {
+    const [userImage, setUserImage] = useState('')
+
+    const replaceUserProfilePic = async (e) => {
+        e.preventDefault()
+        console.log(userImage)
+        try {
+
+            let response = await fetch('https://striveschool-api.herokuapp.com/api/profile/' + window.localStorage.getItem('_id') + '/picture', {
+                method: 'POST',
+                headers: {
+                    "Authorization": "Bearer " + window.localStorage.getItem('user_Token'),
+                },
+                body: userImage
+
+            })
+            let sent = await response.json()
+        } catch (error) {
+            console.log(error)
+
+        }
+
+    }
 
     return (
         <Modal
@@ -21,15 +43,20 @@ function ModalProfileImage(props) {
                     <Form.Row>
                         <Form.Group as={Col} controlId="profile">
                             <Form.Label>Profile Image</Form.Label>
-                            <Form.Control type="file" placeholder="Update your profile image" onChange={(e) => console.log( e.target.files)} />
+                            <Form.Control type="file" placeholder="Update your profile image" onChange={(e) => {
+                                 let newUserImage = new FormData()
+                                 newUserImage.append('profile', e.target.files[0])
+                                 setUserImage(newUserImage)
+                                console.log(userImage)
+                            }} />
                         </Form.Group>
                     </Form.Row>
                 </Form>
             </Modal.Body>
             <Modal.Footer>
-                {/* <Button onClick={props.onHide}>Close</Button> */}
+                <Button>Close</Button>
                 <Button variant="primary"
-                    
+                    onClick={(e) => replaceUserProfilePic(e)}
                 >Save</Button>
             </Modal.Footer>
         </Modal>
