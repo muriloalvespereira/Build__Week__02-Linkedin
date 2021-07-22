@@ -25,10 +25,11 @@ const SideHome = () => {
                     viewBox="0 0 18 18"
                     data-supported-dps="18x18"
                     fill="#61605F"
-                    className="mercado-match svg-sidehome"
+                    className="mercado-match "
                     width="20"
                     height="20"
                     focusable="false"
+                    id="svg-sidehome2"
                   >
                     <path
                       d="M12 2H4a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 
@@ -196,10 +197,11 @@ const SideHome = () => {
                     viewBox="0 0 18 18"
                     data-supported-dps="18x18"
                     fill="#61605F"
-                    className="mercado-match svg-sidehome"
+                    className="mercado-match"
                     width="20"
                     height="20"
                     focusable="false"
+                    id="svg-sidehome1"
                   >
                     <path
                       d="M12 2H4a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 
