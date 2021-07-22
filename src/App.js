@@ -48,7 +48,7 @@ const App = (props) => {
           <Route path="/transitionPage" exact render={(routerProps) => <TransitionPage userData={userData}{...routerProps} />}></Route>
         </Router>
 
-        <Messaging />
+        {showTopNavBar &&<Messaging />}
         <Footer></Footer>
 
       </div>
