@@ -1,21 +1,20 @@
-import AvatarPost from "../assets/drake.png";
-const PostUser = () => {
+
+import PopUpUser from "./PopUpUser";
+const PostUser = (props) => {
   return (
     <div className="d-flex align-items-center">
       <div className="img-post-feed my-3 position-relative">
-        <img src={AvatarPost} className="circle-img-post" alt="" />
-        <div className="popup-user">
-test
-        </div>
+        <img src={props.post.user.image} className="circle-img-post" alt="" />
       </div>
       <div className="ml-2 my-3 w-100">
-        <p className="d-flex mb-0 align-items-center">
-          <h6 className="mb-0 mr-1 h6-post links-feed">Shaun Stevens</h6>
+        <p className="d-flex mb-0 align-items-center display-popup">
+          <h6 className="mb-0 mr-1 h6-post links-feed">{props.post.user.name + ' ' + props.post.user.surname}</h6>
           <h6 className="mb-0 span-feed"> • 2nd</h6>
+          <PopUpUser post={props.post} />
         </p>
         <div className="mr-1 d-flex justify-content-between align-items-center">
           <p className="mb-0 about-feed">
-            Partner - Morgan McKinley Executive Search | Connecting...
+          {props.post.user.title}
           </p>
         </div>
         <p className="d-flex mb-0 align-items-center">

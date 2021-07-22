@@ -1,29 +1,21 @@
 import { useState } from "react";
 
-const TextPost = () => {
+const TextPost = (props) => {
   const [displayText, setDisplayText] = useState(false);
 
   const showText = (text) => {
     setDisplayText(text);
   };
 
-  const shortText = `How life has changed, I never thought getting something like my 
-  EU Digital COVID Certification would excite me, but it did. Since getting the 2nd jab,
-   I haven't felt the best, but thankfully I am starting to feel somewhat normal again. `;
+  const shortText = props.post.text.slice(0,200);
 
-  const completeText = `How life has changed, I never thought getting something like my 
-  EU Digital COVID Certification would excite me, but it did. Since getting the 2nd jab,
-   I haven't felt the best, but thankfully I am starting to feel somewhat normal again.
-    Fingers crossed, we continue to make progress with the vaccine rollout and get our beautiful
-     country booming once again.
-     
-     The light at the end of the tunnel is brighter than the biggest brightest star - Keith McClelland`;
+  const completeText = props.post.text;
 
   return (
     <div>
       <p className="text-post">
         {!displayText && shortText}
-        {!displayText && (
+        {!displayText && completeText.length > 150 && (
           <span
             className="mb-0 see-more"
             onClick={() => showText(completeText)}

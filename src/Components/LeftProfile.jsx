@@ -15,15 +15,15 @@ const LeftProfile = () => {
           <div className="profile-pic-side">
             <div
               className="bg-photo-side"
-              style={{ backgroundImage: `url(${avatar})` }}
+              style={{ backgroundImage: `url(${window.localStorage.getItem('image')})` }}
             ></div>
           </div>
         </div>
 
         <Col className="details-profile-side">
-          <h6 className="mb-0 text-center">Murilo Alves</h6>
+          <h6 className="mb-0 text-center">{window.localStorage.getItem('name') + ' ' + window.localStorage.getItem('surname')}</h6>
           <p className="mb-0 text-center about-side">
-            MSc Digital Marketing/Sales Growth/Polyglot
+            {window.localStorage.getItem('title')}
           </p>
           <p className="text-muted details-region">
             <span className="span-details"></span>
