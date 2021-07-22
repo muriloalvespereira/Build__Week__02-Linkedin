@@ -2,6 +2,7 @@ import { Row, Col } from "react-bootstrap";
 import SectionProfile from "./SectionProfile";
 import ExperienceDetails from "./ExperienceDetails";
 import { useState, useEffect } from "react";
+import EducationSection from "./RaiaComponents/EducationSection";
 
 const Experience = (props) => {
   const [userAllExperiences, setUserAllExperiences] = useState([])
@@ -33,12 +34,12 @@ const Experience = (props) => {
   return (
     <Row>
       <Col className="col-12 experience-area mt-4 px-0">
-        <SectionProfile 
-        changeExpImg={changeExpImg}
-        setchangeExpImg={setchangeExpImg}
-        changeUserData={changeUserData} 
-        setchangeuserdata={setchangeuserdata} 
-        category={"Experience"} />
+        <SectionProfile
+          changeExpImg={changeExpImg}
+          setchangeExpImg={setchangeExpImg}
+          changeUserData={changeUserData}
+          setchangeuserdata={setchangeuserdata}
+          category={"Experience"} />
 
         {userAllExperiences.length > 0 ? userAllExperiences.map(userExperience =>
           <ExperienceDetails
@@ -46,9 +47,11 @@ const Experience = (props) => {
             setchangeExpImg={setchangeExpImg}
             changeUserData={changeUserData}
             setchangeuserdata={setchangeuserdata} key={userExperience._id}
-            userExperience={userExperience} ></ExperienceDetails>) : 'no Experience do display'}
+            userExperience={userExperience} ></ExperienceDetails>) : <p className="little-padding">Let's add your first experience</p>}
         {/* <ExperienceDetails  />  To be deleted*/}
         <SectionProfile category={"Education"} />
+
+        <EducationSection />
         {/* Needs to create an object and pass as props to simulate the Education */}
         {/* <ExperienceDetails /> */}
       </Col>
