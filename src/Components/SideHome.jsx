@@ -9,15 +9,15 @@ import "../Styles/Lea.css";
 
 const SideHome = () => {
   return (
-    <aside className="aside-sidehome">
-      <div className="mt-5 text-left">
-        <section>
-          <ListGroup>
+    <aside className="aside-sidehome ">
+      <div className="mt-5 text-left ">
+        <section >
+          <ListGroup >
             <ListGroup.Item
-              className="d-flex align-items-center"
+              className="d-flex align-items-center pt-2 pb-1"
               style={{ border: "none" }}
             >
-              <h5 style={{ flex: "1" }}>LinkedIn News</h5>
+              <h6 style={{ flex: "1" }}>LinkedIn News</h6>
               <span className="mb-2">
                 <button className="button-sidehome">
                   <svg
@@ -41,14 +41,14 @@ const SideHome = () => {
             </ListGroup.Item>
 
             <ListGroup.Item
-              className="hoverable-link"
+              className="hoverable-link hoverable-link1 pl-2 pt-1 pb-0"
               style={{ border: "none" }}
             >
-              <strong>
+              <strong style={{ fontSize: "15px"}}>
                 <Dot size={20} />
                 My salary? Shhh, it´s a secret
               </strong>
-              <span className="float-right d-none"
+              <span className="float-right external-icon" 
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 16 16"
@@ -62,7 +62,7 @@ const SideHome = () => {
                 <path d="M15 1v6h-2V4.41L7.41 10 6 8.59 11.59 3H9V1zm-4 10a1 1 0 01-1 1H5a1 1 0 01-1-1V6a1 1 0 011-1h2V3H5a3 3 0 00-3 3v5a3 3 0 003 3h5a3 3 0 003-3V9h-2z"></path>
               </svg>
               </span>
-              <p>
+              <p className="mb-1">
                 <small className="ml-3">
                   1d ago <Dot size={16} />
                   6,791 readers
@@ -71,14 +71,28 @@ const SideHome = () => {
             </ListGroup.Item>
 
             <ListGroup.Item
-              className="hoverable-link"
+              className="hoverable-link hoverable-link1 pl-2 pt-1 pb-0"
               style={{ border: "none" }}
             >
-              <strong>
+              <strong style={{ fontSize: "14px"}}>
                 <Dot size={20} />
                 Netflix CEO responds to Slack firing
               </strong>
-              <p>
+              <span className="float-right external-icon" 
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 16 16"
+                data-supported-dps="16x16"
+                fill="#61605F"
+                className="mercado-match"
+                width="16"
+                height="16"
+                focusable="false"
+              >
+                <path d="M15 1v6h-2V4.41L7.41 10 6 8.59 11.59 3H9V1zm-4 10a1 1 0 01-1 1H5a1 1 0 01-1-1V6a1 1 0 011-1h2V3H5a3 3 0 00-3 3v5a3 3 0 003 3h5a3 3 0 003-3V9h-2z"></path>
+              </svg>
+              </span>
+              <p className="mb-1">
                 <small className="ml-3">
                   17h ago <Dot size={16} />
                   246,486 readers
@@ -87,14 +101,28 @@ const SideHome = () => {
             </ListGroup.Item>
 
             <ListGroup.Item
-              className="hoverable-link"
+              className="hoverable-link hoverable-link1 pl-2 pt-1 pb-0"
               style={{ border: "none" }}
             >
-              <strong>
+              <strong style={{ fontSize: "14px"}}>
                 <Dot size={20} />
                 Virus infiltrates Olympic Village
               </strong>
-              <p>
+              <span className="float-right external-icon" 
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 16 16"
+                data-supported-dps="16x16"
+                fill="#61605F"
+                className="mercado-match"
+                width="16"
+                height="16"
+                focusable="false"
+              >
+                <path d="M15 1v6h-2V4.41L7.41 10 6 8.59 11.59 3H9V1zm-4 10a1 1 0 01-1 1H5a1 1 0 01-1-1V6a1 1 0 011-1h2V3H5a3 3 0 00-3 3v5a3 3 0 003 3h5a3 3 0 003-3V9h-2z"></path>
+              </svg>
+              </span>
+              <p className="mb-1">
                 <small className="ml-3">
                   1d ago <Dot size={16} />
                   8,706 readers
@@ -103,14 +131,28 @@ const SideHome = () => {
             </ListGroup.Item>
 
             <ListGroup.Item
-              className="hoverable-link"
+              className="hoverable-link hoverable-link1 pl-2 pt-1"
               style={{ border: "none" }}
             >
-              <strong>
+              <strong style={{ fontSize: "14px"}}>
                 <Dot size={20} />
                 Govt invests €375m in tech startups
               </strong>
-              <p>
+              <span className="float-right external-icon" 
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 16 16"
+                data-supported-dps="16x16"
+                fill="#61605F"
+                className="mercado-match"
+                width="16"
+                height="16"
+                focusable="false"
+              >
+                <path d="M15 1v6h-2V4.41L7.41 10 6 8.59 11.59 3H9V1zm-4 10a1 1 0 01-1 1H5a1 1 0 01-1-1V6a1 1 0 011-1h2V3H5a3 3 0 00-3 3v5a3 3 0 003 3h5a3 3 0 003-3V9h-2z"></path>
+              </svg>
+              </span>
+              <p className="mb-1">
                 <small className="ml-3">
                   6h ago <Dot size={16} />
                   1,114 readers
@@ -118,12 +160,13 @@ const SideHome = () => {
               </p>
             </ListGroup.Item>
 
-            <ListGroup.Item style={{ border: "none" }}>
+            <ListGroup.Item className="pl-2 pt-1 pb-1"
+            style={{ border: "none" }}>
               <div className=" m-2">
                 <a
                   href="/home"
-                  className="text-left hoverable-link"
-                  style={{ fontSize: "18px" }}
+                  className="text-left hoverable-link px-2 py-1 "
+                  style={{ fontSize: "15px" }}
                 >
                   Show more
                   <span className="ml-2 text-left">
@@ -140,12 +183,12 @@ const SideHome = () => {
         <section>
           <ListGroup>
             <ListGroup.Item
-              className="d-flex align-items-center"
+              className="d-flex align-items-center pl-3 pt-2 pb-1"
               style={{ border: "none" }}
             >
-              <h5 className="text-left" style={{ flex: "1" }}>
+              <h6 className="text-left " style={{ flex: "1" }}>
                 Today´s top courses
-              </h5>
+              </h6>
               <span className="mb-2">
                 <button className="button-sidehome">
                   <svg
@@ -169,45 +212,91 @@ const SideHome = () => {
             </ListGroup.Item>
 
             <ListGroup.Item
-              className="hoverable-link"
+              className="hoverable-link hoverable-link1 pl-2 pt-1 pb-0"
               style={{ border: "none" }}
             >
-              <strong>1. Leadership foundations</strong>
-              <p>
+              <strong style={{ fontSize: "14px"}}>1. Leadership foundations</strong>
+              <span className="float-right external-icon" 
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 16 16"
+                data-supported-dps="16x16"
+                fill="#61605F"
+                className="mercado-match"
+                width="16"
+                height="16"
+                focusable="false"
+              >
+                <path d="M15 1v6h-2V4.41L7.41 10 6 8.59 11.59 3H9V1zm-4 10a1 1 0 01-1 1H5a1 1 0 01-1-1V6a1 1 0 011-1h2V3H5a3 3 0 00-3 3v5a3 3 0 003 3h5a3 3 0 003-3V9h-2z"></path>
+              </svg>
+              </span>
+              <p className="mb-1">
                 <small className="ml-3">Dr. Shirley Davis</small>
               </p>
             </ListGroup.Item>
 
             <ListGroup.Item
-              className="hoverable-link"
+              className="hoverable-link hoverable-link1 pl-2 pt-1 pb-0"
               style={{ border: "none" }}
             >
-              <strong>2. Leading with a Heavy Heart</strong>
-              <p>
+              <strong style={{ fontSize: "14px"}}>2. Leading with a Heavy Heart</strong>
+              <span className="float-right external-icon" 
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 16 16"
+                data-supported-dps="16x16"
+                fill="#61605F"
+                className="mercado-match"
+                width="16"
+                height="16"
+                focusable="false"
+              >
+                <path d="M15 1v6h-2V4.41L7.41 10 6 8.59 11.59 3H9V1zm-4 10a1 1 0 01-1 1H5a1 1 0 01-1-1V6a1 1 0 011-1h2V3H5a3 3 0 00-3 3v5a3 3 0 003 3h5a3 3 0 003-3V9h-2z"></path>
+              </svg>
+              </span>
+              <p className="mb-1">
                 <small className="ml-3">Kat Cole</small>
               </p>
             </ListGroup.Item>
 
             <ListGroup.Item
-              className="hoverable-link"
+              className="hoverable-link hoverable-link1 pl-2 pt-1 pb-0"
               style={{ border: "none" }}
             >
-              <strong>3. Staying Positive in the Face of Neg...</strong>
-              <p>
+              <strong style={{ fontSize: "14px"}}>3. Staying Positive in the Face of Neg...</strong>
+              <span className="float-right external-icon" 
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 16 16"
+                data-supported-dps="16x16"
+                fill="#61605F"
+                className="mercado-match"
+                width="16"
+                height="16"
+                focusable="false"
+              >
+                <path d="M15 1v6h-2V4.41L7.41 10 6 8.59 11.59 3H9V1zm-4 10a1 1 0 01-1 1H5a1 1 0 01-1-1V6a1 1 0 011-1h2V3H5a3 3 0 00-3 3v5a3 3 0 003 3h5a3 3 0 003-3V9h-2z"></path>
+              </svg>
+              </span>
+              <p className="mb-1">
                 <small className="ml-3">Scott Mautz</small>
               </p>
             </ListGroup.Item>
-            <ListGroup.Item style={{ border: "none" }}>
+
+            <ListGroup.Item className="pb-1 pl-1"
+            style={{ border: "none" }}>
+              <div className=" mb-2">
               <a
                 href="/home"
-                className="text-left hoverable-link"
-                style={{ fontSize: "18px" }}
+                className="text-left hoverable-link px-2 py-1"
+                style={{ fontSize: "15px" }}
               >
                 Show more on LinkedIn Learning
                 <span className="ml-2">
                   <ArrowRight size={16} />
                 </span>
               </a>
+              </div>
             </ListGroup.Item>
           </ListGroup>
         </section>
@@ -216,17 +305,18 @@ const SideHome = () => {
       <div className="pt-4 text-left">
         <section>
           <ListGroup>
-            <ListGroup.Item style={{ border: "none" }}>
-              <h5 className="text-left">
+            <ListGroup.Item className="pb-0"
+            style={{ border: "none" }}>
+              <h6 className="text-left">
                 Promoted
                 <ThreeDots className="float-right" size={16} />
-              </h5>
+              </h6>
             </ListGroup.Item>
 
-            <ListGroup.Item className="d-flex" style={{ border: "none" }}>
+            <ListGroup.Item className="d-flex pr-1 pb-0" style={{ border: "none" }}>
               <a
                 href="/home"
-                className="mr-2"
+                className="mr-2 pt-2"
                 style={{ position: "relative", flex: "0 0 auto" }}
               >
                 <img
@@ -236,9 +326,11 @@ const SideHome = () => {
                 />
               </a>
               <div>
-                <h6 className="promoted-sidehome">Impact--made to purchase</h6>
+                <p className="promoted-sidehome mb-1"
+                style={{ fontSize: "14px"}}>
+                  <strong>Impact--made to purchase</strong></p>
                 <p className="promoted-sidehome" style={{ lineHeight: "1.2" }}>
-                  <small>
+                  <small style={{ fontSize: "10px"}}>
                     Complete your most pressing work with Project Catalog™ by
                     Upwork.
                   </small>
@@ -261,10 +353,10 @@ const SideHome = () => {
               </div>
             </ListGroup.Item>
 
-            <ListGroup.Item className="d-flex" style={{ border: "none" }}>
+            <ListGroup.Item className="d-flex pr-1" style={{ border: "none" }}>
               <a
                 href="/home"
-                className="mr-2"
+                className="mr-2 pt-1"
                 style={{ position: "relative", flex: "0 0 auto" }}
               >
                 <img
@@ -274,9 +366,10 @@ const SideHome = () => {
                 />
               </a>
               <div>
-                <h6 className="promoted-sidehome">Build better products</h6>
+                <p className="promoted-sidehome mb-1"
+                 style={{ fontSize: "14px"}}><strong>Build better products</strong></p>
                 <p className="promoted-sidehome" style={{ lineHeight: "1.2" }}>
-                  <small>
+                  <small style={{ fontSize: "10px"}}>
                     Canny helps you keep track of customer feedback. Free 14-day
                     trial.
                   </small>
@@ -302,39 +395,39 @@ const SideHome = () => {
         </section>
       </div>
 
-      <footer>
+      <footer >
         <div
           className="pt-3 mx-3 px-4 d-flex flex-wrap justify-content-center align-items-center"
           style={{ background: "#F3F2EF", border: "none" }}
         >
           <a
             href="/home"
-            className="mx-3 my-1"
-            style={{ textDecorationLine: "none" }}
+            className="mx-2 my-1"    
+            style={{ fontSize: "11px"}}       
           >
             About
           </a>
 
           <a
             href="/home"
-            className="mx-3 my-1"
-            style={{ textDecorationLine: "none" }}
+            className="mx-2 my-1"
+            style={{ fontSize: "11px"}}
           >
             Accessibility
           </a>
 
           <a
             href="/home"
-            className="mx-3 my-1"
-            style={{ textDecorationLine: "none" }}
+            className="mx-2 my-1"
+            style={{ fontSize: "11px"}}
           >
             Help Center
           </a>
 
           <a
             href="/home"
-            className="mx-3 my-1"
-            style={{ textDecorationLine: "none" }}
+            className="mx-2 my-1"
+            style={{ fontSize: "11px"}}
           >
             Privacy & Terms
             <span className="ml-2">
@@ -344,24 +437,24 @@ const SideHome = () => {
 
           <a
             href="/home"
-            className="mx-3 my-1"
-            style={{ textDecorationLine: "none" }}
+            className="mx-2 my-1"
+            style={{ fontSize: "11px"}}
           >
             Ad Choices
           </a>
 
           <a
             href="/home"
-            className="mx-3 my-1"
-            style={{ textDecorationLine: "none" }}
+            className="mx-2 my-1"
+            style={{ fontSize: "11px"}}
           >
             Advertising
           </a>
 
           <a
             href="/home"
-            className="mx-3 my-1"
-            style={{ textDecorationLine: "none" }}
+            className="mx-2 my-1"
+            style={{ fontSize: "11px"}}
           >
             Business Services
             <span className="ml-2">
@@ -371,16 +464,16 @@ const SideHome = () => {
 
           <a
             href="/home"
-            className="mx-3 my-1"
-            style={{ textDecorationLine: "none" }}
+            className="mx-2 my-1"
+            style={{ fontSize: "11px"}}
           >
             Get the LinkedIn app
           </a>
 
           <a
             href="/home"
-            className="mx-3 my-1"
-            style={{ textDecorationLine: "none" }}
+            className="mx-2 my-1"
+            style={{ fontSize: "11px"}}
           >
             More
           </a>
@@ -404,8 +497,7 @@ const SideHome = () => {
               ></path>
             </g>
           </svg>
-          <span>
-            <small>LinkedIn Corporation © 2021</small>
+          <span style={{ fontSize: "11px"}}>LinkedIn Corporation © 2021
           </span>
         </div>
       </footer>
