@@ -3,17 +3,20 @@ import SectionProfile from "./SectionProfile";
 import ExperienceDetails from "./ExperienceDetails";
 import { useState, useEffect } from "react";
 import EducationSection from "./RaiaComponents/EducationSection";
+import Spinners from "./RaiaComponents/Spinners"
+
 
 const Experience = (props) => {
   const [userAllExperiences, setUserAllExperiences] = useState([])
   const [changeUserData, setchangeuserdata] = useState(false)
   const [changeExpImg, setchangeExpImg] = useState(true)
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => getUserExperiences(), [])
   useEffect(() => getUserExperiences(), [changeUserData, changeExpImg])
 
   const getUserExperiences = async () => {
-    console.log('inside get all experiences')
+    setIsLoading(true)
     try {
       let response = await fetch('https://striveschool-api.herokuapp.com/api/profile/' + window.localStorage.getItem('_id') + '/experiences', {
         method: 'GET',
@@ -23,9 +26,8 @@ const Experience = (props) => {
       })
 
       let dataRequested = await response.json()
+      setIsLoading(false)
       setUserAllExperiences(dataRequested)
-      console.log(dataRequested, '<<<<<<<<<<<<<<<Inside request Experience ALL experiences')
-
     } catch (e) {
       console.log(e)
       return e
@@ -38,14 +40,17 @@ const Experience = (props) => {
           changeExpImg={changeExpImg}
           setchangeExpImg={setchangeExpImg}
           changeUserData={changeUserData}
+          setIsLoading={setIsLoading}
           setchangeuserdata={setchangeuserdata}
           category={"Experience"} />
-
+        {isLoading && <Spinners></Spinners>}
         {userAllExperiences.length > 0 ? userAllExperiences.map(userExperience =>
           <ExperienceDetails
             changeExpImg={changeExpImg}
+            setIsLoading={setIsLoading}
             setchangeExpImg={setchangeExpImg}
             changeUserData={changeUserData}
+
             setchangeuserdata={setchangeuserdata} key={userExperience._id}
             userExperience={userExperience} ></ExperienceDetails>) : <p className="little-padding">Let's add your first experience</p>}
         {/* <ExperienceDetails  />  To be deleted*/}

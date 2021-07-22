@@ -42,6 +42,7 @@ function ModalAddNewExperience(props) {
 
   // POST Goes to the Token owner independently of the ID
   const postUserExperience = async () => {
+    props.setIsLoading(true)
     try {
       let response = await fetch(props.endpoint, {
         method: props.requestmethod,
@@ -52,6 +53,7 @@ function ModalAddNewExperience(props) {
         body: JSON.stringify(formData)
       })
       let newExperienceSent = await response.json()
+      props.setIsLoading(false)
       props.setchangeuserdata(!props.changeUserData)
       addExperienceImage(newExperienceSent._id)
 
@@ -64,6 +66,7 @@ function ModalAddNewExperience(props) {
 
   // Delete
   const deleteUserExperience = async () => {
+    props.setIsLoading(true)
     try {
       let response = await fetch(props.endpoint, {
         method: 'DELETE',
@@ -71,6 +74,7 @@ function ModalAddNewExperience(props) {
           "Authorization": "Bearer " + window.localStorage.getItem('user_Token')
         },
       })
+      props.setIsLoading(false)
       props.setchangeuserdata(!props.changeUserData)
       props.onHide()
     } catch (e) {

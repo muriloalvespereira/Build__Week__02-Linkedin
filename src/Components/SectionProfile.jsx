@@ -15,6 +15,7 @@ const SectionProfile = (props) => {
         // need to change the id to the user id
         endpoint={'https://striveschool-api.herokuapp.com/api/profile/' +  window.localStorage.getItem('_id') + '/experiences'}
         requestmethod='POST'
+        setIsLoading={props.setIsLoading}
         changeExpImg={props.changeExpImg}
         setchangeExpImg={props.setchangeExpImg}
         changeUserData={props.changeUserData}

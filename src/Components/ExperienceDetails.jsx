@@ -44,6 +44,7 @@ const ExperienceDetails = (props) => {
         endpoint={'https://striveschool-api.herokuapp.com/api/profile/' + window.localStorage.getItem('_id') + '/experiences/' + props.userExperience._id}
         requestmethod='PUT'
         changeExpImg={props.changeExpImg}
+        setIsLoading={props.setIsLoading}
         setchangeExpImg={props.setchangeExpImg}
         userExperience={props.userExperience}
         changeUserData={props.changeUserData}
