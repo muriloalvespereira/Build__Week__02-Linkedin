@@ -95,9 +95,14 @@
   transform: translateY(5px);
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   #NavBar {
-    height: 52px;
+    height: 56px;
+  }
+} */
+@media only screen and (max-width: 768px) {
+  #NavBar {
+    height: 50px;
   }
 }
 
