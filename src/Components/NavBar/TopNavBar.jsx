@@ -10,16 +10,19 @@ import { withRouter } from "react-router"
 
 function TopNavBar(props) {
   const [isClickedAvatar, setIsClickedAvatar] = useState(false)
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false)
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
 
   return (
     <>
       <Navbar id="NavBar" className="container-fluid p-0">
         <Container>
-          <div onClick={() => props.history.push('home')} style={{ cursor: 'pointer' }}>
+          <div
+            onClick={() => props.history.push("home")}
+            style={{ cursor: "pointer" }}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="34"
@@ -41,7 +44,11 @@ function TopNavBar(props) {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto nav-icons">
-              <Nav.Link className="d-flex flex-column justify-content-center align-items-center small-inlink position-relative" onClick={() => props.history.push('home')} style={{ cursor: 'pointer' }}>
+              <Nav.Link
+                className="d-flex flex-column justify-content-center align-items-center small-inlink position-relative"
+                onClick={() => props.history.push("home")}
+                style={{ cursor: "pointer" }}
+              >
                 <svg height="24" width="24">
                   <path d="m23 9v2h-2v7c0 1.7-1.3 3-3 3h-4v-6h-4v6h-4c-1.7 0-3-1.3-3-3v-7h-2v-2l11-7z"></path>
                 </svg>
@@ -93,9 +100,9 @@ function TopNavBar(props) {
                   <img
                     className="avatar"
                     width="24"
-                    src={window.localStorage.getItem('image')}
+                    src={window.localStorage.getItem("image")}
                     height="24"
-                    alt={window.localStorage.getItem('name')}
+                    alt={window.localStorage.getItem("name")}
                     id="ember34"
                   />
 
@@ -104,13 +111,6 @@ function TopNavBar(props) {
                     <TriangleIcon></TriangleIcon>
                   </div>
                 </a>
-
-                {isClickedAvatar && (
-                  <ProfileBox
-                    setShowTopNavBar={props.setShowTopNavBar}
-
-                  ></ProfileBox>
-                )}
               </div>
 
               <Nav.Link
@@ -124,8 +124,6 @@ function TopNavBar(props) {
                   <span className="mr-1 txt-span">Work</span>
                   <TriangleIcon></TriangleIcon>
                 </div>
-
-
               </Nav.Link>
               <Nav.Link className="txt-span d-flex flex-column justify-content-center align-items-center small-inlink premium-inlink">
                 Try Premium for Free
@@ -135,12 +133,14 @@ function TopNavBar(props) {
         </Container>
       </Navbar>
 
+      {isClickedAvatar && (
+        <ProfileBox setShowTopNavBar={props.setShowTopNavBar}></ProfileBox>
+      )}
       <Sidebar
         handleClose={handleClose}
         handleShow={handleShow}
         show={show}
       ></Sidebar>
-
     </>
   )
 }
