@@ -114,26 +114,7 @@ const Footer = () => {
           </div>
         </Col>
         <Col sm={4} md={3} className="last-col ml-2 ">
-          {/* <p>Select Language</p> */}
-          {/*  <Dropdown className="language mb-2" width="300px" height="20px">
-            <Dropdown.Toggle
-              variant=".."
-              className="footerDropdown"
-              width="100%"
-              id="dropdown-basic"
-            >
-              English(English)
-            </Dropdown.Toggle>
-
-            <Dropdown.Menu className="options">
-              <Dropdown.Item href="#/action-1">Italiano(Italian)</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Deutsch(German)</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">
-                Nerderlands(Dutch)
-              </Dropdown.Item>
-              <Dropdown.Item href="#/action-4">English(English)</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown> */}
+          
           <label for="globalfooter-select_language" class="select-label mb-0">
             Select Language
           </label>
