@@ -6,6 +6,7 @@ import { useEffect } from "react";
 const EditModalPost = (props) => {
   const [text, setText] = useState();
   const [textEdit, setTextEdit] = useState();
+  const [imgEdit, setImgEdit] = useState();
 
   const handleChange = (key, value) => {
     setText({[key]: value});
@@ -28,6 +29,9 @@ handleEdit()
         );
         let data = await response.json()
         setTextEdit(data.text)
+        {data.image &&
+        setImgEdit(data.image)
+        }
     } catch (e) {
       console.log(e);
       return e;
@@ -46,17 +50,36 @@ handleEdit()
           body: JSON.stringify(text),
         }
       );
-      // console.log("inside get all POSTS AFTER FETCH", response);
-      // let dataRequested = await response.json();
-      // console.log(dataRequested);
+      if (imgEdit){
+        sendImage()
+      }else {
+        props.setShow(false)
+        props.renderAgain()
+      }
     } catch (e) {
       console.log(e);
       return e;
     }
+  };
 
+  const sendImage = async () => {
+    try {
+      let response = await fetch("https://striveschool-api.herokuapp.com/api/posts/" + props.id,
+        {
+          method: "PUT",
+          headers: {
+            "Authorization": "Bearer " + window.localStorage.getItem('user_Token'),
+          },
+          body: imgEdit
+        }
+      );
+    } catch (e) {
+      console.log(e);
+      return e;
+    }
     props.setShow(false)
     props.renderAgain()
-  };
+  }
 
   return (
     <div className="create-post">
@@ -88,6 +111,11 @@ handleEdit()
                 onChange={(e) => handleChange('text', e.target.value)}
               />
             </Form.Group>
+          </div>
+          <div className="img-upload">
+            {imgEdit &&
+            <img src={imgEdit} className="img-fluid" alt="" />
+            }
           </div>
           <div className="create-post-body-footer edit-disable d-flex pt-2">
             <div className="create-post-body-footer-icons d-flex justify-content-around">
