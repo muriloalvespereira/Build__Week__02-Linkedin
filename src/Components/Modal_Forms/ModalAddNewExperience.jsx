@@ -7,18 +7,18 @@ import { format } from 'date-fns'
 function ModalAddNewExperience(props) {
   const [formData, setFormData] = useState({
     role: '',
-    company: 'propsCompany',
-    startDate: ' propsStartDate',
-    endDate: 'propsEndDate',
-    description: 'propsDescription',
-    area: 'propsArea'
+    company: '',
+    startDate: '',
+    endDate: '',
+    description: '',
+    area: ''
   })
   const [endpoint, setEndpoint] = useState('')
   const [userImage, setUserImage] = useState('')
 
 
   useEffect(() => {
-    if (props.userExperience)
+    if (props.requestmethod === 'PUT')
       setFormData(
         {
           role: props.userExperience.role,
@@ -56,6 +56,14 @@ function ModalAddNewExperience(props) {
       props.setIsLoading(false)
       props.setchangeuserdata(!props.changeUserData)
       addExperienceImage(newExperienceSent._id)
+      setFormData({
+        role: '',
+        company: '',
+        startDate: '',
+        endDate: '',
+        description: '',
+        area: ''
+      })
 
       props.onHide()
     } catch (e) {
