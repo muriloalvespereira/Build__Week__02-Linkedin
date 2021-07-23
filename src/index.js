@@ -7,13 +7,14 @@ import './Styles/Ingrid.css'
 import './Styles/Rafa.css'
 import './Styles/Murilo.css'
 import './Styles/Sara.css'
+import './Styles/Raia.css'
 
 
 
 ReactDOM.render(
 
-    <App />,
-  
+  <App />,
+
   document.getElementById('root')
 );
 
