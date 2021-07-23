@@ -1,3 +1,5 @@
+/* #5d3b09 */
+
 #NavBar {
   background-color: white;
 }
@@ -81,7 +83,7 @@
   }
 }
 
-#profile-Box .inner-avatar {
+#profile-Box .inner-avatar{
   height: 48px;
   object-fit: cover;
   width: 48px;
