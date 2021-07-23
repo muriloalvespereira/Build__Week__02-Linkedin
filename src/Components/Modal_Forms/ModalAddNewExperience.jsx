@@ -16,10 +16,12 @@ function ModalAddNewExperience(props) {
   })
   const [endpoint, setEndpoint] = useState('')
   const [userImage, setUserImage] = useState('')
+  const [userImagePath, setUserImagePath] = useState('')
 
 
   useEffect(() => {
-    if (props.requestmethod === 'PUT')
+    if (props.requestmethod === 'PUT'){
+
       setFormData(
         {
           role: props.userExperience.role,
@@ -28,9 +30,16 @@ function ModalAddNewExperience(props) {
           endDate: format(new Date(props.userExperience.endDate), 'yyyy-MM-dd'),
           description: props.userExperience.description,
           area: props.userExperience.area
-
+          
         }
-      )
+        )
+        
+        
+        if(Object.keys(props.userExperience).includes('image') ){
+            setUserImagePath(props.userExperience.image)
+        }
+        
+      }
   }, [])
 
   const handleForm = (key, value) => {
@@ -39,7 +48,6 @@ function ModalAddNewExperience(props) {
       [key]: value
     })
   }
-
 
   // POST Goes to the Token owner independently of the ID
   const postUserExperience = async () => {
@@ -65,6 +73,7 @@ function ModalAddNewExperience(props) {
         description: '',
         area: ''
       })
+
       setError(false)
 
       props.onHide()
@@ -108,6 +117,9 @@ function ModalAddNewExperience(props) {
       props.setchangeExpImg(!props.changeExpImg)
       props.onHide()
       setUserImage('')
+      if(props.requestmethod === 'POST'){
+        setUserImagePath('')
+      }
 
     } catch (error) {
       console.log(error)
@@ -141,9 +153,9 @@ function ModalAddNewExperience(props) {
             </div>
 
             <div className="radio">
-              <label class="switch-wrap">
+              <label className="switch-wrap">
                 <input type="checkbox" />
-                <div class="switch"></div>
+                <div className="switch"></div>
               </label>
             </div>
           </div>
@@ -172,7 +184,7 @@ function ModalAddNewExperience(props) {
             </div>
             <div className="check-check">
 
-              <label class="b-contain">
+              <label className="b-contain">
                 <input type="checkbox" className="custom-checkbox" />
                 <span>I am currently working on this role</span>
               </label>
@@ -212,26 +224,41 @@ function ModalAddNewExperience(props) {
             <Form.Control type="text" as="textarea" rows={5} placeholder={endpoint === 'POST' ? "addDescription" : formData.description} onChange={(e) => handleForm('description', e.target.value)} />
           </Form.Group>
           <Form>
-            <Form.Group>
-              <Form.File id="exampleFormControlFile1" label="Example file input"
-                onChange={(e) => {
-                  let newUserImage = new FormData()
-                  newUserImage.append('experience', e.target.files[0])
-                  setUserImage(newUserImage)
-                }}
-
-              />
+           <div className="Media fix">
+              <p className="mb-0">Media</p>
+              <p className="make-it-gray font-small">Add or link to external documents, photos, sites, videos, and presentations.</p>
+           </div>
+            <Form.Group className="d-flex flex-nowrap">
+              <div className="btn btn-blue d-flex justify-content-center align-items-center w-50 position-relative border-2-4rem pr-2">
+              <span className="upLoadXPImage-YMod">Upload Image</span>
+                <Form.File id="exampleFormControlFile1" className="upload-Exp-img position-absolute w-100 h-100"
+                  onChange={(e) => {
+                    let newUserImage = new FormData()
+                    newUserImage.append('experience', e.target.files[0])
+                    console.log(e.target.files[0].name)
+                    setUserImagePath(URL.createObjectURL(e.target.files[0]))
+                    setUserImage(newUserImage)
+                  }}
+                  
+                  />
+              </div>
+                  <div className="space-between"></div>
+              <div className="btn btn-outline-primary btn-outline-uploadXPImage verticalAlign w-50 border-2-4rem pl-2"> <span>Link</span></div>
             </Form.Group>
+            <div className='show-Exp-image-preview d-flex justify-content-center align-items-center'>
+              {userImagePath.length > 5 && <img src={userImagePath} alt="" />}
+            </div>
+            
           </Form>
         </div>
 
       </Modal.Body>
-      <Modal.Footer>
-        {props.requestmethod === 'PUT' && <Button variant="dark"
+      <Modal.Footer className="justify-content-between">
+        {props.requestmethod === 'PUT' && <Button variant="" className="border-2-4rem connect_button"
           onClick={() => deleteUserExperience()}
         >Delete</Button>}
 
-        <Button variant="primary"
+        <Button variant="" className="btn-blue saveExpImg-padding-Mod border-2-4rem"
           onClick={() => postUserExperience()}
         >Save</Button>
       </Modal.Footer>

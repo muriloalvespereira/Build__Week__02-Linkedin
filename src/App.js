@@ -1,5 +1,3 @@
-
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState, useEffect } from 'react'
 import { Container } from 'react-bootstrap';
@@ -35,11 +33,11 @@ const App = (props) => {
           {showTopNavBar && <TopNavBar
             setIsSearchOn={setIsSearchOn}
             setShowTopNavBar={setShowTopNavBar}
-            
+
 
           ></TopNavBar>}
           <Route path="/" exact render={(routerProps) => <Login
-            setUserData={setUserData} 
+            setUserData={setUserData}
             setShowTopNavBar={setShowTopNavBar}
             {...routerProps}
           ></Login>}></Route>
@@ -47,15 +45,15 @@ const App = (props) => {
           <Route path="/signup" exact render={(routerProps) => <SignUpForm setUserData={setUserData} setShowTopNavBar={setShowTopNavBar}   {...routerProps}></SignUpForm>}></Route>
 
           <Route path="/home" exact render={(routerProps) => <Home setShowTopNavBar={setShowTopNavBar} userData={userData}  {...routerProps}></Home>}></Route>
-          <Route path="/profile" exact render={(routerProps) => <Profile userData={userData}  {...routerProps}></Profile>}></Route>
+          <Route path="/profile" exact render={(routerProps) => <Profile setShowTopNavBar={setShowTopNavBar} userData={userData}  {...routerProps}></Profile>}></Route>
           <Route path="/userprofile" exact render={(routerProps) => <UserProfile userData={userData}{...routerProps} />} />
           <Route path="/transitionPage" exact render={(routerProps) => <TransitionPage setShowTopNavBar={setShowTopNavBar} userData={userData}{...routerProps} />}></Route>
-          {/* <Route path="/home" component={Messaging}></Route>
-          <Route path="/profile" component={Messaging}></Route> */}
-            
-            </Router>
+          <Route path="/home" component={Messaging}></Route>
+          <Route path="/profile" component={Messaging}></Route>
 
-        {showTopNavBar &&<Messaging />}
+        </Router>
+
+        {showTopNavBar && <Messaging />}
         <Footer></Footer>
       </div>
     </>

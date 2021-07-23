@@ -10,10 +10,10 @@ const SectionProfile = (props) => {
       <h4 className="h4-section">{props.category}</h4>
 
       {/* Add new experience */}
-      <ModalAddNewExperience 
-        show={modalShow} 
+      <ModalAddNewExperience
+        show={modalShow}
         // need to change the id to the user id
-        endpoint={'https://striveschool-api.herokuapp.com/api/profile/' +  window.localStorage.getItem('_id') + '/experiences'}
+        endpoint={'https://striveschool-api.herokuapp.com/api/profile/' + window.localStorage.getItem('_id') + '/experiences'}
         requestmethod='POST'
         setIsLoading={props.setIsLoading}
         changeExpImg={props.changeExpImg}
@@ -30,7 +30,7 @@ const SectionProfile = (props) => {
           viewBox="0 0 24 24"
           data-supported-dps="24x24"
           fill="currentColor"
-          class="mercado-match card-svg-exp"
+          className="mercado-match card-svg-exp"
           width="24"
           height="24"
           focusable="false"

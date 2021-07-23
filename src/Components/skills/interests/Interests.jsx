@@ -80,16 +80,7 @@ const Interests = () => {
               <div className="interests_title">Amazon Web</div>
               <div className="interests_views ">537,775 viewers</div>
             </div>
-            {/* <div className='interests ml-auto'>
-                        <img
-                            src='https://toppng.com/uploads/preview/instagram-logo-transparent-logo-instagram-vector-2021-116177766354twhxoagvv.png'
-                            alt=''
-                        />
-                    </div>
-                    <div className='interests_info ml ml-3'>
-                        <div className='interests_title'>Instagram</div>
-                        <div className='interests_views'>554,655 viewers</div>
-                    </div> */}
+
           </div>
         </div>
       </div>
@@ -100,7 +91,7 @@ const Interests = () => {
           viewBox="0 0 16 16"
           data-supported-dps="16x16"
           fill="currentColor"
-          class="mercado-match"
+          className="mercado-match"
           width="16"
           height="16"
           focusable="false"

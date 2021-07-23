@@ -8,9 +8,9 @@ const Spinner = () => {
             <div class="wobbling-3"></div> */}
 
 
-            <div class="loader loader-1">
-                <div class="loader-outter"></div>
-                <div class="loader-inner"></div>
+            <div className="loader loader-1">
+                <div className="loader-outter"></div>
+                <div className="loader-inner"></div>
             </div>
 
 
