@@ -5,6 +5,7 @@ import { format } from 'date-fns'
 
 
 function ModalAddNewExperience(props) {
+  const [error, setError] = useState(false)
   const [formData, setFormData] = useState({
     role: '',
     company: '',
@@ -64,9 +65,11 @@ function ModalAddNewExperience(props) {
         description: '',
         area: ''
       })
+      setError(false)
 
       props.onHide()
     } catch (e) {
+      setError(true)
       return e
     }
   }
@@ -107,6 +110,7 @@ function ModalAddNewExperience(props) {
       setUserImage('')
 
     } catch (error) {
+      setError(true)
       console.log(error)
     }
 
@@ -148,19 +152,19 @@ function ModalAddNewExperience(props) {
           <div className="split">
             <div className="first-section">
               <Form.Group controlId="role">
-                <Form.Label>Title*</Form.Label>
+                <Form.Label className={error ? 'text-danger fw-bold' : ''}>Title* {error ? 'Required' : ''}</Form.Label>
                 <Form.Control type="text" className="title-role" placeholder={endpoint === 'POST' ? "Enter propsrole" : formData.role} onChange={(e) => handleForm('role', e.target.value)} />
               </Form.Group>
             </div>
             <div className="first-section">
               <Form.Group controlId="company">
-                <Form.Label>Company name*</Form.Label>
+                <Form.Label className={error ? 'text-danger fw-bold' : ''}>Company name* {error ? 'Required' : ''}</Form.Label>
                 <Form.Control type="text" placeholder={endpoint === 'POST' ? "Enter propsCompany" : formData.company} onChange={(e) => handleForm('company', e.target.value)} />
               </Form.Group>
             </div>
             <div className="first-section">
               <Form.Group controlId="area">
-                <Form.Label>Location (city,country)</Form.Label>
+                <Form.Label className={error ? 'text-danger fw-bold' : ''}>Location (city,country) {error ? 'Required' : ''}</Form.Label>
                 <Form.Control type="text" placeholder={endpoint === 'POST' ? "propsendare" : formData.area} onChange={(e) => handleForm('area', e.target.value)} />
               </Form.Group>
 
@@ -180,11 +184,11 @@ function ModalAddNewExperience(props) {
 
           <Form.Row className="dateInputs">
             <Form.Group as={Col} controlId="startDate">
-              <Form.Label>Start Date</Form.Label>
+              <Form.Label className={error ? 'text-danger fw-bold' : ''}>Start Date {error ? 'Required' : ''}</Form.Label>
               <Form.Control type="date" value={endpoint === 'POST' ? "" : formData.startDate} onChange={(e) => handleForm('startDate', format(new Date(e.target.value), 'yyyy-MM-dd'))} />
             </Form.Group>
             <Form.Group as={Col} controlId="endDate">
-              <Form.Label>End Date</Form.Label>
+              <Form.Label className={error ? 'text-danger fw-bold' : ''}>End Date {error ? 'Required' : ''}</Form.Label>
               <Form.Control type="date" value={endpoint === 'POST' ? "" : formData.endDate} onChange={(e) => handleForm('endDate', format(new Date(e.target.value), 'yyyy-MM-dd'))} />
             </Form.Group>
 
@@ -205,7 +209,7 @@ function ModalAddNewExperience(props) {
           </Form.Group>
 
           <Form.Group as={Col} controlId="description">
-            <Form.Label>Description</Form.Label>
+            <Form.Label className={error ? 'text-danger fw-bold' : ''}>Description {error ? 'Required' : ''}</Form.Label>
             <Form.Control type="text" as="textarea" rows={5} placeholder={endpoint === 'POST' ? "addDescription" : formData.description} onChange={(e) => handleForm('description', e.target.value)} />
           </Form.Group>
           <Form>
