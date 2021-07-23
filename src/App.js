@@ -35,6 +35,7 @@ const App = (props) => {
           {showTopNavBar && <TopNavBar
             setIsSearchOn={setIsSearchOn}
             setShowTopNavBar={setShowTopNavBar}
+            
 
           ></TopNavBar>}
           <Route path="/" exact render={(routerProps) => <Login

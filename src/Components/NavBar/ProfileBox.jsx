@@ -21,7 +21,7 @@ const ProfileBox = (props) => (
         </Col>
       </div>
       <div className="d-grid mt-2 font-weight-bolder">
-        <Button id="btn-blockMod" variant="outline-primary" block>
+        <Button onClick={()=> props.history.push('profile')} id="btn-blockMod" variant="outline-primary" block>
           View Profile
         </Button>
       </div>

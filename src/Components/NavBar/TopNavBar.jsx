@@ -6,6 +6,7 @@ import TriangleIcon from "./TriangleIcon"
 import RedCircleIcon from "./RedCircleIcon"
 import ProfileBox from "./ProfileBox"
 import Sidebar from "../RaiaComponents/Sidebar.jsx"
+import { withRouter } from "react-router"
 
 function TopNavBar(props) {
   const [isClickedAvatar, setIsClickedAvatar] = useState(false)
@@ -18,7 +19,7 @@ function TopNavBar(props) {
     <>
     <Navbar id="NavBar" className="container-fluid p-0">
       <Container>
-        <div>
+        <div onClick={()=> props.history.push('home')} style={{cursor:'pointer'}}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="34"
@@ -40,7 +41,7 @@ function TopNavBar(props) {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto nav-icons">
-            <Nav.Link className="d-flex flex-column justify-content-center align-items-center small-inlink position-relative">
+            <Nav.Link className="d-flex flex-column justify-content-center align-items-center small-inlink position-relative" onClick={()=> props.history.push('home')} style={{cursor:'pointer'}}>
               <svg height="24" width="24">
                 <path d="m23 9v2h-2v7c0 1.7-1.3 3-3 3h-4v-6h-4v6h-4c-1.7 0-3-1.3-3-3v-7h-2v-2l11-7z"></path>
               </svg>
@@ -144,4 +145,4 @@ function TopNavBar(props) {
   )
 }
 
-export default TopNavBar
+export default withRouter(TopNavBar)
