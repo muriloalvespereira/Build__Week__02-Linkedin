@@ -42,26 +42,38 @@ function Login(props) {
       console.log(err)
       return err
     }
-  }
 
-  const getUserData = async () => {
-    let userToken = "Bearer " + window.localStorage.getItem("user_Token")
-    console.log(userToken)
-    try {
-      let response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/profile/me",
-        {
-          method: "Get",
-          headers: {
-            Authorization: userToken,
-          },
-        }
-      )
-      if (response.ok) {
-        let userData = await response.json()
-        if (userData.name === undefined) {
-          setLoginValidation(true)
-          return
+
+    const getUserData = async () => {
+        let userToken =  "Bearer " + window.localStorage.getItem('user_Token')
+        console.log(userToken)
+        try {
+            let response = await fetch('https://striveschool-api.herokuapp.com/api/profile/me', {
+                method: 'Get',
+                headers: {
+                    "Authorization": userToken,  
+                },
+                
+            })
+            if(response.ok){
+            let userData = await response.json()
+            if(userData.name === undefined){
+                setLoginValidation(true)
+                return
+            }
+                setTransitionPage(true)
+                let userDataKeyList = Object.keys(userData)
+                userDataKeyList.forEach(key => window.localStorage.setItem(key, userData[key]))
+                props.history.push('transitionPage')
+            } else{
+                setLoginValidation(true)
+            }
+           
+        } catch (e) {
+            // setLoginValidation(true)
+            console.log(e)
+            return e
+
         }
         setTransitionPage(true)
         let userDataKeyList = Object.keys(userData)
@@ -253,9 +265,102 @@ function Login(props) {
           </p>
         </div>
 
-        <div className="container mod-logo-maxWidth p-3">
-          <hr></hr>
-        </div>
+
+            <main className="container-fluid">
+                <div className="container d-flex flex-column justify-content-center align-items-center mod-logo-maxWidth">
+                    <h4 className="mt-5" > To continue, log in to Linkedin.</h4>
+                    <div className="btn btn-primary logo-btn-FB w-100 d-flex justify-content-center p-2 m-1 ">
+                        <div id="FB-login">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.35c-.538 0-.65.221-.65.778v1.222h2l-.209 2h-1.791v7h-3v-7h-2v-2h2v-2.308c0-1.769.931-2.692 3.029-2.692h1.971v3z" /></svg>
+                        </div>
+                        <div className="btn-text">
+                            <span className="FB-text">Continue with Facebook</span>
+                        </div>
+                    </div>
+
+                    <div className="btn btn-bg-dark logo-btn-apple w-100 d-flex justify-content-center p-2 mt-3">
+                        <div id="apple-login">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M22 17.607c-.786 2.28-3.139 6.317-5.563 6.361-1.608.031-2.125-.953-3.963-.953-1.837 0-2.412.923-3.932.983-2.572.099-6.542-5.827-6.542-10.995 0-4.747 3.308-7.1 6.198-7.143 1.55-.028 3.014 1.045 3.959 1.045.949 0 2.727-1.29 4.596-1.101.782.033 2.979.315 4.389 2.377-3.741 2.442-3.158 7.549.858 9.426zm-5.222-17.607c-2.826.114-5.132 3.079-4.81 5.531 2.612.203 5.118-2.725 4.81-5.531z" /></svg>
+                        </div>
+                        <div className="btn-text">
+                            <span className="apple-text ">Continue with Apple</span>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div className="container mt-4 mb-3 d-flex justify-content-center align-items-center mod-logo-maxWidth p-3">
+                    <div className="section-line"></div>
+                    <span className="mx-3 orModtranslate">or</span>
+                    <div className="section-line"></div>
+
+                </div>
+                {loginValidation && <div className="container d-flex justify-content-center">
+                    <p className="text-danger"><strong>Sorry incorrect username/password :(</strong></p>
+                    </div>}
+
+
+                <div className="container d-flex flex-column mod-logo-maxWidth">
+                    <form>
+                        <div className="form-group">
+                            <label for="exampleInputUsername">Username</label>
+                            <input type="text" className="form-control" id="exampleInputUsername" a
+                                ria-describedby="usernameHelp"
+                                onChange={(e) => {
+                                    handleForm('username', e.target.value)
+                                }} />
+                        </div>
+                        <div className="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" className="form-control" id="exampleInputPassword1"
+                                onChange={(e) => {
+                                    handleForm('password', e.target.value)
+                                }}
+
+                            />
+                        </div>
+                        <div className="container d-flex justify-content-between align-items-center pl-4 pr-0">
+                            <div className="form-group form-check d-flex align-items-center m-0 p-0">
+                                <input type="checkbox" className="form-check-input my-auto" id="exampleCheck1" />
+                                <label className="form-check-label" for="exampleCheck1">Remember me</label>
+                            </div>
+                            <a id="login-btn" className="btn btn-success" onClick={(e)=>getUserToken(e)} >Log in</a>
+                        </div>
+                    </form>
+
+                    <p className="mt-4 text-success text-center loginp"><span><a href="#">Forgot your password?</a></span></p>
+
+                </div>
+
+
+                <div className="container mod-logo-maxWidth p-3">
+                    <hr></hr>
+
+                </div>
+
+                <div className="container d-flex flex-column justify-content-center align-items-center mod-logo-maxWidth">
+                    <h5 className="mb-4">Don't have an account?</h5>
+                    <button id="btn-sign-up-strivefy" className="btn btn-outline-dark btn-large w-100" onClick={() => props.history.push('signup')}>
+                        SIGN UP FOR LINKEDIN
+                    </button>
+                </div>
+
+                <div className="container mod-logo-maxWidth mt-4">
+                    <p className="text-center loginp">If you click "Log in with Facebook" and are not a Linkedin user, you will be registered
+                        and you agree to Linkedin's <span><a href="#">Terms & Conditions</a></span> and <span><a href="#">Privacy Policy.</a></span>
+                    </p>
+
+                </div>
+            </main>
+
+
+
+//         <div className="container mod-logo-maxWidth p-3">
+//           <hr></hr>
+//         </div>
+
 
         <div className="container d-flex flex-column justify-content-center align-items-center mod-logo-maxWidth">
           <h5 className="mb-4">Don't have an account?</h5>

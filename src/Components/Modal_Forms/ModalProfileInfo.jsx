@@ -3,6 +3,7 @@ import { Modal, Button, Form, Col } from 'react-bootstrap'
 import { useState, useEffect } from 'react'
 
 function ModalProfileInfo(props) {
+  const [error, setError] = useState(false)
   const [formData, setFormData] = useState({
     surname: window.localStorage.getItem('surname'),
     title: window.localStorage.getItem('title'),
@@ -32,8 +33,12 @@ function ModalProfileInfo(props) {
       let sent = await response.json()
       console.log(sent)
       props.setChangeUserdata(!props.changeUserData)
+      let userDataKeyList = Object.keys(formData)
+      userDataKeyList.forEach(key => window.localStorage.setItem(key, formData[key]))
       props.onHide()
+      setError(false)
     } catch (e) {
+      setError(true)
       console.log(e)
       return e
     }
@@ -59,13 +64,13 @@ function ModalProfileInfo(props) {
 
             <Form.Row>
               <Form.Group as={Col} controlId="name">
-                <Form.Label>First Name*</Form.Label>
-                <Form.Control type="text" className="change-border" placeholder="Enter propsName" onChange={(e) => handleForm('name', e.target.value)} />
+                <Form.Label className={error ? 'text-danger fw-bold' : ''}>First Name* {error ? 'Required' : ''}</Form.Label>
+                <Form.Control type="text" className="change-border" placeholder={window.localStorage.getItem('name')} onChange={(e) => handleForm('name', e.target.value)} />
                 <p className="make-blue">Add former name</p>
               </Form.Group>
               <Form.Group as={Col} controlId="surname">
-                <Form.Label>Last Name*</Form.Label>
-                <Form.Control type="text" className="change-border" placeholder="Enter propsSurname" onChange={(e) => handleForm('surname', e.target.value)} />
+                <Form.Label className={error ? 'text-danger fw-bold' : ''}>Last Name* {error ? 'Required' : ''}</Form.Label>
+                <Form.Control type="text" className="change-border" placeholder={window.localStorage.getItem('surname')} onChange={(e) => handleForm('surname', e.target.value)} />
               </Form.Group>
             </Form.Row>
 
@@ -88,8 +93,8 @@ function ModalProfileInfo(props) {
 
             <Form.Row>
               <Form.Group as={Col} controlId="title">
-                <Form.Label>Headline*</Form.Label>
-                <Form.Control className="change-border" as='textarea' type="text" placeholder="propsTitle" onChange={(e) => handleForm('title', e.target.value)} />
+                <Form.Label className={error ? 'text-danger fw-bold' : ''}>Headline* {error ? 'Required' : ''}</Form.Label>
+                <Form.Control className="change-border" as='textarea' type="text" placeholder={window.localStorage.getItem('title')} onChange={(e) => handleForm('title', e.target.value)} />
                 <div>
                   <p className="make-blue-3"><span>+</span> Add current position</p>
                 </div>
@@ -119,11 +124,11 @@ function ModalProfileInfo(props) {
             <Form.Row>
               <Form.Group className="col-4">
                 <Form.Label>Postal code</Form.Label>
-                <Form.Control className="change-border" type="text" placeholder="Enter propsName" />
+                <Form.Control className="change-border" type="text" placeholder="ex: L25 59AA" />
               </Form.Group>
               <Form.Group as={Col}>
-                <Form.Label>Locations within this area</Form.Label>
-                <Form.Control className="change-border" type="text" placeholder="Enter propsName" onChange={(e) => handleForm('area', e.target.value)} />
+                <Form.Label className={error ? 'text-danger fw-bold' : ''}>Locations within this area {error ? 'Required' : ''}</Form.Label>
+                <Form.Control className="change-border" type="text" placeholder={window.localStorage.getItem('area')} onChange={(e) => handleForm('area', e.target.value)} />
               </Form.Group>
             </Form.Row>
 
@@ -147,7 +152,7 @@ function ModalProfileInfo(props) {
         </Modal.Body>
         <Modal.Footer>
           {/* <Button onClick={props.onHide}>Close</Button> */}
-          <Button className="custom-btn" onClick={()=>updateProfileInfo()}>Save</Button>
+          <Button className="custom-btn" onClick={() => updateProfileInfo()}>Save</Button>
         </Modal.Footer>
       </Modal>
 

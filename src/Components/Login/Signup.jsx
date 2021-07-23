@@ -3,7 +3,7 @@ import SignupForm from './SignUpForm'
 
 function Signup(props) {
     return (
-        <div id="logo-main-container" className="container-fluid d-flex flex-column align-content-center p-0">
+        <div id="logo-main-container" className="container-fluid d-flex flex-column align-content-center p-0" style={{backgroundColor:'#f8f8f8'}}>
             <div className="container  d-flex flex-column justify-content-center align-items-center mt-4 mb-3 mod-logo-maxWidth">
 
                 <div id="login-logo" className="d-flex justify-content-center align-items-center">

@@ -92,9 +92,9 @@ const About = () => {
                 setReadMore(!readMore);
               }}
             >
-              {!readMore && <span className="read-more">... see more</span>}
+              {/* {!readMore && <span className="read-more">... see more</span>} */}
             </p>
-            {readMore && extraContent}
+            {/* {readMore && extraContent} */}
           </p>
         </Col>
       </Row>

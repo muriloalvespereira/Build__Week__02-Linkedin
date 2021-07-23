@@ -82,3 +82,9 @@
     display: none;
   }
 }
+
+#profile-Box .inner-avatar{
+  height: 48px;
+  object-fit: cover;
+  width: 48px;
+}

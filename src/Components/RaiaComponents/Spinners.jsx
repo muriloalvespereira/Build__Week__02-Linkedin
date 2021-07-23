@@ -14,7 +14,7 @@ const Spinner = () => {
             </div>
 
 
-            <div class="loader loader-4"></div>
+            {/* <div class="loader loader-4"></div> */}
         </>
     )
 }
