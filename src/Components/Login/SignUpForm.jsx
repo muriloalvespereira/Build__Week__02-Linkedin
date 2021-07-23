@@ -3,7 +3,6 @@ import { useFormik, Formik, Field, Form } from "formik"
 import { useState } from 'react';
 import { Alert } from 'react-bootstrap';
 import { withRouter } from "react-router"
-//formik isn't getting the data from input
 
 const validate = (values) => {
     const errors = {}
