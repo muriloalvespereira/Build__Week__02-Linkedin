@@ -284,7 +284,7 @@ a:hover {
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
 	background: white;
-	box-shadow: -2px -1px 3px -1px rgba(0, 0, 0, 0.45);
+	box-shadow: -1px -1px 3px -1px rgba(0, 0, 0, 0.30);
 	z-index: 5;
 }
 .header_messaging {
