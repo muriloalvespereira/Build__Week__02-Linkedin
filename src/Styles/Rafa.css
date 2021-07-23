@@ -69,6 +69,7 @@
 
 #NavBar .avatar {
   border-radius: 50%;
+  object-fit: cover;
   border: none;
   height: 24px;
   transform: scale(1);
