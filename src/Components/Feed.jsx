@@ -10,7 +10,7 @@ const Feed = (props) => {
   return (
     <>
       <Col className="feed-area">
-        <HeaderPost />
+        <HeaderPost renderAgain={props.renderAgain} postId={props.data._id} id={props.data.user._id} />
         <PostUser post={props.data} />
         <TextPost post={props.data}/>
       </Col>

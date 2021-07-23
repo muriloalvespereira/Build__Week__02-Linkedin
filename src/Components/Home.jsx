@@ -14,6 +14,10 @@ const Home = (props) => {
 
     const [posts, setPosts] = useState([])
 
+    const renderAgain = () => {
+        getAllPosts()
+    }
+
     const getAllPosts = async () => {
         try {
                 let response = await fetch('https://striveschool-api.herokuapp.com/api/posts/', {
@@ -45,11 +49,11 @@ const Home = (props) => {
                         <LeftProfile />
                     </Col>
                     <Col className="col-6 pr-0">
-                        <Post />
+                        <Post renderAgain={renderAgain}/>
                         {
                             posts.map((post, index) => 
-                                <Feed key={index} data={post}/>
-                                ).slice(404, 407)
+                                <Feed renderAgain={renderAgain} key={index} data={post}/>
+                                ).slice(posts.length -5).reverse()
                         }
                     </Col>
                     <Col className="col-4">

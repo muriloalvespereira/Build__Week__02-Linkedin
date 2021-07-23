@@ -58,7 +58,7 @@
   top: 50px;
 }
 
-.profile-pic:hover{
+.profile-pic:hover {
   cursor: pointer;
 }
 
@@ -537,10 +537,14 @@ p > img {
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
   opacity: 0;
   transition: all 0.2ms ease-in;
+  transition-delay: 1s;
+  visibility: hidden;
 }
 
 .like-display:hover .different-reactions {
   opacity: 1;
+  transition-delay: 0s;
+  visibility: visible;
 }
 
 .like-reaction {
@@ -593,6 +597,8 @@ p > img {
   border: 1px solid rgba(0, 0, 0, 0.1);
   opacity: 0;
   transition: all 0.2ms ease-in;
+  visibility: hidden;
+  transition-delay: 1s;
 }
 .edit-post-user {
   position: absolute;
@@ -631,6 +637,8 @@ p > img {
 
 .display-popup:hover .popup-user {
   opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
 }
 
 .edit-post {
@@ -651,4 +659,20 @@ p > img {
 .edit-font {
   font-size: 12px;
   color: gray;
+}
+
+.trash {
+  margin-left: 12px;
+}
+
+.delete-btn {
+  padding-left: 10px;
+}
+
+.input-file > input[type="file"] {
+  display: none;
+}
+
+.img-upload {
+  overflow: hidden;
 }
