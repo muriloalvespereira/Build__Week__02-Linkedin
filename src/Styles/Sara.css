@@ -1,3 +1,36 @@
+/* delete post */
+.delete-modal {
+  width: 336px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  border-radius: 10px;
+}
+.delete-modal-header {
+  border: none;
+}
+.create-post-body-footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+/* .center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+} */
+.close {
+  display: none;
+}
+.delete-post-container {
+  width: 336px !important;
+}
+.btn-cancel-delete {
+  border-radius: 30px;
+  padding: 4px 16px 4px !important;
+}
+.btn-cancel {
+  border: 1px black solid;
+}
 /* people also viewed */
 .people_also_viewed {
   background: white !important;
@@ -209,7 +242,7 @@
 .img-post {
   display: flex;
   align-items: center !important;
-  margin: 8px 16px 0 16px;
+  margin: 8px 16px 0px !important;
   cursor: pointer;
 }
 .img-post img {
@@ -220,7 +253,7 @@
   background-clip: content-box;
 }
 .img-post .btn-post {
-  margin: 10px 5px;
+  margin: 4px 5px;
   /* font-size: 1.4rem;; */
   flex-grow: 1;
   max-width: none;
@@ -238,10 +271,11 @@
 .btn-light:hover {
   background-color: #ebebeb !important;
 }
-.img-post .btn-post .photo-video-event-article {
+.photo-video-event-article {
   flex-wrap: wrap;
+  margin-left: 8px !important;
 
-  padding-bottom: 4px;
+  /*  padding-bottom: 4px; */
 }
 @media screen and (max-width: 992px) {
   .photo-video-event-article {
@@ -255,6 +289,8 @@
   font-size: 14px;
   border: none;
   background-color: transparent;
+  display: flex;
+  align-items: center;
 }
 .photo-video-event-article button:hover {
   background-color: #ebebeb;
@@ -297,9 +333,9 @@
   color: #fc9295;
   margin-right: 10px;
 }
-.photo-btn span {
+/* .photo-btn span {
   margin-right: 10px;
-}
+} */
 .video-btn span {
   margin-right: 10px;
 }
@@ -564,6 +600,14 @@ div.modal-header > button > span:nth-child(1) {
   padding-left: 0;
   resize: none;
 }
+.post-area-container .post-area:hover {
+  outline: 0px !important;
+  -webkit-appearance: none;
+  box-shadow: none !important;
+}
+/* outline:0px !important;
+-webkit-appearance:none;
+box-shadow: none !important; */
 .btn-add-hashtag {
   padding: 6px 8px;
   color: #3983ce;
