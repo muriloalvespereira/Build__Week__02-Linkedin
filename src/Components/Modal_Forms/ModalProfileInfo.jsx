@@ -65,12 +65,12 @@ function ModalProfileInfo(props) {
             <Form.Row>
               <Form.Group as={Col} controlId="name">
                 <Form.Label className={error ? 'text-danger fw-bold' : ''}>First Name* {error ? 'Required' : ''}</Form.Label>
-                <Form.Control type="text" className="change-border" placeholder={window.localStorage.getItem('name')} onChange={(e) => handleForm('name', e.target.value)} />
+                <Form.Control type="text" className="change-border" defaultValue={window.localStorage.getItem('name')} onChange={(e) => handleForm('name', e.target.value)} />
                 <p className="make-blue">Add former name</p>
               </Form.Group>
               <Form.Group as={Col} controlId="surname">
                 <Form.Label className={error ? 'text-danger fw-bold' : ''}>Last Name* {error ? 'Required' : ''}</Form.Label>
-                <Form.Control type="text" className="change-border" placeholder={window.localStorage.getItem('surname')} onChange={(e) => handleForm('surname', e.target.value)} />
+                <Form.Control type="text" className="change-border" defaultValue={window.localStorage.getItem('surname')} onChange={(e) => handleForm('surname', e.target.value)} />
               </Form.Group>
             </Form.Row>
 
@@ -94,7 +94,7 @@ function ModalProfileInfo(props) {
             <Form.Row>
               <Form.Group as={Col} controlId="title">
                 <Form.Label className={error ? 'text-danger fw-bold' : ''}>Headline* {error ? 'Required' : ''}</Form.Label>
-                <Form.Control className="change-border" as='textarea' type="text" placeholder={window.localStorage.getItem('title')} onChange={(e) => handleForm('title', e.target.value)} />
+                <Form.Control className="change-border" as='textarea' type="text" defaultValue={window.localStorage.getItem('title')} onChange={(e) => handleForm('title', e.target.value)} />
                 <div>
                   <p className="make-blue-3"><span>+</span> Add current position</p>
                 </div>
@@ -128,7 +128,7 @@ function ModalProfileInfo(props) {
               </Form.Group>
               <Form.Group as={Col}>
                 <Form.Label className={error ? 'text-danger fw-bold' : ''}>Locations within this area {error ? 'Required' : ''}</Form.Label>
-                <Form.Control className="change-border" type="text" placeholder={window.localStorage.getItem('area')} onChange={(e) => handleForm('area', e.target.value)} />
+                <Form.Control className="change-border" type="text" defaultValue={window.localStorage.getItem('area')} onChange={(e) => handleForm('area', e.target.value)} />
               </Form.Group>
             </Form.Row>
 

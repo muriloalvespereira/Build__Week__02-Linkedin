@@ -16,6 +16,8 @@ const Home = (props) => {
     getAllPosts();
   };
 
+  let count = 10
+
   const getAllPosts = async () => {
     try {
       let response = await fetch(
@@ -32,7 +34,7 @@ const Home = (props) => {
       let dataRequested = await response.json();
       const data = dataRequested;
       console.log(data);
-      setPosts(data);
+      setPosts(data.slice(data.length -25));
       console.log(dataRequested);
     } catch (e) {
       console.log(e);
@@ -55,7 +57,7 @@ const Home = (props) => {
               .map((post, index) => (
                 <Feed renderAgain={renderAgain} key={index} data={post} />
               ))
-              .slice(posts.length - 5)
+              .slice(posts.length - 25)
               .reverse()}
           </Col>
           <Col className="col-lg-4 d-none d-lg-block">

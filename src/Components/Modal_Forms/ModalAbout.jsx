@@ -56,7 +56,7 @@ function ModalAbout(props) {
           <Form.Row>
             <Form.Group as={Col} controlId="bio" className="descriptionAbout" >
               <Form.Label><span className="sum-title ">Summary </span></Form.Label>
-              <Form.Control type="text" as='textarea' placeholder={window.localStorage.getItem('bio')} rows={5} onChange={(e) => handleForm('bio', e.target.value)} />
+              <Form.Control type="text" as='textarea' defaultValue={window.localStorage.getItem('bio')} rows={5} onChange={(e) => handleForm('bio', e.target.value)} />
             </Form.Group>
           </Form.Row>
         </Form>
