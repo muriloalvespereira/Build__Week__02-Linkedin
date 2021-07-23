@@ -3,7 +3,7 @@ import { Modal, Button, Form, Col } from 'react-bootstrap'
 import { useState, useEffect } from 'react'
 
 function ModalProfileInfo(props) {
-  const [error, setError]  = useState(false)
+  const [error, setError] = useState(false)
   const [formData, setFormData] = useState({
     surname: window.localStorage.getItem('surname'),
     title: window.localStorage.getItem('title'),
@@ -33,6 +33,8 @@ function ModalProfileInfo(props) {
       let sent = await response.json()
       console.log(sent)
       props.setChangeUserdata(!props.changeUserData)
+      let userDataKeyList = Object.keys(formData)
+      userDataKeyList.forEach(key => window.localStorage.setItem(key, formData[key]))
       props.onHide()
       setError(false)
     } catch (e) {
@@ -150,7 +152,7 @@ function ModalProfileInfo(props) {
         </Modal.Body>
         <Modal.Footer>
           {/* <Button onClick={props.onHide}>Close</Button> */}
-          <Button className="custom-btn" onClick={()=>updateProfileInfo()}>Save</Button>
+          <Button className="custom-btn" onClick={() => updateProfileInfo()}>Save</Button>
         </Modal.Footer>
       </Modal>
 
