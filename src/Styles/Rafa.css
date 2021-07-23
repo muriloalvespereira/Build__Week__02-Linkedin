@@ -204,6 +204,7 @@
 
 .show-Exp-image-preview > img{
   max-height: 200px;
+  max-width: 340px;
   object-fit: cover;
 
 }
