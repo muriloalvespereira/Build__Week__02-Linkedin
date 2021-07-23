@@ -23,7 +23,7 @@ const Post = (props) => {
             <span>Start a post</span>
           </Button>
         </div>
-        <div className="photo-video-event-article d-flex justify-content-evenly">
+        <div className="photo-video-event-article d-flex justify-content-around">
           <div className="photo-btn d-flex align-items-center ">
             <button>
               <span>
