@@ -4,6 +4,8 @@ import { useState } from "react";
 
 const CreatePost = (props) => {
   const [text, setText] = useState();
+  const [img, setImg] = useState();
+  const [imgToSend, setImgToSend] = useState();
 
   const handleChange = (key, value) => {
     setText({[key]: value});
@@ -21,16 +23,42 @@ const CreatePost = (props) => {
           body: JSON.stringify(text),
         }
       );
-      // console.log("inside get all POSTS AFTER FETCH", response);
-      // let dataRequested = await response.json();
-      // console.log(dataRequested);
     } catch (e) {
       console.log(e);
       return e;
     }
-
+    // sendImage()
     props.handleClose()
     props.renderAgain()
+  };
+
+const sendImage = async () => {
+  try {
+    let response = await fetch("https://striveschool-api.herokuapp.com/api/posts/",
+      {
+        method: "POST",
+        headers: {
+          "Authorization": "Bearer " + window.localStorage.getItem('user_Token'),
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(imgToSend),
+      }
+    );
+  } catch (e) {
+    console.log(e);
+    return e;
+  }
+}
+
+  const imageHandler = (e) => {
+    const reader = new FileReader();
+    reader.onload = () =>{
+      if(reader.readyState === 2){
+        setImg(reader.result)
+        setImgToSend({'post': reader.result})
+      }
+    }
+    reader.readAsDataURL(e.target.files[0])
   };
 
   return (
@@ -97,6 +125,11 @@ const CreatePost = (props) => {
               />
             </Form.Group>
           </div>
+          <div className="img-upload">
+            {img &&
+            <img src={img} className="img-fluid" alt="" />
+            }
+          </div>
           <div>
             <span className="btn-add-hashtag">Add hashtag</span>
           </div>
@@ -116,20 +149,23 @@ const CreatePost = (props) => {
                   <path d="M21 13h-8v8h-2v-8H3v-2h8V3h2v8h8z"></path>
                 </svg>
               </span>
-              <span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  data-supported-dps="24x24"
-                  fill="currentColor"
-                  className="mercado-match"
-                  width="24"
-                  height="24"
-                  focusable="false"
-                >
-                  <path d="M19 4H5a3 3 0 00-3 3v10a3 3 0 003 3h14a3 3 0 003-3V7a3 3 0 00-3-3zm1 13a1 1 0 01-.29.71L16 14l-2 2-6-6-4 4V7a1 1 0 011-1h14a1 1 0 011 1zm-2-7a2 2 0 11-2-2 2 2 0 012 2z"></path>
-                </svg>
-              </span>
+                <span className="input-file">
+                  <label for="arquivo">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    data-supported-dps="24x24"
+                    fill="currentColor"
+                    className="mercado-match"
+                    width="24"
+                    height="24"
+                    focusable="false"                  
+                  >
+                    <path d="M19 4H5a3 3 0 00-3 3v10a3 3 0 003 3h14a3 3 0 003-3V7a3 3 0 00-3-3zm1 13a1 1 0 01-.29.71L16 14l-2 2-6-6-4 4V7a1 1 0 011-1h14a1 1 0 011 1zm-2-7a2 2 0 11-2-2 2 2 0 012 2z"></path>
+                  </svg>
+                  </label>
+                  <input type="file" accept="image/*" name="arquivo" id="arquivo" onChange={imageHandler}/>
+                </span>
               <span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

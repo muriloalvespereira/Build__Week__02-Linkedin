@@ -668,3 +668,11 @@ p > img {
 .delete-btn {
   padding-left: 10px;
 }
+
+.input-file > input[type="file"] {
+  display: none;
+}
+
+.img-upload {
+  overflow: hidden;
+}
