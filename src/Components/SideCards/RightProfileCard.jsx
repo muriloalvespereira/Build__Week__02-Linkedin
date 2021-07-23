@@ -5,7 +5,7 @@ import PeopleAlsoViewed from "./PeopleAlsoViewed";
 
 const RightProfileCard = () => {
   return (
-    <div className="mt-5 " width="100%">
+    <div className="mt-5 d-none d-md-none d-lg-block" width="100%">
       <Col
         className="py-3"
         style={{
