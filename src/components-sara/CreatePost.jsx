@@ -23,6 +23,8 @@ const CreatePost = (props) => {
           body: JSON.stringify(text),
         }
       );
+
+      console.log("GET DETAILS", response)
     } catch (e) {
       console.log(e);
       return e;
