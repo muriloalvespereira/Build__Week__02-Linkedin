@@ -13,7 +13,7 @@ const Post = (props) => {
     <>
       <div className="post mt-5 pt-0">
         <div className="img-post d-flex mt-0">
-          <img src={`${window.localStorage.getItem('image')}`} alt="" />
+          <img src={`${window.localStorage.getItem("image")}`} alt="" />
 
           <Button
             variant="light"
@@ -23,8 +23,8 @@ const Post = (props) => {
             <span>Start a post</span>
           </Button>
         </div>
-        <div className="photo-video-event-article d-flex justify-content-around">
-          <div className="photo-btn ">
+        <div className="photo-video-event-article d-flex justify-content-evenly">
+          <div className="photo-btn d-flex align-items-center ">
             <button>
               <span>
                 <svg
