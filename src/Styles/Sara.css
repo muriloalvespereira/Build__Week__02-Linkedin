@@ -18,7 +18,7 @@
   top: 50%;
   transform: translate(-50%, -50%);
 } */
-.close {
+.delete-modal .close {
   display: none;
 }
 .delete-post-container {
@@ -251,6 +251,7 @@
   height: 48px;
   box-sizing: border-box;
   background-clip: content-box;
+  object-fit: cover;
 }
 .img-post .btn-post {
   margin: 4px 5px;
@@ -565,6 +566,7 @@ div.modal-header > button > span:nth-child(1) {
   height: 48px;
   box-sizing: border-box;
   background-clip: content-box;
+  object-fit: cover;
 }
 .create-post-user .user-name {
   font-size: 16px;
