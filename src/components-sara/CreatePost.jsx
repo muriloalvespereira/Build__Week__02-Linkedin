@@ -5,7 +5,7 @@ import { useState } from "react";
 const CreatePost = (props) => {
   const [text, setText] = useState();
   const [img, setImg] = useState();
-  const [imgToSend, setImgToSend] = useState();
+  const [imgToSend, setImgToSend] = useState('');
 
   const handleChange = (key, value) => {
     setText({[key]: value});
@@ -24,40 +24,52 @@ const CreatePost = (props) => {
         }
       );
 
-      console.log("GET DETAILS", response)
+      // console.log("GET DETAILS", response.json())
+      let data = await response.json()
+      let id = data._id
+      console.log(id)
+      if (imgToSend){
+        sendImage(id)
+      }else {
+        props.handleClose()
+        props.renderAgain()
+      }
     } catch (e) {
       console.log(e);
       return e;
     }
-    // sendImage()
-    props.handleClose()
-    props.renderAgain()
   };
 
-const sendImage = async () => {
+const sendImage = async (id) => {
+  console.log("o que tem aqui", imgToSend)
   try {
-    let response = await fetch("https://striveschool-api.herokuapp.com/api/posts/",
+    let response = await fetch("https://striveschool-api.herokuapp.com/api/posts/" + id,
       {
         method: "POST",
         headers: {
           "Authorization": "Bearer " + window.localStorage.getItem('user_Token'),
-          "Content-Type": "application/json",
         },
-        body: JSON.stringify(imgToSend),
+        body: imgToSend
       }
     );
   } catch (e) {
     console.log(e);
     return e;
   }
+  props.handleClose()
+  props.renderAgain()
 }
 
   const imageHandler = (e) => {
+console.log("minha foto", e)
+    let postImage = new FormData()
+    postImage.append('post', e.target.files[0])
+    setImgToSend(postImage)
+    
     const reader = new FileReader();
     reader.onload = () =>{
       if(reader.readyState === 2){
         setImg(reader.result)
-        setImgToSend({'post': reader.result})
       }
     }
     reader.readAsDataURL(e.target.files[0])
@@ -116,6 +128,7 @@ const sendImage = async () => {
               </Button>
             </div>
           </div>
+          <Form>
           <div className="post-area-container">
             <Form.Group controlId="exampleForm.ControlTextarea1">
               <Form.Control
@@ -152,6 +165,7 @@ const sendImage = async () => {
                 </svg>
               </span>
                 <span className="input-file">
+                
                   <label for="arquivo">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -166,7 +180,8 @@ const sendImage = async () => {
                     <path d="M19 4H5a3 3 0 00-3 3v10a3 3 0 003 3h14a3 3 0 003-3V7a3 3 0 00-3-3zm1 13a1 1 0 01-.29.71L16 14l-2 2-6-6-4 4V7a1 1 0 011-1h14a1 1 0 011 1zm-2-7a2 2 0 11-2-2 2 2 0 012 2z"></path>
                   </svg>
                   </label>
-                  <input type="file" accept="image/*" name="arquivo" id="arquivo" onChange={imageHandler}/>
+                  <input type="file" name="arquivo" id="arquivo" onChange={imageHandler}/>
+                 
                 </span>
               <span>
                 <svg
@@ -226,6 +241,7 @@ const sendImage = async () => {
               </Button>
             </div>
           </div>
+          </Form>
         </div>
       </Modal>
     </div>

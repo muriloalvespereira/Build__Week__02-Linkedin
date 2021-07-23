@@ -15,10 +15,11 @@ const Feed = (props) => {
         <TextPost post={props.data}/>
       </Col>
       <Col className="px-0">
-        <div
+        { props.data.image &&
+          <div
           className="media-feed w-100"
           style={{ backgroundImage: `url(${props.data.image})` }}
-        ></div>
+        ></div>}
       </Col>
       <Col className="feed-area-end mb-3">
         <Likes />

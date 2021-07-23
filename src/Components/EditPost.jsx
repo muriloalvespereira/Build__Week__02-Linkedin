@@ -46,7 +46,7 @@ const EditPost = (props) => {
           <div className="pl-3">
          <FaTrashAlt className="trash" />
           </div>
-          <div className="delete-btn">
+          <div className="pl-2">
           <h6>Delete post</h6>
             <p className="edit-font mb-0">Delete here, but please, do another</p>
           </div>
