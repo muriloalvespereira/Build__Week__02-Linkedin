@@ -9,7 +9,7 @@ const TransitionPage = (props) => {
                     props.history.push('profile')
                 }, 3000)}
                 <img src="https://1000logos.net/wp-content/uploads/2017/03/Linkedin-Logo.png" alt="" />
-                <div class="infinity-3"></div>
+                <div className="infinity-3"></div>
             </div>
 
         </>

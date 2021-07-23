@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import '../../Styles/Hasham.css'
-//icons
 import { FaRegEdit, FaSearch } from 'react-icons/fa';
 import { BsThreeDots } from 'react-icons/bs';
 import { MdKeyboardArrowUp } from 'react-icons/md';
@@ -12,7 +11,7 @@ import Chat from './Chat';
 const Messaging = () => {
     const [messaging, setMessaging] = useState(false);
     const [Profiles, setProfiles] = useState([]);
-    console.log(Profiles);
+    // console.log(Profiles);
     useEffect(() => {
         fetch('https://striveschool-api.herokuapp.com/api/profile/', {
             method: 'GET',
@@ -38,23 +37,23 @@ const Messaging = () => {
                     <img
                         src='https://thumbs.dreamstime.com/b/male-avatar-icon-flat-style-male-user-icon-cartoon-man-avatar-hipster-vector-stock-91462914.jpg'
                         alt='profile picture'
-                    />
-                    <div className="pr-auto titleSize"> <p>Messaging</p></div>
-                    <div className='icon icon1'>
-                        <BsThreeDots className='icon ml-auto' /></div>
-                    <div> <FaRegEdit className='icon' /></div>
-                    <div className='icon' onClick={() => setMessaging(!messaging)}>
-                        <MdKeyboardArrowUp />
-                    </div>
+                    /></div>
+                <div className="pr-auto titleSize"> <p>Messaging</p></div>
+                <div className='icon1'>
+                    <BsThreeDots className=' ml-auto' /></div>
+                <div> <FaRegEdit className='icon2' /></div>
+                <div className='icon' onClick={() => setMessaging(!messaging)}>
+                    <MdKeyboardArrowUp />
                 </div>
             </div>
 
-            <div className='messagin-body '>
 
-                <input type='text' placeholder='  ' className='search-message' />
-                <span className=' search-bar'><FaSearch class='search-icon' />Search messages <GoSettings class='setting-icon' /></span>
+            <div className='messagin-body'>
+
+                <input type='text' className='search-message' />
+                <span className=' search-bar'><FaSearch className='search-icon' />Search messages <GoSettings className='setting-icon' /></span>
                 {Profiles.slice(0, 10).map((person) => (
-                    <a href={'/userrofile/' + person.name + '/' + person._id}>
+                    <a href={'/userprofile/' + person.name + '/' + person._id} key={person._id}>
                         <Chat person={person} />
                     </a>
                 ))}

@@ -13,7 +13,7 @@ const SideBellow = () => {
               viewBox="0 0 16 16"
               data-supported-dps="16x16"
               fill="currentColor"
-              class="mercado-match card-svg-side"
+              className="mercado-match card-svg-side"
               width="16"
               height="16"
               focusable="false"

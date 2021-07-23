@@ -1,6 +1,6 @@
 import React from 'react'
 import { Modal, Button, Form, Col } from 'react-bootstrap'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 function ModalProfileImage(props) {
     const [userImage, setUserImage] = useState('')
@@ -42,7 +42,6 @@ function ModalProfileImage(props) {
             </Modal.Header>
             <Modal.Body className="upload-img-modal">
                 <Form>
-
                     
                         {userImagePath.length > 5 && <div className="bg-photo-upload">
                             <img src={userImagePath} alt="" />

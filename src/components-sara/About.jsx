@@ -68,13 +68,13 @@ const About = () => {
               setChangeUserdata={setChangeUserdata}
               onHide={() => setModalShow(false)}
             ></ModalAbout>
-            <div class="about-icon" onClick={() => setModalShow(true)}>
+            <div className="about-icon" onClick={() => setModalShow(true)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 data-supported-dps="24x24"
                 fill="currentColor"
-                class="mercado-match"
+                className="mercado-match"
                 width="24"
                 height="24"
                 focusable="false"
@@ -84,7 +84,7 @@ const About = () => {
             </div>
           </div>
 
-          <p className="mb-0">
+          <div className="mb-0">
             {userData.bio}
             <p
               className="read-more-link d-inline-block"
@@ -95,7 +95,7 @@ const About = () => {
               {/* {!readMore && <span className="read-more">... see more</span>} */}
             </p>
             {/* {readMore && extraContent} */}
-          </p>
+          </div>
         </Col>
       </Row>
     </div>
