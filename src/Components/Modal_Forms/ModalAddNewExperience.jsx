@@ -110,7 +110,6 @@ function ModalAddNewExperience(props) {
       setUserImage('')
 
     } catch (error) {
-      setError(true)
       console.log(error)
     }
 
