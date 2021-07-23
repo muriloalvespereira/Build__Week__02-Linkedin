@@ -13,6 +13,7 @@ import CreatePost from "../components-sara/CreatePost";
 
 const Profile = (props) => {
   console.log(props, "Profile");
+  props.setShowTopNavBar(true)
   return (
     <Container>
       <Row>
