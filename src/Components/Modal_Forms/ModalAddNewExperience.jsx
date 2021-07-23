@@ -16,10 +16,12 @@ function ModalAddNewExperience(props) {
   })
   const [endpoint, setEndpoint] = useState('')
   const [userImage, setUserImage] = useState('')
+  const [userImagePath, setUserImagePath] = useState('')
 
 
   useEffect(() => {
-    if (props.requestmethod === 'PUT')
+    if (props.requestmethod === 'PUT'){
+
       setFormData(
         {
           role: props.userExperience.role,
@@ -28,9 +30,16 @@ function ModalAddNewExperience(props) {
           endDate: format(new Date(props.userExperience.endDate), 'yyyy-MM-dd'),
           description: props.userExperience.description,
           area: props.userExperience.area
-
+          
         }
-      )
+        )
+        
+        
+        if(Object.keys(props.userExperience).includes('image') ){
+            setUserImagePath(props.userExperience.image)
+        }
+        
+      }
   }, [])
 
   const handleForm = (key, value) => {
@@ -39,7 +48,6 @@ function ModalAddNewExperience(props) {
       [key]: value
     })
   }
-
 
   // POST Goes to the Token owner independently of the ID
   const postUserExperience = async () => {
@@ -65,6 +73,7 @@ function ModalAddNewExperience(props) {
         description: '',
         area: ''
       })
+
       setError(false)
 
       props.onHide()
@@ -108,6 +117,9 @@ function ModalAddNewExperience(props) {
       props.setchangeExpImg(!props.changeExpImg)
       props.onHide()
       setUserImage('')
+      if(props.requestmethod === 'POST'){
+        setUserImagePath('')
+      }
 
     } catch (error) {
       console.log(error)
@@ -223,6 +235,8 @@ function ModalAddNewExperience(props) {
                   onChange={(e) => {
                     let newUserImage = new FormData()
                     newUserImage.append('experience', e.target.files[0])
+                    console.log(e.target.files[0].name)
+                    setUserImagePath(URL.createObjectURL(e.target.files[0]))
                     setUserImage(newUserImage)
                   }}
                   
@@ -231,6 +245,9 @@ function ModalAddNewExperience(props) {
                   <div className="space-between"></div>
               <div className="btn btn-outline-primary btn-outline-uploadXPImage verticalAlign w-50 border-2-4rem pl-2"> <span>Link</span></div>
             </Form.Group>
+            <div className='show-Exp-image-preview d-flex justify-content-center align-items-center'>
+              {userImagePath.length > 5 && <img src={userImagePath} alt="" />}
+            </div>
             
           </Form>
         </div>
