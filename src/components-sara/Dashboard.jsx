@@ -1,5 +1,6 @@
 import React from "react";
 import "../Styles/Sara.css";
+import { Link } from 'react-router-dom'
 const Dashboard = () => {
   return (
     <>
@@ -15,33 +16,33 @@ const Dashboard = () => {
         </div>
         <div className=" dashboard-middle-container">
           <div className="profile-view">
-            <p href="">
+            <Link to="#">
               <div className="dashboard-view">
                 <span className="no-view">40</span>
                 <span>Who viewed your profile</span>
               </div>
-            </p>
+            </Link>
           </div>
           <div className="article-view">
-            <p href="">
+            <Link to="#">
               <div className="dashboard-view">
                 <span className="no-view">19</span>
                 <span>Article views</span>
               </div>
-            </p>
+            </Link>
           </div>
           <div className="search-appearances">
-            <p href="">
+            <Link to="#">
               <div className="dashboard-view">
                 <span className="no-view">19</span>
                 <span>Search appearances</span>
               </div>
-            </p>
+            </Link>
           </div>
         </div>
         <div className="dashboard-bottom-container">
           <div className="creator-mode">
-            <p href="">
+            <Link to="#">
               <div className="creatormode-content">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -67,10 +68,10 @@ const Dashboard = () => {
                   </p>
                 </div>
               </div>{" "}
-            </p>
+            </Link>
           </div>
           <div className="mynetwork dashboard-section__hr">
-            <p href="" className="">
+            <Link to="#">
               <div className="mynetwork-content ">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -89,10 +90,10 @@ const Dashboard = () => {
                   <p>Manage your connections, events, and interests.</p>
                 </div>
               </div>
-            </p>
+            </Link>
           </div>
           <div className="salary-insights dashboard-section__hr">
-            <p href="">
+            <Link to="#">
               <div className="salaryinsights-content ">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -113,10 +114,10 @@ const Dashboard = () => {
                   </p>
                 </div>
               </div>
-            </p>
+            </Link>
           </div>
           <div className="myitems d-flex dashboard-section__hr">
-            <p href="">
+            <Link to="#">
               <div className="myitems-content ">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -136,7 +137,7 @@ const Dashboard = () => {
                   <p>Keep track of your jobs, courses and articles.</p>
                 </div>
               </div>
-            </p>
+            </Link>
           </div>
         </div>
       </div>

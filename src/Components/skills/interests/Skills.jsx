@@ -10,8 +10,21 @@ const Skills = () => {
         <div className="skill_title">
           <h6 className="block-title">Skills & endorsements</h6>
           <div className="ml-auto add-skill">
-            Add a new skill <FiEdit2 className="mb-2 ml-3 edit-logo" />
-          </div>
+            Add a new skill </div>
+          <div className="mb-2 ml-3 edit-logo">
+            <svg
+
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              data-supported-dps="24x24"
+              fill="currentColor"
+              width="24"
+              height="24"
+              focusable="false"
+            >
+              <path d="M21.13 2.86a3 3 0 00-4.17 0l-13 13L2 22l6.19-2L21.13 7a3 3 0 000-4.16zM6.77 18.57l-1.35-1.34L16.64 6 18 7.35z"></path>
+            </svg></div>
+
         </div>
         <div>
           <Button className="btn btn-primary btn-skill px-3">
@@ -29,7 +42,7 @@ const Skills = () => {
                   viewBox="0 0 16 16"
                   data-supported-dps="16x16"
                   fill="currentColor"
-                  class="mercado-match m-0"
+                  className="mercado-match m-0"
                   width="16"
                   height="16"
                   focusable="false"
@@ -59,7 +72,7 @@ const Skills = () => {
                     viewBox="0 0 24 24"
                     data-supported-dps="24x24"
                     fill="currentColor"
-                    class="mercado-match"
+                    className="mercado-match"
                     width="24"
                     height="24"
                     focusable="false"
@@ -82,7 +95,7 @@ const Skills = () => {
                   viewBox="0 0 16 16"
                   data-supported-dps="16x16"
                   fill="currentColor"
-                  class="mercado-match m-0"
+                  className="mercado-match m-0"
                   width="16"
                   height="16"
                   focusable="false"
@@ -106,23 +119,7 @@ const Skills = () => {
                   2 of Hedri Helena’s colleagues at Princess Cruises
                 </span>{" "}
               </div>
-              {/*  <div className="d-flex align-items-center">
-                <span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    data-supported-dps="24x24"
-                    fill="currentColor"
-                    class="mercado-match"
-                    width="24"
-                    height="24"
-                    focusable="false"
-                  >
-                    <path d="M14.73 10H17l-5.5 8L8 14.5l1.34-1.34L11.21 15zM20 3v16a3 3 0 01-3 3H7a3 3 0 01-3-3V3h5.69l.52-1A2 2 0 0112 1a2 2 0 011.76 1l.52 1zm-2 2h-2.6l.6 1.1V7H8v-.9L8.6 5H6v14a1 1 0 001 1h10a1 1 0 001-1z"></path>
-                  </svg>{" "}
-                </span>
-                <span>LinkedIn Skill Assessment badge</span>
-              </div> */}
+
             </div>
           </div>
         </div>
@@ -135,7 +132,7 @@ const Skills = () => {
                   viewBox="0 0 16 16"
                   data-supported-dps="16x16"
                   fill="currentColor"
-                  class="mercado-match m-0"
+                  className="mercado-match m-0"
                   width="16"
                   height="16"
                   focusable="false"
@@ -158,23 +155,7 @@ const Skills = () => {
                   2 of Stefano’s colleagues at Nucleode Srl
                 </span>{" "}
               </div>
-              {/*  <div className="d-flex align-items-center">
-                <span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    data-supported-dps="24x24"
-                    fill="currentColor"
-                    class="mercado-match"
-                    width="24"
-                    height="24"
-                    focusable="false"
-                  >
-                    <path d="M14.73 10H17l-5.5 8L8 14.5l1.34-1.34L11.21 15zM20 3v16a3 3 0 01-3 3H7a3 3 0 01-3-3V3h5.69l.52-1A2 2 0 0112 1a2 2 0 011.76 1l.52 1zm-2 2h-2.6l.6 1.1V7H8v-.9L8.6 5H6v14a1 1 0 001 1h10a1 1 0 001-1z"></path>
-                  </svg>{" "}
-                </span>
-                <span>LinkedIn Skill Assessment badge</span>
-              </div> */}
+
             </div>
           </div>
         </div>
@@ -186,7 +167,7 @@ const Skills = () => {
           viewBox="0 0 16 16"
           data-supported-dps="16x16"
           fill="currentColor"
-          class="mercado-match"
+          className="mercado-match"
           width="16"
           height="16"
           focusable="false"

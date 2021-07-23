@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../../Styles/Hasham.css";
 import "../../Styles/Sara.css";
+import { Link } from 'react-router-dom'
 
 const PeopleAlsoViewed = () => {
   const [Profiles, setProfiles] = useState([]);
@@ -43,7 +44,7 @@ const PeopleAlsoViewed = () => {
               className="mt-1"
             />
             <div className="profile_info">
-              <div href={"@" + profile.name + "/" + profile._id}>
+              <Link to={"@" + profile.name + "/" + profile._id}>
                 <div className="name d-flex align-items-center">
                   <span>{profile.name + " " + profile.surname}</span>
                   <span
@@ -67,7 +68,7 @@ const PeopleAlsoViewed = () => {
                 >
                   {profile.title}
                 </div>
-              </div>
+              </Link>
               <button className="connect_button  mt-2">Connect</button>
             </div>
           </div>
@@ -80,7 +81,7 @@ const PeopleAlsoViewed = () => {
           viewBox="0 0 16 16"
           data-supported-dps="16x16"
           fill="currentColor"
-          class="mercado-match"
+          className="mercado-match"
           width="16"
           height="16"
           focusable="false"

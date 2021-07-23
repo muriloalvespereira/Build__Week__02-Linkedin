@@ -1,6 +1,6 @@
 import React from 'react'
 import { Modal, Button, Form, Col } from 'react-bootstrap'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 function ModalProfileImage(props) {
     const [userImage, setUserImage] = useState('')
@@ -45,9 +45,9 @@ function ModalProfileImage(props) {
                         <Form.Group as={Col} controlId="profile">
                             <Form.Label>Profile Image</Form.Label>
                             <Form.Control type="file" placeholder="Update your profile image" onChange={(e) => {
-                                 let newUserImage = new FormData()
-                                 newUserImage.append('profile', e.target.files[0])
-                                 setUserImage(newUserImage)
+                                let newUserImage = new FormData()
+                                newUserImage.append('profile', e.target.files[0])
+                                setUserImage(newUserImage)
                             }} />
                         </Form.Group>
                     </Form.Row>

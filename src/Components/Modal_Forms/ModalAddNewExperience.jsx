@@ -141,9 +141,9 @@ function ModalAddNewExperience(props) {
             </div>
 
             <div className="radio">
-              <label class="switch-wrap">
+              <label className="switch-wrap">
                 <input type="checkbox" />
-                <div class="switch"></div>
+                <div className="switch"></div>
               </label>
             </div>
           </div>
@@ -172,7 +172,7 @@ function ModalAddNewExperience(props) {
             </div>
             <div className="check-check">
 
-              <label class="b-contain">
+              <label className="b-contain">
                 <input type="checkbox" className="custom-checkbox" />
                 <span>I am currently working on this role</span>
               </label>

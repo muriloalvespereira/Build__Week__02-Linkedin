@@ -10,7 +10,7 @@ const Chat = ({ person }) => {
                 <div className='profile_info'>
                     <div className='message_name'>{person.name}</div>
                     <div className='message'>
-                        <EllipsisText text={person.bio} length={'25'} />
+                        <EllipsisText text={person.bio} length={25} />
                     </div>
                 </div>
                 <div className='date'>Today</div>
