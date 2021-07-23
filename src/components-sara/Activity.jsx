@@ -67,8 +67,8 @@ const Activity = () => {
               />
               <div>
                 <h3>
-                  Weekend!!! Time to gather with your friends and study together
-                  improving ...
+                  Weekend!!! Time to gather with your friends and study
+                  together...
                 </h3>
                 <span className="span1">Rafael shared this</span>
                 <span className="span2">3 Reactions.1 Comment</span>

@@ -16,7 +16,7 @@ const RightProfileCard = () => {
         }}
       >
         <Row>
-          <Col lg={10} className="mb-3">
+          <Col lg={10} className="mb-0">
             <p
               href="#"
               style={{
@@ -46,6 +46,7 @@ const RightProfileCard = () => {
                 fontSize: "1em",
                 color: "rgb(102,102,102)",
                 fontWeight: "600",
+                marginBottom: "0",
               }}
             >
               Add profile in another language{" "}
