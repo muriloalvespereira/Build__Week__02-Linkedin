@@ -212,26 +212,36 @@ function ModalAddNewExperience(props) {
             <Form.Control type="text" as="textarea" rows={5} placeholder={endpoint === 'POST' ? "addDescription" : formData.description} onChange={(e) => handleForm('description', e.target.value)} />
           </Form.Group>
           <Form>
-            <Form.Group>
-              <Form.File id="exampleFormControlFile1" label="Example file input"
-                onChange={(e) => {
-                  let newUserImage = new FormData()
-                  newUserImage.append('experience', e.target.files[0])
-                  setUserImage(newUserImage)
-                }}
-
-              />
+           <div className="Media fix">
+              <p className="mb-0">Media</p>
+              <p className="make-it-gray font-small">Add or link to external documents, photos, sites, videos, and presentations.</p>
+           </div>
+            <Form.Group className="d-flex flex-nowrap">
+              <div className="btn btn-blue d-flex justify-content-center align-items-center w-50 position-relative border-2-4rem pr-2">
+              <span className="upLoadXPImage-YMod">Upload Image</span>
+                <Form.File id="exampleFormControlFile1" className="upload-Exp-img position-absolute w-100 h-100"
+                  onChange={(e) => {
+                    let newUserImage = new FormData()
+                    newUserImage.append('experience', e.target.files[0])
+                    setUserImage(newUserImage)
+                  }}
+                  
+                  />
+              </div>
+                  <div className="space-between"></div>
+              <div className="btn btn-outline-primary btn-outline-uploadXPImage verticalAlign w-50 border-2-4rem pl-2"> <span>Link</span></div>
             </Form.Group>
+            
           </Form>
         </div>
 
       </Modal.Body>
-      <Modal.Footer>
-        {props.requestmethod === 'PUT' && <Button variant="dark"
+      <Modal.Footer className="justify-content-between">
+        {props.requestmethod === 'PUT' && <Button variant="" className="border-2-4rem connect_button"
           onClick={() => deleteUserExperience()}
         >Delete</Button>}
 
-        <Button variant="primary"
+        <Button variant="" className="btn-blue saveExpImg-padding-Mod border-2-4rem"
           onClick={() => postUserExperience()}
         >Save</Button>
       </Modal.Footer>
