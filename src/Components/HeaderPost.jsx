@@ -13,7 +13,7 @@ const HeaderPost = (props) => {
 useEffect(() => {
   props.id === window.localStorage.getItem('_id') ? setCheckId(true) : setCheckId(false)
 
-}, [])
+}, [props.id])
 
 
 

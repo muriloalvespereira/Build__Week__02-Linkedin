@@ -78,9 +78,6 @@ const LeftProfile = () => {
           </p>
         </Col>
       </div>
-      <div>
-         <SideBellow /> 
-      </div>
     </>
   );
 };

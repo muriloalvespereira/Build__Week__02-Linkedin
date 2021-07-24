@@ -285,6 +285,11 @@ p > img {
   border-radius: 10px;
   background: white;
 }
+
+.side-bellow-container {
+  position: sticky;
+  top: 20px;
+}
 .side-middle {
   height: 65px;
   padding-top: 10px;

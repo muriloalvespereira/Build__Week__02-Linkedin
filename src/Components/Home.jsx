@@ -7,13 +7,15 @@ import SideHome from "./SideHome";
 import { useState } from "react";
 import Spinner from "./RaiaComponents/Spinners";
 import TransitionPage from "./RaiaComponents/TransitionPage";
-import { useEffect } from "react";
+import { useEffect } from "react"
+import SideBellow from "./SideBelow";
 
 const Home = (props) => {
   const [posts, setPosts] = useState([]);
 
   const renderAgain = () => {
     getAllPosts();
+
   };
 
   let count = 10
@@ -50,6 +52,7 @@ const Home = (props) => {
         <Row>
           <Col className="col-lg-2 px-0 d-none col-md-4  d-md-block">
             <LeftProfile />
+            <SideBellow />
           </Col>
           <Col className="col-lg-6 col-md-8 col-sm-12 pr-0">
             <Post renderAgain={renderAgain} />

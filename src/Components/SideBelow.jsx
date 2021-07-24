@@ -2,7 +2,7 @@ import { Col } from "react-bootstrap";
 import "../Styles/Murilo.css";
 const SideBellow = () => {
   return (
-    <div className="side-profile mt-2">
+    <div className="side-profile mt-2 side-bellow-container">
       <Col className="pt-3 pr-0 side-bellow">
         <p className="mb-2 span-side">Groups</p>
         <div className="d-flex justify-content-between position-relative">

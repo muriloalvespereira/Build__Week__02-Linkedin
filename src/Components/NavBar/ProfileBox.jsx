@@ -25,24 +25,24 @@ const ProfileBox = (props) => (
         </Button>
       </div>
     </ListGroup.Item>
-    <ListGroup.Item>
+    <ListGroup.Item className="d-flex menu-box">
       <span className="font-weight-bolder">Account</span>
-      <Button variant="link" className="btn-linkMod">
+      <Button variant="link" className="change-color">
         Settings & Privacy
       </Button>
-      <Button variant="link" className="btn-linkMod">
+      <Button variant="link" className="change-color">
         Help
       </Button>
-      <Button variant="link" className="btn-linkMod">
+      <Button variant="link" className="change-color">
         Language
       </Button>
     </ListGroup.Item>
-    <ListGroup.Item>
+    <ListGroup.Item className="d-flex menu-box">
       <span className="font-weight-bolder">Manage</span>
-      <Button variant="link" className="btn-linkMod">
+      <Button variant="link" className="change-color">
         Posts & Activity
       </Button>
-      <Button variant="link" className="btn-linkMod">
+      <Button variant="link" className="change-color">
         Job Posting Account
       </Button>
     </ListGroup.Item>
